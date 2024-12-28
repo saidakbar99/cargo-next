@@ -2,20 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RoadRadio';
+  src: url('/fonts/RoadRadio-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.hero-background {
+  background: 
+    linear-gradient(181deg, rgba(14, 16, 19, 0.38) 1.64%, rgba(28, 50, 63, 0) 18.72%),
+    linear-gradient(181deg, rgba(28, 50, 63, 0) 1.64%, rgba(14, 16, 19, 0.76) 97.59%), 
+    url(/images/hero_background.png) lightgray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: 900px;
+  position: relative;
+  width: 100%;
+}
+
+.banner-background {
+  background: 
+    linear-gradient(97deg, #222529 33.88%, rgba(0, 0, 0, 0) 68.88%), 
+    url('/images/banner_image.png') lightgray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: 470px;
+  position: relative;
+  width: 100%;
+  padding-block: 107px;
 }
