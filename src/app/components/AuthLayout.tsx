@@ -1,5 +1,5 @@
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Logo from '../../../public/svgs/cargo_black.svg'
 import Dropdown from './ui/Dropdown';
 import { languages } from '../../utils/utils';

@@ -68,7 +68,7 @@ export const BestStores = () => {
         <div className="mr-12 border border-grayBorder rounded-xl p-6 flex flex-col w-[364px] h-fit">
           <span className="font-medium text-xl">Категории</span>
           <span className="mt-4 font-semibold">Все магазины</span>
-          {categories.map((category:any, index:number) => (
+          {categories.map((category: {name:string}, index: number) => (
             <span key={index} className="mt-4 opacity-60 cursor-pointer">{category.name}</span>
           ))}
         </div>
