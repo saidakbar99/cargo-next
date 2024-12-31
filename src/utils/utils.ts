@@ -12,4 +12,4 @@ export const scrollToSection = (id: string, offset: number = 0) => {
   }
 };
 
-export const languages = ["Ру", "Уз", "Uz", "En"]
+export const languages = ["Ру", "Уз", "O'z", "En"]

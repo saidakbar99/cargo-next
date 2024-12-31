@@ -4,12 +4,10 @@ import React, { useState } from "react";
 
 interface DropdownProps {
   options: string[];
-  placeholder?: string;
-  variant?: 'white' | 'blurred';
   classname?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'white', classname }) => {
+const LanguageDropdown: React.FC<DropdownProps> = ({ options, classname }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string>(options[0]);
 
@@ -36,19 +34,13 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
     }
   };
 
-  const baseDropdownStyles = "font-semibold w-full py-3 px-4 cursor-pointer flex justify-between items-center"
-  const variantDropdownStyles = getDropdownStyles(variant);
-
-  const baseOptionsStyles = "absolute z-10 mt-2 w-full rounded-lg shadow-md max-h-60 overflow-y-auto"
-  const variantOptionsStyles = getOptionsStyles(variant);
-
   return (
-    <div className={`relative w-full max-w-xs select-none ${classname}`}>
+    <div className={`relative select-none ${classname}`}>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className={`${baseDropdownStyles} ${variantDropdownStyles}`}
+        className='font-semibold py-3 px-4 cursor-pointer flex justify-between items-center border border-lightGray rounded-80'
       >
-        <span className="mr-1.5">{selectedOption || placeholder}</span>
+        <span className="mr-1.5">{selectedOption}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +53,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
       </div>
 
       {isOpen && (
-        <ul className={`${baseOptionsStyles} ${variantOptionsStyles}`}>
+        <ul className='absolute z-10 mt-2 w-full rounded-lg shadow-md max-h-60 overflow-y-auto bg-white'>
           {options.map((option, index) => (
             <li
               key={index}
@@ -77,4 +69,4 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
   );
 };
 
-export default Dropdown;
+export default LanguageDropdown;

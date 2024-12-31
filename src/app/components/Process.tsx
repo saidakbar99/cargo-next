@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import ProcessIcon1 from '../../../public/svgs/checked_user_icon.svg'
-import ProcessIcon2 from '../../../public/svgs/truck_icon.svg'
+import ProcessIcon2 from '../../../public/svgs/truck_time_icon.svg'
 import ProcessIcon3 from '../../../public/svgs/box_icon.svg'
 
 export const Process = () => {

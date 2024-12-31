@@ -1,5 +1,7 @@
+import Link from "next/link"
 import AuthLayout from "@/components/AuthLayout"
 import { Button } from "@/components/ui/Button"
+import { SocialButton } from "@/components/ui/SocialButton"
 
 const SignIn = () => {
   return (
@@ -14,8 +16,8 @@ const SignIn = () => {
           <input
             id="email"
             type="email"
-            className="border border-lightGray py-3 px-[14px] rounded-lg w-full"
-            placeholder="example@gmail.com"
+            className="border border-lightGray py-3 px-[14px] rounded-lg w-full text-sm"
+            placeholder="Pochtangiz"
           />
         </div>
         <div className="flex flex-col my-3">
@@ -25,17 +27,25 @@ const SignIn = () => {
           <input
             id="password"
             type="password"
-            className="border border-lightGray py-3 px-4 rounded-lg w-full"
-            placeholder="example@gmail.com"
+            className="border border-lightGray py-3 px-4 rounded-lg w-full text-sm"
+            placeholder="Parol"
           />
         </div>
-        <p className="text-gray-300 ml-3 mb-6">Parolni unutdingizmi?
-          <span className="text-orange font-semibold"> Qayta tiklash</span>
+        <p className="text-gray-300 ml-3 mb-6">
+          Parolni unutdingizmi?
+          <Link href='/auth/recovery'>
+            <span className="text-orange font-semibold"> Qayta tiklash</span>
+          </Link>
         </p>
-        <Button className="w-full" variant="orange" text="Kirish" />
-        <Button className="w-full mt-2" variant="secondary" text="Google orqali kirish" />
-        <p className="text-center mt-6 text-gray-300">Avval ro’yxatdan o’tganmisiz?
-          <span className="text-orange font-bold"> Ro’yxatdan o’tish</span>
+        <Link href='/crm/shipments'>
+          <Button className="w-full px-5 py-2.5 text-base" variant="orange" text="Kirish" />
+        </Link>
+        <SocialButton />
+        <p className="text-center mt-6 text-gray-300">
+          Avval ro’yxatdan o’tmaganmisiz?
+          <Link href='/auth/sign-up'>
+            <span className="text-orange font-bold"> Ro’yxatdan o’tish</span>
+          </Link>
         </p>
       </div>
     </AuthLayout>
