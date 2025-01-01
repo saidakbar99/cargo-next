@@ -1,18 +1,10 @@
 "use client"
 
 import { useState } from 'react';
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { languages } from "../../utils/utils";
-import LogoutIcon from '../../../public/svgs/logout.svg';
 import LanguageDropdown from "./ui/LanguageDropdown";
-import LogoIcon from '../../../public/svgs/cargo_black.svg';
-import TruckActiveIcon from '../../../public/svgs/truck_active.svg'
-import TruckIcon from '../../../public/svgs/truck.svg'
-import MapIcon from '../../../public/svgs/map_icon.svg'
-import SettingsIcon from '../../../public/svgs/settings_icon.svg'
-import CalculatorIcon from '../../../public/svgs/calculator_icon.svg'
 
 interface CrmLayoutProps {
   children: React.ReactNode;
@@ -25,14 +17,13 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children }) => {
   const isActive = (currentPath:string, targetPath:string) => 
     currentPath === `/crm/${targetPath}` ? 'bg-orange-05 text-orange' : '';
 
-  const isShipments = pathname === '/crm/shipments'
   return (
     <div className="flex h-screen">
       <div className="min-w-[264px] border-r border-lightGray p-3">
-        <div className='flex justify-between items-center'>
-          <Image src={LogoIcon} alt="Logo Icon" />
+        <div className='flex justify-between items-center pl-3'>
+          <img src='/svgs/cargo_black.svg' alt="Logo Icon" />
           <svg
-            className={`w-4 h-4 transition-transform cursor-pointer ${isMenuOpen ? "rotate-180" : ""}`}
+            className={`w-4 h-4 mb-1 transition-transform cursor-pointer ${isMenuOpen ? "rotate-180" : ""}`}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -43,13 +34,13 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children }) => {
           </svg>
         </div>
         <Link href='/crm/shipments'>
-          <div className={`mt-8 p-3 cursor-pointer rounded-xl ${isActive(pathname, 'shipments')}`}>
+          <div className={`mt-5 p-3 cursor-pointer rounded-xl ${isActive(pathname, 'shipments')}`}>
             <div className='flex'>
-              <Image 
+              <img 
                 className='min-w-6 h-6' 
                 width={24} 
                 height={24} 
-                src={pathname === '/crm/shipments' ? TruckActiveIcon : TruckIcon}
+                src={pathname === '/crm/shipments' ? '/svgs/truck_active.svg' : '/svgs/truck.svg'}
                 alt='Truck Icon' 
               />
               <span className='ml-3 font-medium'>Jo’natmalar</span>
@@ -59,7 +50,13 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children }) => {
         <Link href='/crm/addresses'>
           <div className={`mt-1 p-3 cursor-pointer rounded-xl ${isActive(pathname, 'addresses')}`}>
             <div className='flex'>
-              <Image className='min-w-6 h-6' width={24} height={24} src={MapIcon} alt='Map Icon' />
+              <img 
+              className='min-w-6 h-6' 
+              width={24} 
+              height={24} 
+              src={pathname === '/crm/addresses' ? '/svgs/map_active.svg' : '/svgs/map.svg'} 
+              alt='Map Icon' 
+              />
               <span className='ml-3 font-medium'>Manzillar</span>
             </div>
           </div>
@@ -67,7 +64,13 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children }) => {
         <Link href='/crm/settings'>
           <div className={`mt-1 p-3 cursor-pointer rounded-xl ${isActive(pathname, 'settings')}`}>
             <div className='flex'>
-              <Image className='min-w-6 h-6' width={24} height={24} src={SettingsIcon} alt='Settings Icon' />
+              <img 
+              className='min-w-6 h-6' 
+              width={24} 
+              height={24} 
+              src={pathname === '/crm/settings' ? '/svgs/settings_active.svg' : '/svgs/settings.svg'} 
+              alt='Settings Icon' 
+              />
               <span className='ml-3 font-medium'>Sozlamalar</span>
             </div>
           </div>
@@ -75,7 +78,13 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children }) => {
         <Link href='/crm/calculator'>
           <div className={`mt-1 p-3 cursor-pointer rounded-xl ${isActive(pathname, 'calculator')}`}>
             <div className='flex'>
-              <Image className='min-w-6 h-6' width={24} height={24} src={CalculatorIcon} alt='Calculator Icon' />
+              <img 
+              className='min-w-6 h-6' 
+              width={24} 
+              height={24} 
+              src={pathname === '/crm/calculator' ? '/svgs/calculator_active.svg' : '/svgs/calculator.svg'} 
+              alt='Calculator Icon' 
+              />
               <span className='ml-3 font-medium'>Kalkulyator</span>
             </div>
           </div>
@@ -83,13 +92,20 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children }) => {
       </div>
       <div className="flex flex-col w-full">
         <div className="flex border-b border-lightGray p-6">
-          <input type="text" className="w-full border border-lightGray mr-4 rounded-80 py-3 px-4" />
+          <div className='relative w-full mr-4'>
+            <input 
+              type="text" 
+              className="border w-full border-lightGray rounded-80 py-3 pr-4 pl-12 focus:outline-none"
+              placeholder='Qidirish'
+            />
+            <img src='/svgs/search.svg' alt="Search Icon" className='absolute top-[14.5px] left-4' />
+          </div>
           <LanguageDropdown options={languages} classname="mr-3" />
           <Link href='/'>
             <button
               className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3'
             >
-              <Image src={LogoutIcon} width={20} height={20} alt='Logout Icon' />
+              <img src='/svgs/logout.svg' width={20} height={20} alt='Logout Icon' />
               <span className='ml-2.5 text-black font-semibold text-sm'>Chiqish</span>
             </button>
           </Link>
