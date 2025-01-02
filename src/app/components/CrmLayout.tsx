@@ -17,7 +17,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
     currentPath === `${targetPath}` ? 'bg-orange-05 text-orange' : '';
 
   return (
-    <div className="flex h-screen">
+    <div className="flex">
       <div className="min-w-[264px] border-r border-lightGray p-3">
         <div className='flex justify-between items-center pl-3'>
           <img src='/svgs/cargo_black.svg' alt="Logo Icon" />
