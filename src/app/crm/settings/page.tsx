@@ -1,8 +1,11 @@
 import CrmLayout from "@/components/CrmLayout";
+import Empty from "@/components/NoData";
 
 const Settings = () => {
   return (
-    <CrmLayout>settogs</CrmLayout>
+    <CrmLayout activeMenu="settings">
+      settings
+    </CrmLayout>
   )
 }
 

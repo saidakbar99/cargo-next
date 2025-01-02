@@ -30,7 +30,8 @@ export default {
         iconBackground: '#FFF0E8',
         grayBorder: 'rgba(34, 37, 41, 0.10)',
         storeLogoBg: 'rgba(34, 37, 41, 0.04)',
-        sliderBg: 'rgba(60, 60, 67, 0.18)'
+        sliderBg: 'rgba(60, 60, 67, 0.18)',
+        whiteBackground: '#F9FAFB'
       },
       borderRadius: {
         '80': '80px',

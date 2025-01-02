@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '../../../public/svgs/cargo_black.svg'
-import { languages } from '../../utils/utils';
+import { languages } from '../../lib/utils';
 import LanguageDropdown from './ui/LanguageDropdown';
 interface AuthLayoutProps {
   children: React.ReactNode;

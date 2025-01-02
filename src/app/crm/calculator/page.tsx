@@ -2,7 +2,9 @@ import CrmLayout from "@/components/CrmLayout";
 
 const Calculator = () => {
   return (
-    <CrmLayout>calvulator</CrmLayout>
+    <CrmLayout activeMenu='calculator'>
+      calc
+    </CrmLayout>
   )
 }
 

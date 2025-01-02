@@ -7,7 +7,7 @@ import { Button } from "./ui/Button"
 import Logo from '../../../public/svgs/cargo.svg'
 import BurgerIcon from '../../../public/svgs/burger_icon.svg'
 import Dropdown from "./ui/Dropdown"
-import { languages, scrollToSection } from '../../utils/utils'
+import { languages, scrollToSection } from '../../lib/utils'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
