@@ -18,16 +18,19 @@ const mockData = [
     date: "2024-12-20T00:00:00.000Z",
     items: [
       {
+        id: 1231231256731,
         name: 'Apple Headphone',
         item_amount: 4500000,
         quantity: 1
       },
       {
+        id: 123125677651231,
         name: 'Samsung S21',
         item_amount: 8000000,
         quantity: 1
       },
       {
+        id: 123125766556731,
         name: 'Logitech G403',
         item_amount: 1000000,
         quantity: 2
@@ -45,21 +48,25 @@ const mockData = [
     date: "2025-06-12T00:00:00.000Z",
     items: [
       {
+        id: 123125766545671,
         name: 'Apple Headphone',
         item_amount: 4500000,
         quantity: 1
       },
       {
+        id: 123115236643342731,
         name: 'Apple Headphone',
         item_amount: 4500000,
         quantity: 1
       },
       {
+        id: 1231257624363462346,
         name: 'Samsung S21',
         item_amount: 8000000,
         quantity: 1
       },
       {
+        id: 12317089779878,
         name: 'Logitech G403',
         item_amount: 1000000,
         quantity: 2
@@ -77,26 +84,31 @@ const mockData = [
     date: "2022-01-01T00:00:00.000Z",
     items: [
       {
+        id: 123198689676,
         name: 'Apple Headphone',
         item_amount: 4500000,
         quantity: 1
       },
       {
+        id: 6387935847269,
         name: 'Apple Headphone',
         item_amount: 4500000,
         quantity: 1
       },
       {
+        id: 1231278888888234,
         name: 'Samsung S21',
         item_amount: 8000000,
         quantity: 1
       },
       {
+        id: 123112312322256731,
         name: 'Logitech G403',
         item_amount: 1000000,
         quantity: 2
       },
       {
+        id: 123195674362112312,
         name: 'Apple Macbook',
         item_amount: 15000000,
         quantity: 1
