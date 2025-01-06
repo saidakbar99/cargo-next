@@ -38,7 +38,7 @@ export const Navbar = () => {
           >
             ✕
           </button>
-          <ul className="mt-52 text-center text-4xl font-semibold text-white">
+          <ul className="mt-40 text-center text-4xl font-semibold text-white">
             <li className="mb-7">
               <button onClick={() => handleScroll("aboutUs")}>О нас</button>
             </li>
