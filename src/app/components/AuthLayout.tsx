@@ -15,7 +15,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, backgroundImage }) =>
       <div className="w-full md:w-1/2 flex flex-col justify-between">
         <nav className="flex justify-between py-4 px-6">
           <Link href='/'>
-            <Image src={Logo} alt="Logo" />
+            <img src={Logo} alt="Logo" />
           </Link>
           <LanguageDropdown options={languages} />
         </nav>

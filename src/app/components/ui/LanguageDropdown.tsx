@@ -16,24 +16,6 @@ const LanguageDropdown: React.FC<DropdownProps> = ({ options, classname }) => {
     setIsOpen(false);
   };
 
-  const getDropdownStyles = (variant: string) => {
-    switch (variant) {
-      case "blurred":
-        return "bg-white/25 backdrop-blur-[21px] text-white py-[14px] px-6 rounded-80 mr-[5px]";
-      case "white":
-        return "border border-lightGray bg-white rounded-lg";
-    }
-  };
-
-  const getOptionsStyles = (variant: string) => {
-    switch (variant) {
-      case "blurred":
-        return "bg-white/25 backdrop-blur-[21px] text-gray-700 text-center w-2/3 left-4 font-semibold";
-      case "white":
-        return "border border-lightGray bg-white rounded-lg";
-    }
-  };
-
   return (
     <div className={`relative select-none ${classname}`}>
       <div

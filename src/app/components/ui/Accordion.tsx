@@ -17,7 +17,7 @@ export const Accordion: React.FC<AccordionProps> = ({question, answer}) => {
     <div onClick={() => setIsOpened(!isOpened)} className='pb-8 pt-6 cursor-pointer'>
       <button type="button" className="flex items-center justify-between w-full mb-2">
         <span className='text-xl font-medium'>{question}</span>
-        <Image src={isOpened ? MinusIcon : PlusIcon} alt="icon" />
+        <img src={isOpened ? MinusIcon : PlusIcon} alt="icon" />
       </button>
       <div 
         className={`transition-all duration-200 overflow-hidden transform ${

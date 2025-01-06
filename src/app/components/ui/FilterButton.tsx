@@ -5,12 +5,6 @@ interface ButtonProps {
   handleClick?: () => void;
 }
 
-const buttonText = {
-  all: 'Barcha jo’natmalar',
-  active: 'Faol',
-  archived: 'Yetkazib berilganlar'
-}
-
 export const FilterButton: React.FC<ButtonProps> = ({
   variant = "",
   className = "",

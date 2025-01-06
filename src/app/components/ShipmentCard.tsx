@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ShipmentStatuses } from "./ShipmentStatuses"
 import { calculateTotalAmount, formatCurrency, formatDate } from '../../lib/utils'
+import Image from 'next/image'
 
 // TODO: add interface
 export const ShipmentCard: React.FC<any> = ({shipment}) => {
@@ -45,7 +46,8 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
           <div className='mt-6'>
             <span className='font-bold'>Tovarlar</span>
             <div className='mt-4 grid grid-cols-3 gap-6'>
-              {shipment.items.map((item:any) => (
+              {
+              shipment.items.map((item:any) => (
                 <div className='flex' key={item.id}>
                   <img src="/images/item_mock_image.png" alt="Item Image" className='w-[50px] h-[50px] object-contain shrink-0' />
                   <div className='ml-3 w-full'>

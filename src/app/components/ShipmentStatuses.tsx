@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ShipmentStatusesProps {
   activeStatus: number;
 }

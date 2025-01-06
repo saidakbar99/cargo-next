@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <div className="flex justify-between h-[50px] items-center">
-      <Image src={Logo} alt="Logo" />
+      <img src={Logo} alt="Logo" />
       <div className="flex">
         <Link href='/auth/sign-in'>
           <Button className="mr-4">Авторизоваться</Button>
@@ -27,7 +27,7 @@ export const Navbar = () => {
         <Dropdown variant="blurred" options={languages} />
         <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Button className="ml-4 w-[70px]">
-            <Image width={22} height={22} src={BurgerIcon} alt="Burger Icon" />
+            <img width={22} height={22} src={BurgerIcon} alt="Burger Icon" />
           </Button>
         </div>
       </div>
