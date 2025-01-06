@@ -7,10 +7,10 @@ const SignIn = () => {
   return (
     <AuthLayout backgroundImage="/images/sign_in.png">
       <div className="px-40">
-        <h3 className="text-4xl text-black font-bold text-center">Kirish</h3>
+        <h3 className="text-4xl font-bold text-center">Kirish</h3>
         <h5 className="mt-2 text-gray-300 text-center">Shaxsiy ma’lumotlaringizni kiriting </h5>
         <div className="flex flex-col mt-6">
-          <label htmlFor="email" className="text-sm mb-1.5 text-black font-semibold">
+          <label htmlFor="email" className="text-sm mb-1.5 font-semibold">
             Email
           </label>
           <input
@@ -21,7 +21,7 @@ const SignIn = () => {
           />
         </div>
         <div className="flex flex-col my-3">
-          <label htmlFor="password" className="text-sm mb-1.5 text-black font-semibold">
+          <label htmlFor="password" className="text-sm mb-1.5 font-semibold">
             Parol
           </label>
           <input

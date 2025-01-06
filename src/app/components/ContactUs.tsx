@@ -1,17 +1,14 @@
-import MailIcon from "../../../public/svgs/mail_icon.svg"
-import PhoneIcon from "../../../public/svgs/phone_icon.svg"
-import GeoPinIcon from "../../../public/svgs/geo_pin_icon.svg"
 import { IconWithBackground } from "./ui/IconWithBackground"
 import { Button } from "./ui/Button"
 
 export const ContactUs = () => {
   return (
     <div id="contactUs" className="mt-[108px]">
-      <h2 className="font-roadRadio font-bold text-5xl text-center text-black">связаться с нами</h2>
+      <h2 className="font-roadRadio font-bold text-5xl text-center">связаться с нами</h2>
       <div className="mt-12 flex border border-lightGray rounded-2xl">
         <div className="p-12 bg-black rounded-s-2xl min-w-[464px]">
           <div className="py-4 flex my-8">
-            <IconWithBackground icon={MailIcon} />
+            <IconWithBackground icon='/svgs/mail_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Напишите нам</span>
               <span className="mb-[14px] text-lightGray font-medium">Наша дружная команда здесь, чтобы помочь.</span>
@@ -19,7 +16,7 @@ export const ContactUs = () => {
             </div>
           </div>
           <div className="py-4 flex">
-            <IconWithBackground icon={GeoPinIcon} />
+            <IconWithBackground icon='/svgs/phone_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Офис</span>
               <span className="mb-[14px] text-lightGray font-medium">Приходите поздороваться в наш офис HQ.</span>
@@ -27,7 +24,7 @@ export const ContactUs = () => {
             </div>
           </div>
           <div className="py-4 flex">
-            <IconWithBackground icon={PhoneIcon} />
+            <IconWithBackground icon='/svgs/geo_pin_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Телефон</span>
               <span className="mb-[14px] text-lightGray font-medium">пн-пт с 8:00 до 17:00.</span>
@@ -37,7 +34,7 @@ export const ContactUs = () => {
         </div>
         <div className="p-24 w-full">
           <div className="flex flex-col mb-6">
-            <label htmlFor="name" className="text-sm mb-1.5 text-black font-semibold">
+            <label htmlFor="name" className="text-sm mb-1.5 font-semibold">
               Имя
             </label>
             <input
@@ -48,7 +45,7 @@ export const ContactUs = () => {
             />
           </div>
           <div className="flex flex-col mb-6">
-            <label htmlFor="telephone" className="text-sm mb-1.5 text-black font-semibold">
+            <label htmlFor="telephone" className="text-sm mb-1.5 font-semibold">
               Номер телефона
             </label>
             <input
@@ -59,7 +56,7 @@ export const ContactUs = () => {
             />
           </div>
           <div className="flex flex-col mb-6">
-            <label htmlFor="message" className="text-sm mb-1.5 text-black font-semibold">
+            <label htmlFor="message" className="text-sm mb-1.5 font-semibold">
               Сообщение
             </label>
             <textarea

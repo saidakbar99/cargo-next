@@ -1,11 +1,8 @@
 "use client"
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link';
 import { Button } from "./ui/Button"
-import Logo from '../../../public/svgs/cargo.svg'
-import BurgerIcon from '../../../public/svgs/burger_icon.svg'
 import Dropdown from "./ui/Dropdown"
 import { languages, scrollToSection } from '../../lib/utils'
 
@@ -19,7 +16,7 @@ export const Navbar = () => {
 
   return (
     <div className="flex justify-between h-[50px] items-center">
-      <img src={Logo} alt="Logo" />
+      <img src='/svgs/cargo.svg' alt="Logo" />
       <div className="flex">
         <Link href='/auth/sign-in'>
           <Button className="mr-4">Авторизоваться</Button>
@@ -27,7 +24,7 @@ export const Navbar = () => {
         <Dropdown variant="blurred" options={languages} />
         <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Button className="ml-4 w-[70px]">
-            <img width={22} height={22} src={BurgerIcon} alt="Burger Icon" />
+            <img width={22} height={22} src='/svgs/burger.svg' alt="Burger Icon" />
           </Button>
         </div>
       </div>

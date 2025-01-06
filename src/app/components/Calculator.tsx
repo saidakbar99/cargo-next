@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import Dropdown from "./ui/Dropdown";
-
-const weightOptions = ['KG', 'Lb', 'grams']
+import { weightOptions } from "../../lib/utils";
 
 export const Calculator = () => {
   const [slider, setSlider] = useState(600);
@@ -16,7 +15,7 @@ export const Calculator = () => {
   };
 
   return (
-    <div id="calculator" className="mt-[140px] text-black">
+    <div id="calculator" className="mt-[140px]">
       <h2 className="font-roadRadio text-5xl font-bold text-center">Стоимость доставки</h2>
       <div className="mt-16 flex justify-between">
         <div className="flex flex-col w-[620px]">

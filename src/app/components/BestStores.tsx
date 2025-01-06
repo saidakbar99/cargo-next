@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { StoreItem, StoreItemProps } from "./StoreItem"
 import { Pagination } from "./ui/Pagination"
-import TrendyolIcon from '../../../public/svgs/store_logo.svg'
 
 const categories = [
   {
@@ -31,25 +30,25 @@ const stores = [
     id: 1,
     storeName: 'Trendyol',
     description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
-    icon: TrendyolIcon,
+    icon: '/svgs/store_logo.svg',
   },
   {
     id: 2,
     storeName: 'Trendyol',
     description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
-    icon: TrendyolIcon,
+    icon: '/svgs/store_logo.svg',
   },
   {
     id: 3,
     storeName: 'Trendyol',
     description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
-    icon: TrendyolIcon,
+    icon: '/svgs/store_logo.svg',
   },
   {
     id: 4,
     storeName: 'Trendyol',
     description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
-    icon: TrendyolIcon,
+    icon: '/svgs/store_logo.svg',
   },
 ]
 
@@ -62,7 +61,7 @@ export const BestStores = () => {
   };
 
   return (
-    <div id='stores' className="mt-[140px] text-black">
+    <div id='stores' className="mt-[140px]">
       <h2 className="text-5xl font-bold text-center font-roadRadio">Лучшие магазины</h2>
       <div className="mt-[48px] flex">
         <div className="mr-12 border border-grayBorder rounded-xl p-6 flex flex-col w-[364px] h-fit">

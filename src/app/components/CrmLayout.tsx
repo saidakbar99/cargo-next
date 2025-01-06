@@ -18,7 +18,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
 
   return (
     <div className="flex">
-      <div className="min-w-[264px] border-r border-lightGray p-3">
+      <div className="min-w-[264px] border-r border-lightGray p-3 min-h-screen">
         <div className='flex justify-between items-center pl-3'>
           <img src='/svgs/cargo_black.svg' alt="Logo Icon" />
           <svg
@@ -97,7 +97,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
               className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3'
             >
               <img src='/svgs/logout.svg' alt='Logout Icon' />
-              <span className='ml-2.5 text-black font-semibold text-sm'>Chiqish</span>
+              <span className='ml-2.5 font-semibold text-sm'>Chiqish</span>
             </button>
           </Link>
         </div>

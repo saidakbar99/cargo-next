@@ -13,7 +13,7 @@ export const AboutUs = () => {
         </div>
       </div>
       <Image className="my-[70px]" src={AboutUsImage} alt="About us Image" />
-      <div className="flex justify-between text-black text-wrap	">
+      <div className="flex justify-between text-wrap	">
         <div className="p-6">
           <h3 className="text-5xl font-bold font-roadRadio">10,580,996</h3>
           <span className="text-xl font-medium mt-[18px]">Отправленных посылок</span>

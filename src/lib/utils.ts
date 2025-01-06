@@ -15,6 +15,7 @@ export const scrollToSection = (id: string, offset: number = 0) => {
 };
 
 export const languages = ["Ру", "Уз", "O'z", "En"]
+export const weightOptions = ['KG', 'Lb', 'grams']
 
 export const calculateTotalAmount = (items: { name: string; item_amount: number; quantity: number }[]) => {
   return items.reduce((total, item) => total + item.item_amount * item.quantity, 0);

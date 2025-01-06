@@ -1,9 +1,6 @@
 "use client"
 
 import { useState } from 'react'
-import Image from 'next/image'
-import PlusIcon from '../../../../public/svgs/plus-icon.svg'
-import MinusIcon from '../../../../public/svgs/minus_icon.svg'
 
 interface AccordionProps {
   question: string;
@@ -17,7 +14,7 @@ export const Accordion: React.FC<AccordionProps> = ({question, answer}) => {
     <div onClick={() => setIsOpened(!isOpened)} className='pb-8 pt-6 cursor-pointer'>
       <button type="button" className="flex items-center justify-between w-full mb-2">
         <span className='text-xl font-medium'>{question}</span>
-        <img src={isOpened ? MinusIcon : PlusIcon} alt="icon" />
+        <img src={isOpened ? '/svgs/minus_icon.svg' : '/svgs/plus_icon.svg'} alt="icon" />
       </button>
       <div 
         className={`transition-all duration-200 overflow-hidden transform ${

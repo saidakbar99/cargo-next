@@ -1,12 +1,9 @@
-import Image from 'next/image'
-import Logo from '../../../public/svgs/cargo.svg'
-
 export const Footer = () => {
   return (
     <footer className="bg-black mt-[140px] pt-16 pb-12">
       <div className="mx-auto w-[1216px] p-4 py-8 flex">
         <div className="w-[320px]">
-          <img className='mb-6' src={Logo} alt="Logo" />
+          <img className='mb-6' src='/svgs/cargo.svg' alt="Logo" />
           <span className='text-white font-medium'>Создавайте удивительные цифровые впечатления, которые делают мир более счастливым.</span>
         </div>
         <div className="w-full">

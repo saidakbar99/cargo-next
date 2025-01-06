@@ -1,7 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../../../public/svgs/cargo_black.svg'
 import { languages } from '../../lib/utils';
 import LanguageDropdown from './ui/LanguageDropdown';
 interface AuthLayoutProps {
@@ -15,7 +13,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, backgroundImage }) =>
       <div className="w-full md:w-1/2 flex flex-col justify-between">
         <nav className="flex justify-between py-4 px-6">
           <Link href='/'>
-            <img src={Logo} alt="Logo" />
+            <img src='/svgs/cargo_black.svg' alt="Logo" />
           </Link>
           <LanguageDropdown options={languages} />
         </nav>

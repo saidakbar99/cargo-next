@@ -10,7 +10,7 @@ const Recovery = () => {
   return (
     <AuthLayout backgroundImage="/images/recovery.png">
       <div className="px-40">
-        <h3 className="text-4xl text-black font-bold text-center">Parolni qayta tiklash</h3>
+        <h3 className="text-4xl font-bold text-center">Parolni qayta tiklash</h3>
         <h5 className="mt-2 text-gray-300 text-center">Kerakli ma’lumotni kiriting</h5>
         {isMailSent ? (
           <div className='my-8'>
@@ -18,7 +18,7 @@ const Recovery = () => {
           </div>
         ) : (
           <div className="flex flex-col my-6">
-            <label htmlFor="email" className="text-sm mb-1.5 text-black font-semibold">
+            <label htmlFor="email" className="text-sm mb-1.5 font-semibold">
               Email
             </label>
             <input

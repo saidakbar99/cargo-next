@@ -35,7 +35,7 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
                 </span>
               ))}
             </div>
-            <div className="flex flex-col ml-6 text-black font-medium">
+            <div className="flex flex-col ml-6 font-medium">
               {fields.map((field, index) => (
                 <span key={index} className="mt-4">
                   {field.value}
@@ -53,7 +53,7 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
                   <div className='ml-3 w-full'>
                     <span className='text-gray-300 text-sm'>{item.name}</span>
                     <div className='flex justify-between items-center'>
-                      <span className='mt-2.5 text-black text-xl font-bold'>{formatCurrency(item.item_amount)}</span>
+                      <span className='mt-2.5 text-xl font-bold'>{formatCurrency(item.item_amount)}</span>
                       <span className='mt-2.5 mr-8 text-sm font-medium'>{item.quantity} dona</span>
                     </div>
                   </div>

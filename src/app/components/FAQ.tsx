@@ -41,7 +41,7 @@ const FAQContent = [
 
 export const FAQ = () => {
   return (
-    <div id="faq" className="mt-[140px] text-black">
+    <div id="faq" className="mt-[140px]">
       <h2 className="font-roadRadio text-5xl font-bold text-center">Часто задаваемые вопросы</h2>
       <div className="w-[768px] mx-auto mt-10 divide-y">
         {FAQContent.map((item: FaqProps) => (
