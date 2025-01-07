@@ -34,13 +34,13 @@ const Addresses = () => {
                 <span className="mt-4 flex-1">+90 216 285 1111</span>
               </div>
               <div className="flex flex-col ml-6 font-medium">
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
-                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
+                <img className="mt-4 flex-1 cursor-pointer" src="/svgs/copy.svg" alt="Copy Icon" />
               </div>
             </div>
           </div>

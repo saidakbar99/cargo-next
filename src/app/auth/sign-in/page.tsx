@@ -1,6 +1,5 @@
 import Link from "next/link"
 import AuthLayout from "@/components/AuthLayout"
-import { Button } from "@/components/ui/Button"
 import { SocialButton } from "@/components/ui/SocialButton"
 
 const SignIn = () => {

@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { ShipmentStatuses } from "./ShipmentStatuses"
 import { calculateTotalAmount, formatCurrency, formatDate } from '../../lib/utils'
-import Image from 'next/image'
 
 // TODO: add interface
 export const ShipmentCard: React.FC<any> = ({shipment}) => {
