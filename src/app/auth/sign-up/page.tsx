@@ -54,7 +54,9 @@ const SignUp = () => {
             placeholder="Parol"
           />
         </div>
-        <Button className="w-full px-5 py-2.5 text-base mt-6" variant="orange" text="Ro’yxatdan o’tish" />
+        <button className="rounded-80 text-center font-semibold items-center w-full px-5 py-3 mt-6 bg-orange text-white">
+          Ro’yxatdan o’tish
+        </button>
         <SocialButton />
         <p className="text-center mt-6 text-gray-300">
           Avval ro’yxatdan o’tganmisiz?

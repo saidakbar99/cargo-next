@@ -38,7 +38,9 @@ const SignIn = () => {
           </Link>
         </p>
         <Link href='/crm/shipments'>
-          <Button className="w-full px-5 py-2.5 text-base" variant="orange" text="Kirish" />
+          <button className="rounded-80 text-center font-semibold items-center w-full px-5 py-3 bg-orange text-white">
+            Kirish
+          </button>
         </Link>
         <SocialButton />
         <p className="text-center mt-6 text-gray-300">
