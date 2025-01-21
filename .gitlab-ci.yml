@@ -10,3 +10,4 @@ deploy:
   script:
     - cd /var/www/garanti-express.uz
     - git reset --hard
+    - git pull
