@@ -1,0 +1,13 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  tags:
+    - build
+  only:
+    - main
+  script:
+    - cd /var/www/garanti-express.uz
+    - git pull
+    - pm2 restart garanti-express.uz
