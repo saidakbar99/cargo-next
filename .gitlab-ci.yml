@@ -9,6 +9,7 @@ deploy:
     - main
   script:
     - cd /var/www/garanti-express.uz
+    - git config --global --add safe.directory /var/www/garanti-express.uz
     - git pull
     - npm run build
     - pm2 restart garanti-express.uz
