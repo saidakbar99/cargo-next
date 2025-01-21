@@ -10,6 +10,7 @@ deploy:
   image: node:20
   script:
     - cd /var/www/garanti-express.uz
+    - git reset --hard
     - git pull
     - nvm i 20
     - npm run build
