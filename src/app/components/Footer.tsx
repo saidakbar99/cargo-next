@@ -58,7 +58,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="w-full flex justify-between pt-12">
-          <span className="text-white font-medium">© Все права защищены.</span>
+          <span className="text-white font-medium">© Все права защищены!</span>
           <SocialMedias />
         </div>
       </div>
