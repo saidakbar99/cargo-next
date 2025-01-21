@@ -11,7 +11,7 @@ const mapOptions = {
 
 const MyMap = () => {
   return (
-    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'AIzaSyB_bm1an29_D5YfHu_Rmhngt4E4J5Z27Co'}>
+    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15} options={mapOptions}>
         {/* Add markers or other components here */}
       </GoogleMap>
