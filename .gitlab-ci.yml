@@ -10,6 +10,8 @@ deploy:
   script:
     - git config --global user.name "$CI_GITLAB_USERNAME"
     - git config --global user.password "$CI_PERSONAL_ACCESS_TOKEN"
+    - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    - apt-get install -y nodejs
     - cd /var/www/garanti-express.uz
     - git reset --hard
     - git pull
