@@ -7,9 +7,9 @@ deploy:
     - build
   only:
     - main
+  image: node:20
   script:
     - cd /var/www/garanti-express.uz
-    - git config --global --add safe.directory /var/www/garanti-express.uz
     - git pull
     - nvm i 20
     - npm run build
