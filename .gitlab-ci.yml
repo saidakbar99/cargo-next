@@ -7,8 +7,8 @@ deploy:
     - build
   only:
     - main
-  image: node:20
   script:
     - cd /var/www/garanti-express.uz
     - git reset --hard
     - git pull
+    - npm run build
