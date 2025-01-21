@@ -1,7 +1,6 @@
 stages:
   - deploy
 
-
 deploy:
   stage: deploy
   tags:
@@ -12,4 +11,3 @@ deploy:
     - cd /var/www/garanti-express.uz
     - git reset --hard
     - git pull
-    - npm run build
