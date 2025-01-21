@@ -12,6 +12,3 @@ deploy:
     - cd /var/www/garanti-express.uz
     - git reset --hard
     - git pull
-    - nvm i 20
-    - npm run build
-    - pm2 restart garanti-express.uz
