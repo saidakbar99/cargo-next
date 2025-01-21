@@ -16,7 +16,11 @@ export const Navbar = () => {
 
   return (
     <div className="flex justify-between h-[50px] items-center">
-      <img src='/svgs/cargo_white.svg' alt="Logo" />
+      <img
+        className='w-[75px] md:w-[85px]'
+        src='/svgs/cargo_white.svg' 
+        alt="Logo" 
+      />
       <div className="flex">
         <Link href='/auth/sign-in'>
           <Button className="mr-4">Авторизоваться</Button>

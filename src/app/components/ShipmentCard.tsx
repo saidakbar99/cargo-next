@@ -45,15 +45,13 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
           <div className='mt-6'>
             <span className='font-bold'>Tovarlar</span>
             <div className='mt-4 grid grid-cols-3 gap-6'>
-              {
-              shipment.items.map((item:any) => (
+              {shipment.items.map((item:any) => (
                 <div className='flex' key={item.id}>
-                  <img src="/images/item_mock_image.png" alt="Item Image" className='w-[50px] h-[50px] object-contain shrink-0' />
-                  <div className='ml-3 w-full'>
+                  <div className='w-full'>
                     <span className='text-gray-300 text-sm'>{item.name}</span>
                     <div className='flex justify-between items-center'>
                       <span className='mt-2.5 text-xl font-bold'>{formatCurrency(item.item_amount)}</span>
-                      <span className='mt-2.5 mr-8 text-sm font-medium'>{item.quantity} dona</span>
+                      <span className='mt-2.5 mr-44 text-sm font-medium'>{item.quantity} dona</span>
                     </div>
                   </div>
                 </div>

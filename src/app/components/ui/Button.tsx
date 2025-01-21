@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
   const getButtonStyles = (variant: string) => {
     switch (variant) {
       case "blurred":
-        return "bg-white/25 backdrop-blur-[21px] text-white py-[14px] px-6";
+        return "bg-white/25 backdrop-blur-[21px] text-white py-2 px-3 md:py-[14px] md:px-6";
       case "orange":
         return "bg-orange text-xl text-white px-[30px] py-5";
       case "secondary":

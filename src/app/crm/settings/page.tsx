@@ -7,7 +7,7 @@ import { PersonalSettings } from '@/components/PersonalSettings';
 import { Recievers } from '@/components/Recievers';
 
 const Settings = () => {
-  const [activeFilter, setActiveFilter] = useState<string>('Shaxsiy ma’lumotlar');
+  const [activeFilter, setActiveFilter] = useState<string>('Qabul qiluvchilar');
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);

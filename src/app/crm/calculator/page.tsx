@@ -8,6 +8,7 @@ import { weightOptions } from "../../../lib/utils";
 const Calculator = () => {
   const [slider, setSlider] = useState(600);
   const [amount, setAmount] = useState('12')
+  const [activeTab, setActiveTab] = useState('tab2');
   const min = 0;
   const max = 1000;
 
@@ -19,7 +20,27 @@ const Calculator = () => {
     <CrmLayout activeMenu="calculator">
       <div className="pt-6 h-screen">
         <div className="p-10 bg-white w-[744px] mx-auto rounded-xl">
-          <h3 className="text-2xl font-bold mb-6">Kalkulyator</h3>
+          <h3 className="text-2xl font-bold mb-9">Kalkulyator</h3>
+          <div className="mb-9 flex justify-center">
+            <div className="bg-[#F3F4F6] p-2 rounded-xl text-sm font-semibold">
+              <button
+                onClick={() => setActiveTab('tab1')}
+                className={`px-5 py-2 rounded-lg w-[308px] mr-2 ${
+                  activeTab === 'tab1' ? 'bg-white' : 'bg-transparent text-gray-300'
+                }`}
+              >
+                Из Узбекистана в Турцию.
+              </button>
+              <button
+                onClick={() => setActiveTab('tab2')}
+                className={`px-5 py-2 rounded-lg w-[308px] ${
+                  activeTab === 'tab2' ? 'bg-white' : 'bg-transparent text-gray-300'
+                }`}
+              >
+                Из Турции в Узбекистан.
+              </button>
+            </div>
+          </div>
           <div className="flex flex-col w-[620px]">
             <div className="flex">
               <input 
