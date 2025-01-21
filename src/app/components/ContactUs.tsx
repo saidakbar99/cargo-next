@@ -1,10 +1,14 @@
+'use client'
+
 import { IconWithBackground } from "./ui/IconWithBackground"
 import { Button } from "./ui/Button"
+import MyMap from "./MyMap"
 
 export const ContactUs = () => {
   return (
     <div id="contactUs" className="mt-[108px]">
-      <h2 className="font-roadRadio font-bold text-5xl text-center">связаться с нами</h2>
+      <h2 className="font-roadRadio font-bold text-5xl text-center mb-12">связаться с нами</h2>
+      <MyMap />
       <div className="mt-12 flex border border-lightGray rounded-2xl">
         <div className="p-12 bg-black rounded-s-2xl min-w-[464px]">
           <div className="py-4 flex my-8">

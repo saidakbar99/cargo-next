@@ -3,10 +3,13 @@
 import { useState } from "react"
 import Dropdown from "./ui/Dropdown";
 import { weightOptions } from "../../lib/utils";
+import { FilterButton } from "./ui/FilterButton";
 
 export const Calculator = () => {
   const [slider, setSlider] = useState(600);
   const [amount, setAmount] = useState('12')
+  const [activeType, setActiveType] = useState('Express');
+  const [activeTab, setActiveTab] = useState('tab2');
   const min = 0;
   const max = 1000;
 
@@ -17,7 +20,41 @@ export const Calculator = () => {
   return (
     <div id="calculator" className="mt-[140px]">
       <h2 className="font-roadRadio text-5xl font-bold text-center">Стоимость доставки</h2>
-      <div className="mt-16 flex justify-between">
+      <div className="mt-16 flex justify-center">
+        <div className="bg-[#F3F4F6] p-2 rounded-xl text-sm font-semibold">
+          <button
+            onClick={() => setActiveTab('tab1')}
+            className={`px-5 py-2 rounded-lg w-[308px] mr-2 ${
+              activeTab === 'tab1' ? 'bg-white' : 'bg-transparent text-gray-300'
+            }`}
+          >
+            Из Узбекистана в Турцию.
+          </button>
+          <button
+            onClick={() => setActiveTab('tab2')}
+            className={`px-5 py-2 rounded-lg w-[308px] ${
+              activeTab === 'tab2' ? 'bg-white' : 'bg-transparent text-gray-300'
+            }`}
+          >
+            Из Турции в Узбекистан.
+          </button>
+        </div>
+      </div>
+      <div className="flex justify-center mt-8">
+        <div onClick={() => setActiveType('Express')} className="mr-3">
+          <FilterButton 
+            variant={activeType === 'Express' ? 'active' : ''}
+            text='Express'
+          />
+        </div>
+        <div onClick={() => setActiveType('Odatiy')}>
+          <FilterButton 
+            variant={activeType === 'Odatiy' ? 'active' : ''}
+            text='Odatiy'
+          />
+        </div>
+      </div>
+      <div className="mt-8 flex justify-between">
         <div className="flex flex-col w-[620px]">
           <div className="flex">
             <input 

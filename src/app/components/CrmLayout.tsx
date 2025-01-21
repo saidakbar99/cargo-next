@@ -94,7 +94,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
           <LanguageDropdown options={languages} classname="mr-3" />
           <Link href='/'>
             <button
-              className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3'
+              className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3 leading-none'
             >
               <img src='/svgs/logout.svg' alt='Logout Icon' />
               <span className='ml-2.5 font-semibold text-sm'>Chiqish</span>

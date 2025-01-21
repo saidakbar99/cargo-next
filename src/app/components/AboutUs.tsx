@@ -8,12 +8,12 @@ export const AboutUs = () => {
       <div className="flex justify-between">
         <h2 className="text-5xl font-bold font-roadRadio">О НАС</h2>
         <div className="w-[500px]">
-          <h3 className="text-xl">Мы поможем сопроводить сделку на покупку складов, от момента просмотра до получения ключей и полного пакета документов</h3>
+          <h3 className="text-xl font-semibold">Мы поможем сопроводить сделку на покупку складов, от момента просмотра до получения ключей и полного пакета документов</h3>
           <Button variant="secondary" className="mt-[22px]">Узнать больше</Button>
         </div>
       </div>
       <Image className="my-[70px]" src={AboutUsImage} alt="About us Image" />
-      <div className="flex justify-between text-wrap	">
+      <div className="flex justify-between">
         <div className="p-6">
           <h3 className="text-5xl font-bold font-roadRadio">10,580,996</h3>
           <span className="text-xl font-medium mt-[18px]">Отправленных посылок</span>

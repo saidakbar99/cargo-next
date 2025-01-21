@@ -1,4 +1,5 @@
 import { Button } from "./ui/Button"
+import { SocialMedias } from "./ui/SocialMedias"
 
 export const HeroText = () => {
   return (
@@ -6,7 +7,10 @@ export const HeroText = () => {
       <h1 className="text-6xl text-white font-bold font-roadRadio">Из Турции к вам домой — просто и быстро!</h1>
       <div className="">
         <h3 className="text-xl text-white">Мы поможем сопроводить сделку на покупку складов, от момента просмотра до получения ключей и полного пакета документов</h3>
-        <Button variant="orange" className="mt-[22px]">Начать покупку</Button>
+        <div className="flex mt-[22px]">
+          <Button variant="orange" className=" mr-8">Начать покупку</Button>
+          <SocialMedias />
+        </div>
       </div>
     </div>
   )

@@ -17,14 +17,14 @@ const LanguageDropdown: React.FC<DropdownProps> = ({ options, classname }) => {
   };
 
   return (
-    <div className={`relative select-none ${classname}`}>
+    <div className={`relative select-none  ${classname}`}>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className='font-semibold py-3 px-4 cursor-pointer flex justify-between items-center border border-lightGray rounded-80'
+        className='font-semibold py-3 px-4 cursor-pointer flex justify-between items-center border border-lightGray rounded-80 '
       >
-        <span className="mr-1.5">{selectedOption}</span>
+        <span className="mr-1.5 leading-none">{selectedOption}</span>
         <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 transition-transform  ${isOpen ? "rotate-180" : ""}`}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ const LanguageDropdown: React.FC<DropdownProps> = ({ options, classname }) => {
       </div>
 
       {isOpen && (
-        <ul className='absolute z-10 mt-2 w-full rounded-lg shadow-md max-h-60 overflow-y-auto bg-white'>
+        <ul className='absolute z-10 mt-2 w-full rounded-lg shadow-md max-h-60 overflow-y-auto  bg-white'>
           {options.map((option, index) => (
             <li
               key={index}

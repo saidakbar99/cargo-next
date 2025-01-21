@@ -48,7 +48,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
         onClick={() => setIsOpen(!isOpen)}
         className={`${baseDropdownStyles} ${variantDropdownStyles}`}
       >
-        <span className="mr-1.5">{selectedOption || placeholder}</span>
+        <span className="mr-1.5 leading-none">{selectedOption || placeholder}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           xmlns="http://www.w3.org/2000/svg"

@@ -64,7 +64,7 @@ export const BestStores = () => {
     <div id='stores' className="mt-[140px]">
       <h2 className="text-5xl font-bold text-center font-roadRadio">Лучшие магазины</h2>
       <div className="mt-[48px] flex">
-        <div className="mr-12 border border-grayBorder rounded-xl p-6 flex flex-col w-[364px] h-fit">
+        <div className="mr-6 border border-grayBorder rounded-xl p-6 flex flex-col w-[364px] h-fit">
           <span className="font-medium text-xl">Категории</span>
           <span className="mt-4 font-semibold">Все магазины</span>
           {categories.map((category: {name:string}, index: number) => (

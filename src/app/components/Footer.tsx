@@ -1,77 +1,65 @@
+import { SocialMedias } from "./ui/SocialMedias"
+
 export const Footer = () => {
   return (
     <footer className="bg-black mt-[140px] pt-16 pb-12">
-      <div className="mx-auto w-[1216px] p-4 py-8 flex">
-        <div className="w-[320px]">
-          <img className='mb-6' src='/svgs/cargo.svg' alt="Logo" />
-          <span className='text-white font-medium'>Создавайте удивительные цифровые впечатления, которые делают мир более счастливым.</span>
-        </div>
-        <div className="w-full">
-          <div className="grid grid-cols-4 gap-8 px-4 py-8 ">
-            <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                    <li className="mb-4">
-                        <a href="#" className=" hover:underline">About</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Careers</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Brand Center</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Blog</a>
-                    </li>
+      <div className="mx-auto w-[1216px] p-4 py-8">
+        <div className="flex mb-8">
+          <div className="w-[320px] mr-16">
+            <img className='mb-6' src='/svgs/cargo_white.svg' alt="Logo" />
+            <span className='text-white font-medium'>Создавайте удивительные цифровые впечатления, которые делают мир более счастливым.</span>
+          </div>
+          <div>
+            <div className="grid grid-cols-4 gap-8">
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-white">Товар</h2>
+                <ul className="text-lightGray font-medium">
+                  <li className="mb-4">Обзор</li>
+                  <li className="mb-4">Функции</li>
+                  <li className="mb-4">Решения</li>
+                  <li className="mb-4">Учебники</li>
+                  <li className="mb-4">Цены</li>
+                  <li className="mb-4">Релизы</li>
                 </ul>
-            </div>
-            <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                    <li className="mb-4 hover:underline">Discord Server</li>
-                    <li className="mb-4 hover:underline">
-                        <a href="#" className="hover:underline">Twitter</a>
-                    </li>
-                    <li className="mb-4 hover:underline">
-                        <a href="#" className="hover:underline">Facebook</a>
-                    </li>
-                    <li className="mb-4 hover:underline">
-                        <a href="#" className="hover:underline">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Privacy Policy</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Licensing</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">iOS</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Android</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Windows</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">MacOS</a>
-                    </li>
-                </ul>
+              </div>
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-white">Ресурсы</h2>
+                  <ul className="text-lightGray font-medium">
+                    <li className="mb-4">Блог</li>
+                    <li className="mb-4">Новостная</li>
+                    <li className="mb-4">События</li>
+                    <li className="mb-4">Справочный центр</li>
+                    <li className="mb-4">Учебники</li>
+                    <li className="mb-4">Поддерживать</li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-white">Компания</h2>
+                  <ul className="text-lightGray font-medium">
+                    <li className="mb-4">О нас</li>
+                    <li className="mb-4">Карьера</li>
+                    <li className="mb-4">Press</li>
+                    <li className="mb-4">Новости</li>
+                    <li className="mb-4">Галерея</li>
+                    <li className="mb-4">Контакт</li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 className="mb-6 text-sm font-semibold text-white">Юридический</h2>
+                  <ul className="text-lightGray font-medium">
+                    <li className="mb-4">Условия</li>
+                    <li className="mb-4">Конфиденциальность</li>
+                    <li className="mb-4">Cookies</li>
+                    <li className="mb-4">Лицензии</li>
+                    <li className="mb-4">Настройки</li>
+                  </ul>
+              </div>
             </div>
           </div>
+        </div>
+        <div className="w-full flex justify-between pt-12">
+          <span className="text-white font-medium">© Все права защищены.</span>
+          <SocialMedias />
         </div>
       </div>
     </footer>
