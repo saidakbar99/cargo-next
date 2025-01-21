@@ -10,7 +10,7 @@ deploy:
   script:
     - cd /var/www/garanti-express.uz
     - git reset --hard
-#    - git pull
+    - git pull
 #    - nvm i 20
 #    - npm install
 #    - npm run build
