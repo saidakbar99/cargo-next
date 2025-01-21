@@ -1,6 +1,6 @@
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
-const containerStyle = { width: '100%', height: '400px' };
+const containerStyle = { width: '100%', height: '400px', borderRadius: '16px', };
 const center = { lat: 41.2995, lng: 69.2401 };
 const mapOptions = {
   mapTypeControl: false,        // Remove map type (satellite, terrain, etc.)
