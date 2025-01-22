@@ -7,11 +7,11 @@ export interface StoreItemProps {
 
 export const StoreItem: React.FC<StoreItemProps> = ({storeName, description, icon}) => {
   return (
-    <div className="border border-grayBorder rounded-xl flex p-6 mb-4">
-      <div className='min-w-[120px] min-h-[120px] bg-storeLogoBg rounded-md mr-6 flex justify-center items-center'>
-        <img src={icon} alt="Store Logo" />
+    <div className="border border-grayBorder rounded-xl p-6 mb-4 lg:flex">
+      <div className='bg-storeLogoBg rounded-md flex justify-center items-center w-[60px] h-[60px] lg:mr-6 lg:min-w-[120px] lg:min-h-[120px] '>
+        <img className="w-[38px] h-[13px] lg:w-[76px] lg:h-[26px]" src={icon} alt="Store Logo" />
       </div>
-      <div>
+      <div className="mt-4 lg:mt-0">
         <h4 className="text-xl font-bold mb-3">{storeName}</h4>
         <span>{description}</span>
       </div>

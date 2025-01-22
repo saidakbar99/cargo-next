@@ -21,7 +21,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
   const getDropdownStyles = (variant: string) => {
     switch (variant) {
       case "blurred":
-        return "bg-white/25 backdrop-blur-[21px] text-white py-[14px] px-6 rounded-80 mr-[5px]";
+        return "bg-white/25 backdrop-blur-[21px] text-white py-2 px-3 py-[14px] px-6 rounded-80 mr-[5px]";
       case "white":
         return "border border-lightGray bg-white rounded-lg";
     }
@@ -43,12 +43,12 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
   const variantOptionsStyles = getOptionsStyles(variant);
 
   return (
-    <div className={`relative w-full max-w-xs select-none ${classname}`}>
+    <div className={`relative w-full select-none ${classname}`}>
       <div
         onClick={() => setIsOpen(!isOpen)}
         className={`${baseDropdownStyles} ${variantDropdownStyles}`}
       >
-        <span className="mr-1.5 leading-none">{selectedOption || placeholder}</span>
+        <span className="lg:mr-1.5">{selectedOption || placeholder}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           xmlns="http://www.w3.org/2000/svg"

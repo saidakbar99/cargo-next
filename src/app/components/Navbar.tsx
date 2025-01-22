@@ -17,18 +17,18 @@ export const Navbar = () => {
   return (
     <div className="flex justify-between h-[50px] items-center">
       <img
-        className='w-[75px] md:w-[85px]'
-        src='/svgs/cargo_white.svg' 
-        alt="Logo" 
+        className='w-[75px] lg:w-[85px]'
+        src='/svgs/cargo_white.svg'
+        alt="Logo"
       />
       <div className="flex">
         <Link href='/auth/sign-in'>
-          <Button className="mr-4">Авторизоваться</Button>
+          <Button className="mr-[5px] text-sm lg:text-base lg:mr-4">Авторизоваться</Button>
         </Link>
-        <Dropdown variant="blurred" options={languages} />
+        {/* <Dropdown variant="blurred" options={languages} /> */}
         <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <Button className="ml-4 w-[70px] py-[12px] px-6">
-            <img width={20} height={20} src='/svgs/burger.svg' alt="Burger Icon" />
+          <Button className="ml-[5px] w-10 py-2 px-2.5 lg:w-[70px] lg:py-[12px] lg:px-6 lg:ml-4">
+            <img src='/svgs/burger.svg' alt="Burger Icon" />
           </Button>
         </div>
       </div>

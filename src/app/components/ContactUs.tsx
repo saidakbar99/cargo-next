@@ -6,12 +6,12 @@ import MyMap from "./MyMap"
 
 export const ContactUs = () => {
   return (
-    <div id="contactUs" className="mt-[108px]">
-      <h2 className="font-roadRadio font-bold text-5xl text-center mb-12">связаться с нами</h2>
+    <div id="contactUs" className="mt-[18px] lg:mt-[108px]">
+      <h2 className="font-roadRadio font-bold text-[32px] lg:text-[50px] text-center mb-9 lg:mb-12">связаться с нами</h2>
       <MyMap />
-      <div className="mt-12 flex border border-lightGray rounded-2xl">
-        <div className="p-12 bg-black rounded-s-2xl min-w-[464px]">
-          <div className="py-4 flex my-8">
+      <div className="mt-9 lg:mt-12 flex flex-col lg:flex-row">
+        <div className="p-6 lg:p-12 bg-black lg:min-w-[464px] order-2 lg:order-none rounded-xl lg:rounded-e-none">
+          <div className="py-4 flex">
             <IconWithBackground icon='/svgs/mail_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Напишите нам</span>
@@ -19,7 +19,7 @@ export const ContactUs = () => {
               <span className="text-orange font-medium">garantiexpresscargo@gmail.com</span>
             </div>
           </div>
-          <div className="py-4 flex">
+          <div className="py-4 flex my-8">
             <IconWithBackground icon='/svgs/phone_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Офис</span>
@@ -39,7 +39,7 @@ export const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="p-24 w-full">
+        <div className="p-6 lg:p-24 w-full order-1 lg:order-none border border-lightGray rounded-xl lg:rounded-s-none mb-9 lg:mb-0">
           <div className="flex flex-col mb-6">
             <label htmlFor="name" className="text-sm mb-1.5 font-semibold">
               Имя

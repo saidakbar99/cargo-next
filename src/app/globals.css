@@ -45,7 +45,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
-  height: 900px;
   position: relative;
   width: 100%;
 }
@@ -57,8 +56,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
-  height: 470px;
   position: relative;
   width: 100%;
-  padding-block: 107px;
 }

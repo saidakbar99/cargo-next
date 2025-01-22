@@ -41,9 +41,9 @@ const FAQContent = [
 
 export const FAQ = () => {
   return (
-    <div id="faq" className="mt-[140px]">
-      <h2 className="font-roadRadio text-5xl font-bold text-center">Часто задаваемые вопросы</h2>
-      <div className="w-[768px] mx-auto mt-10 divide-y">
+    <div id="faq" className="mt-[50px] lg:mt-[140px]">
+      <h2 className="font-roadRadio text-[32px] lg:text-[50px] font-bold text-center">Часто задаваемые вопросы</h2>
+      <div className="lg:w-[768px] mx-auto mt-10 divide-y">
         {FAQContent.map((item: FaqProps) => (
           <Accordion key={item.id} question={item.question} answer={item.answer} />
         ))}

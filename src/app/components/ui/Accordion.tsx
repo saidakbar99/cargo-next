@@ -12,12 +12,12 @@ export const Accordion: React.FC<AccordionProps> = ({question, answer}) => {
 
   return (
     <div onClick={() => setIsOpened(!isOpened)} className='pb-8 pt-6 cursor-pointer'>
-      <button type="button" className="flex items-center justify-between w-full mb-2">
-        <span className='text-xl font-medium'>{question}</span>
+      <button type="button" className="flex items-top justify-between w-full mb-2">
+        <span className='text-xl font-medium mr-6 text-left'>{question}</span>
         <img src={isOpened ? '/svgs/minus_icon.svg' : '/svgs/plus_icon.svg'} alt="icon" />
       </button>
       <div 
-        className={`transition-all duration-200 overflow-hidden transform ${
+        className={`transition-all duration-200 overflow-hidden pr-6 transform ${
           isOpened ? 'max-h-[200px] translate-y-0 opacity-100' : 'max-h-0 -translate-y-4 opacity-0'
         }`}
       >
