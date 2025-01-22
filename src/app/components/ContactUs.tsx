@@ -32,9 +32,10 @@ export const ContactUs = () => {
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Телефон</span>
               <span className="mb-[14px] text-lightGray font-medium">пн-пт с 8:00 до 17:00.</span>
-              <span className="text-orange font-medium">Ahror: +998 99 555 55 45</span>
-              <span className="text-orange font-medium">Muhammad: +998 99 044 42 44</span>
-              <span className="text-orange font-medium">Umide: +998 93 560 72 78</span>
+              <span className="text-orange font-medium">Ahror: +90 530 086 77 77</span>
+              <span className="text-orange font-medium">Ofis: +90 552 216 72 78</span>
+              <span className="text-orange font-medium">Doniyur: +90 537 934 99 99</span>
+              <span className="text-orange font-medium">Umide: +90 552 210 33 83</span>
             </div>
           </div>
         </div>
