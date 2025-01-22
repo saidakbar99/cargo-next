@@ -3,8 +3,8 @@ import { SocialMedias } from "./ui/SocialMedias"
 export const Footer = () => {
   return (
     <footer className="bg-black mt-[140px] pt-16 pb-12">
-      <div className="mx-auto w-[1216px] p-4 py-8">
-        <div className="flex mb-8">
+      <div className="mx-auto xl:w-[1216px] p-4 py-8">
+        <div className="hidden lg:flex mb-8">
           <div className="w-[320px] mr-16">
             <img className='mb-6' src='/svgs/cargo_white.svg' alt="Logo" />
             <span className='text-white font-medium'>Создавайте удивительные цифровые впечатления, которые делают мир более счастливым.</span>

@@ -40,9 +40,9 @@ const benefitsContent = [
 
 export const Benefits = () => {
   return (
-    <div id='benefits' className="mt-[140px]">
-      <h2 className="text-center font-roadRadio font-bold text-5xl mb-[48px]">наши преимущества</h2>
-      <div className="flex flex-wrap gap-x-6 gap-y-[29px]">
+    <div id='benefits' className="mt-[50px] lg:mt-[140px]">
+      <h2 className="text-center font-roadRadio font-bold text-[32px] lg:text-5xl mb-9 lg:mb-12">наши преимущества</h2>
+      <div className="flex flex-col gap-y-6 lg:flex-row lg:flex-wrap lg:gap-x-6 lg:gap-y-[29px]">
         {benefitsContent.map((item: BenefitsItemProps) => (
           <BenefitsItem key={item.headerText} {...item} />
         ))}

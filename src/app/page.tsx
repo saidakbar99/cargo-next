@@ -13,14 +13,14 @@ import { Container } from "@/components/ui/Container"
 
 const HomePage = () => {
   return (
-    <div className="hero-background pt-9">
+    <div className="hero-background pt-9 h-[812px] lg:h-[900px]">
       <Container>
         <Navbar />
         <HeroText />
         <AboutUs />
         <Process />
       </Container>
-      <div className="banner-background mt-[140px]">
+      <div className="banner-background h-[270px] lg:h-[470px] mt-[50px] lg:mt-[140px]">
         <Banner />
       </div>
       <Container>

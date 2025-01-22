@@ -2,7 +2,7 @@
 
 export const Banner = () => {
   return (
-    <div className="mx-auto w-[1140px]">
+    <div className="mx-auto xl:w-[1140px]">
       {/* <div className='flex flex-col text-white w-[620px]'>
         <div className="mb-[30px]">
           <h3 className="text-white text-5xl font-bold font-roadRadio">2 недели бесплатного хранения</h3>
