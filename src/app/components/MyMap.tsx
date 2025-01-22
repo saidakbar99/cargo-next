@@ -3,7 +3,7 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = { width: '100%', height: '400px', borderRadius: '16px', };
-const center = { lat: 40.924891, lng: 29.131516 };
+const center = { lat: 40.9904598, lng: 29.0297052 };
 const mapOptions = {
   mapTypeControl: false,        // Remove map type (satellite, terrain, etc.)
   streetViewControl: false,     // Remove street view (human icon)

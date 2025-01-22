@@ -15,27 +15,66 @@ export const ContactUs = () => {
             <IconWithBackground icon='/svgs/mail_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Напишите нам</span>
-              <span className="mb-[14px] text-lightGray font-medium">Наша дружная команда здесь, чтобы помочь.</span>
+              <span className="text-lightGray font-medium">Наша почта:</span>
               <span className="text-orange font-medium">garantiexpresscargo@gmail.com</span>
             </div>
           </div>
           <div className="py-4 flex my-8">
-            <IconWithBackground icon='/svgs/phone_icon.svg' />
+            <IconWithBackground icon='/svgs/geo_pin_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Офис</span>
-              <span className="mb-[14px] text-lightGray font-medium">Приходите поздороваться в наш офис HQ.</span>
-              <span className="text-orange font-medium">Istanbul Kadıköy Rasimpaşa Mah Halıtağa caddesi No72 daıra : 2 Garanti Express </span>
+              <span className="text-lightGray font-medium">Приходите наш офис</span>
+              <span className="text-orange font-medium">Istanbul Kadıköy Ösmanağa cd cilek sok kuçuk sari is hani no 6 kat 2 dayre 10 </span>
             </div>
           </div>
           <div className="py-4 flex">
-            <IconWithBackground icon='/svgs/geo_pin_icon.svg' />
+            <IconWithBackground icon='/svgs/phone_icon.svg' />
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Телефон</span>
-              <span className="mb-[14px] text-lightGray font-medium">пн-пт с 8:00 до 17:00.</span>
-              <span className="text-orange font-medium">Ahror: +90 530 086 77 77</span>
-              <span className="text-orange font-medium">Ofis: +90 552 216 72 78</span>
-              <span className="text-orange font-medium">Doniyur: +90 537 934 99 99</span>
-              <span className="text-orange font-medium">Umide: +90 552 210 33 83</span>
+              <span className="text-lightGray font-medium">пн-сб с 9:00 до 21:00.</span>
+
+              <table className="mt-[14px] text-lightGray font-medium">
+                <tbody>
+                <tr>
+                  <td className="text-orange font-medium">
+                    Kadıköy Ofis
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ahror:</td>
+                  <td>+90 530 086 77 77</td>
+                </tr>
+                <tr>
+                  <td>Ofis:</td>
+                  <td>+90 552 216 72 78</td>
+                </tr>
+                <tr>
+                  <td>Ofis:</td>
+                  <td>+90 537 934 99 99</td>
+                </tr>
+                <tr>
+                  <td>Umide:</td>
+                  <td>+90 552 210 33 83</td>
+                </tr>
+                <tr>
+                  <td className="text-orange font-medium">
+                    Uzbekistan
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rihsitilla:</td>
+                  <td>+999899 555 5545</td>
+                </tr>
+                <tr>
+                  <td>Ofis:</td>
+                  <td>+999899 044 4422</td>
+                </tr>
+                <tr>
+                  <td>Ofis:</td>
+                  <td>+999893 560 7278</td>
+                </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
