@@ -3,7 +3,7 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = { width: '100%', height: '400px', borderRadius: '16px', };
-const center = { lat: 41.3158, lng: 69.2789 };
+const center = { lat: 40.924891, lng: 29.131516 };
 const mapOptions = {
   mapTypeControl: false,        // Remove map type (satellite, terrain, etc.)
   streetViewControl: false,     // Remove street view (human icon)
@@ -14,7 +14,7 @@ const mapOptions = {
 const MyMap = () => {
   return (
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15} options={mapOptions}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16} options={mapOptions}>
         <Marker position={center} />
       </GoogleMap>
     </LoadScript>
