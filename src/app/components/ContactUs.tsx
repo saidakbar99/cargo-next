@@ -24,7 +24,7 @@ export const ContactUs = () => {
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Офис</span>
               <span className="mb-[14px] text-lightGray font-medium">Приходите поздороваться в наш офис HQ.</span>
-              <span className="text-orange font-medium">100 Smith StreetCollingwood VIC 3066 AU</span>
+              <span className="text-orange font-medium">Istanbul Kadıköy Rasimpaşa Mah Halıtağa caddesi No72 daıra : 2 Garanti Express </span>
             </div>
           </div>
           <div className="py-4 flex">
@@ -32,9 +32,9 @@ export const ContactUs = () => {
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Телефон</span>
               <span className="mb-[14px] text-lightGray font-medium">пн-пт с 8:00 до 17:00.</span>
-              <span className="text-orange font-medium">+998 99 555 55 45</span>
-              <span className="text-orange font-medium">+998 99 044 42 44</span>
-              <span className="text-orange font-medium">+998 93 560 72 78</span>
+              <span className="text-orange font-medium">Ahror: +998 99 555 55 45</span>
+              <span className="text-orange font-medium">Muhammad: +998 99 044 42 44</span>
+              <span className="text-orange font-medium">Umide: +998 93 560 72 78</span>
             </div>
           </div>
         </div>
