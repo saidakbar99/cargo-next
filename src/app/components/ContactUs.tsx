@@ -16,7 +16,7 @@ export const ContactUs = () => {
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Напишите нам</span>
               <span className="mb-[14px] text-lightGray font-medium">Наша дружная команда здесь, чтобы помочь.</span>
-              <span className="text-orange font-medium">hi@company.com</span>
+              <span className="text-orange font-medium">garantiexpresscargo@gmail.com</span>
             </div>
           </div>
           <div className="py-4 flex">
@@ -32,7 +32,9 @@ export const ContactUs = () => {
             <div className="flex flex-col ml-5">
               <span className="mb-2 text-white text-xl font-semibold">Телефон</span>
               <span className="mb-[14px] text-lightGray font-medium">пн-пт с 8:00 до 17:00.</span>
-              <span className="text-orange font-medium">+998 99 989 88 99</span>
+              <span className="text-orange font-medium">+998 99 555 55 45</span>
+              <span className="text-orange font-medium">+998 99 044 42 44</span>
+              <span className="text-orange font-medium">+998 93 560 72 78</span>
             </div>
           </div>
         </div>
