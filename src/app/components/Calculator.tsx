@@ -76,9 +76,9 @@ export const Calculator = () => {
             />
           </div>
         </div>
-        <div className="p-6 w-[460px] bg-[#F9F9F9] rounded-xl">
+        <div className="p-6 lg:w-[460px] bg-[#F9F9F9] rounded-xl">
           <span className="font-medium">≈ 5-10 раб. дней</span>
-          <h3 className="text-4xl font-roadRadio font-bold mt-[14px]">2 000 000 UZS</h3>
+          <h3 className="text-[32px] lg:text-[40px] font-roadRadio font-bold mt-[14px]">2 000 000 UZS</h3>
         </div>
       </div>
     </div>

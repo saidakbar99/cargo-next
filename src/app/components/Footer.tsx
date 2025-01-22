@@ -2,8 +2,8 @@ import { SocialMedias } from "./ui/SocialMedias"
 
 export const Footer = () => {
   return (
-    <footer className="bg-black mt-[140px] pt-16 pb-12">
-      <div className="mx-auto xl:w-[1216px] p-4 py-8">
+    <footer className="bg-black mt-[50px] lg:mt-[140px] lg:pt-16 lg:pb-12">
+      <div className="mx-auto xl:w-[1216px] p-4 lg:py-8">
         <div className="hidden lg:flex mb-8">
           <div className="w-[320px] mr-16">
             <img className='mb-6' src='/svgs/cargo_white.svg' alt="Logo" />
@@ -57,7 +57,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-between pt-12">
+        <div className="w-full flex justify-between lg:pt-12">
           <span className="text-white font-medium">© Все права защищены!</span>
           <SocialMedias />
         </div>
