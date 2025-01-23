@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CrmLayout from "@/components/CrmLayout";
 import Dropdown from "@/components/ui/Dropdown";
-import { weightOptions } from "../../../lib/utils";
+import { weightOptions } from "../../../../lib/utils";
 
 const Calculator = () => {
   const [slider, setSlider] = useState(600);

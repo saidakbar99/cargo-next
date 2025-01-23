@@ -1,6 +1,6 @@
 import { Button } from "./ui/Button"
 import Image from 'next/image'
-import AboutUsImage from '../../../public/images/about_us_image.png'
+import AboutUsImage from '../../../../public/images/about_us_image.png'
 
 export const AboutUs = () => {
   return (

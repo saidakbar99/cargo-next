@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { ShipmentStatuses } from "./ShipmentStatuses"
-import { calculateTotalAmount, formatCurrency, formatDate } from '../../lib/utils'
+import { calculateTotalAmount, formatCurrency, formatDate } from '../../../lib/utils'
 
 // TODO: add interface
 export const ShipmentCard: React.FC<any> = ({shipment}) => {
@@ -42,6 +42,16 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
               ))}
             </div>
           </div>
+          {/* <div className="flex flex-col md:flex-row mt-6">
+            <div className="flex flex-col text-gray-300 w-full md:w-auto">
+              {fields.map((field, index) => (
+                <div key={index} className="mt-4 flex flex-col md:flex-row">
+                  <span className="md:w-1/2">{field.label}:</span>
+                  <span className="md:w-1/2 ml-2">{field.value}</span>
+                </div>
+              ))}
+            </div>
+          </div> */}
           <div className='hidden lg:block mt-6'>
             <span className='font-bold'>Tovarlar</span>
             <div className='mt-4 grid grid-cols-3 gap-6'>

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Dropdown from "./ui/Dropdown";
-import { weightOptions } from "../../lib/utils";
+import { weightOptions } from "../../../lib/utils";
 import { FilterButton } from "./ui/FilterButton";
 
 export const Calculator = () => {

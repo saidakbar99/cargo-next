@@ -4,10 +4,12 @@ import { useState } from 'react'
 import Link from 'next/link';
 import { Button } from "./ui/Button"
 // import Dropdown from "./ui/Dropdown"
-// import { languages, scrollToSection } from '../../lib/utils'
-import { scrollToSection } from '../../lib/utils'
+// import { languages, scrollToSection } from '../../../lib/utils'
+import { scrollToSection } from '../../../lib/utils'
+import { useTranslations } from 'next-intl';
 
 export const Navbar = () => {
+  const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleScroll = (id: string) => {
@@ -24,7 +26,7 @@ export const Navbar = () => {
       />
       <div className="flex">
         <Link href='/auth/sign-in'>
-          <Button className="mr-[5px] text-sm lg:text-base lg:mr-4">Авторизоваться</Button>
+          <Button className="mr-[5px] text-sm lg:text-base lg:mr-4">{t('login')}</Button>
         </Link>
         {/* <Dropdown variant="blurred" options={languages} /> */}
         <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
