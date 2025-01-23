@@ -9,9 +9,9 @@ const Recovery = () => {
   const [isMailSent, setIsMailSent] = useState(false)
   return (
     <AuthLayout backgroundImage="/images/recovery.png">
-      <div className="px-40">
-        <h3 className="text-4xl font-bold text-center">Parolni qayta tiklash</h3>
-        <h5 className="mt-2 text-gray-300 text-center">Kerakli ma’lumotni kiriting</h5>
+      <div className="px-8 lg:px-40 w-full">
+        <h3 className="text-2xl lg:text-4xl font-bold lg:text-center mt-6 lg:mt-0">Parolni qayta tiklash</h3>
+        <h5 className="mt-2 text-gray-300 lg:text-center">Kerakli ma’lumotni kiriting</h5>
         {isMailSent ? (
           <div className='my-8'>
             <InputCode />
@@ -30,7 +30,9 @@ const Recovery = () => {
           </div>
         )}
         <div onClick={() => setIsMailSent(true)}>
-          <Button className="w-full px-5 py-2.5 text-base" variant="orange" text="Tasdiqlash" />
+          <button className="w-full rounded-80 bg-orange px-5 py-[14px] leading-none text-white font-bold ">
+            Tasdiqlash
+          </button>
         </div>
         <p className='mt-8 text-gray-300 text-center'>Qayta jo’natish 00:20</p>
       </div>
@@ -38,4 +40,4 @@ const Recovery = () => {
   )
 }
 
-export default Recovery
+export default Recovery;

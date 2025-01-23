@@ -19,8 +19,8 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
   ];
 
   return (
-    <div className="bg-white rounded-xl mt-6 p-6">
-      <div className="flex justify-between items-center">
+    <div className="bg-white rounded-xl mt-6 p-4 lg:p-6">
+      <div className="flex justify-between items-center flex-wrap">
         <h3 className="text-black text-xl font-bold">ID raqami {shipment?.id}</h3>
         <ShipmentStatuses activeStatus={shipment.status} />
       </div>
@@ -42,16 +42,16 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
               ))}
             </div>
           </div>
-          <div className='mt-6'>
+          <div className='hidden lg:block mt-6'>
             <span className='font-bold'>Tovarlar</span>
             <div className='mt-4 grid grid-cols-3 gap-6'>
               {shipment.items.map((item:any) => (
                 <div className='flex' key={item.id}>
                   <div className='w-full'>
                     <span className='text-gray-300 text-sm'>{item.name}</span>
-                    <div className='flex justify-between items-center'>
+                    <div className='flex items-center'>
                       <span className='mt-2.5 text-xl font-bold'>{formatCurrency(item.item_amount)}</span>
-                      <span className='mt-2.5 mr-44 text-sm font-medium'>{item.quantity} dona</span>
+                      <span className='mt-2.5 ml-8 text-sm font-medium'>{item.quantity} dona</span>
                     </div>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ const statuses = [
 
 export const ShipmentStatuses: React.FC<ShipmentStatusesProps> = ({ activeStatus }) => {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap gap-3 mt-4">
       {statuses.map((status, index) => {
         index++
         let borderColor = "border-lightGray";
@@ -35,7 +35,7 @@ export const ShipmentStatuses: React.FC<ShipmentStatusesProps> = ({ activeStatus
         return (
           <button
             key={index}
-            className={`px-4 py-2 flex items-center border border-lightGray rounded-80 ml-3 first:ml-0 ${borderColor} ${textColor}`}
+            className={`px-4 py-2 flex items-center border border-lightGray rounded-80  first:ml-0 ${borderColor} ${textColor}`}
           >
             <img src={icon} alt={`${status.label} Icon`} width={20} height={20} />
             <span className="text-xs font-semibold ml-2">{status.label}</span>

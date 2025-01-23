@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from "next/link";
-import { languages } from "../../lib/utils";
-import LanguageDropdown from "./ui/LanguageDropdown";
+// import { languages } from "../../lib/utils";
+// import LanguageDropdown from "./ui/LanguageDropdown";
 
 interface CrmLayoutProps {
   children: React.ReactNode;
@@ -17,10 +17,14 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
     currentPath === `${targetPath}` ? 'bg-orange-05 text-orange' : '';
 
   return (
-    <div className="flex">
-      <div className="min-w-[264px] border-r border-lightGray p-3 min-h-screen">
-        <div className='flex justify-between items-center pl-3'>
-          <img src='/svgs/cargo_black.svg' alt="Logo Icon" />
+    <div className="flex flex-col lg:flex-row">
+      <div className={`border-r border-lightGray p-3 lg:min-h-screen order-2 lg:order-1 
+        ${isMenuOpen ? 'min-w-[264px]' : ''}`}
+      >
+        <div className='hidden lg:flex justify-between items-center pl-4'>
+          {isMenuOpen && (
+            <img className='w-[52px] h-[26px]' src='/svgs/cargo_black.svg' alt="Logo Icon" />
+          )}
           <svg
             className={`w-4 h-4 mb-1 transition-transform cursor-pointer ${isMenuOpen ? "rotate-180" : ""}`}
             xmlns="http://www.w3.org/2000/svg"
@@ -32,70 +36,80 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </div>
-        <div className='flex flex-col justify-between h-screen'>
-          <div className=''>
+        <div className='flex flex-col justify-between lg:h-[90vh]'>
+          <div className='flex justify-around lg:flex-col'>
             <Link href='/crm/shipments'>
-              <div className={`mt-5 p-3 cursor-pointer rounded-xl ${isActive(activeMenu, 'shipments')}`}>
-                <div className='flex'>
+              <div className={`mt-1 lg:mt-5 p-3 cursor-pointer rounded-xl ${isActive(activeMenu, 'shipments')}`}>
+                <div className='flex flex-col lg:flex-row items-center'>
                   <img 
                     className='min-w-6 h-6' 
                     src={activeMenu === 'shipments' ? '/svgs/truck_active.svg' : '/svgs/truck.svg'}
                     alt='Truck Icon' 
                   />
-                  <span className='ml-3 font-medium'>Jo’natmalar</span>
+                  {isMenuOpen && (
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Jo’natmalar</span>
+                  )}
                 </div>
               </div>
             </Link>
             <Link href='/crm/addresses'>
               <div className={`mt-1 p-3 cursor-pointer rounded-xl ${isActive(activeMenu, 'addresses')}`}>
-                <div className='flex'>
+                <div className='flex flex-col lg:flex-row items-center'>
                   <img 
                   className='min-w-6 h-6' 
                   src={activeMenu === 'addresses' ? '/svgs/map_active.svg' : '/svgs/map.svg'} 
                   alt='Map Icon' 
                   />
-                  <span className='ml-3 font-medium'>Manzillar</span>
+                  {isMenuOpen && (
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Manzillar</span>
+                  )}
                 </div>
               </div>
             </Link>
             <Link href='/crm/settings'>
               <div className={`mt-1 p-3 cursor-pointer rounded-xl ${isActive(activeMenu, 'settings')}`}>
-                <div className='flex'>
+                <div className='flex flex-col lg:flex-row items-center'>
                   <img 
                   className='min-w-6 h-6'
                   src={activeMenu === 'settings' ? '/svgs/settings_active.svg' : '/svgs/settings.svg'} 
                   alt='Settings Icon' 
                   />
-                  <span className='ml-3 font-medium'>Sozlamalar</span>
+                  {isMenuOpen && (
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Sozlamalar</span>
+                  )}
                 </div>
               </div>
             </Link>
             <Link href='/crm/calculator'>
               <div className={`mt-1 p-3 cursor-pointer rounded-xl ${isActive(activeMenu, 'calculator')}`}>
-                <div className='flex'>
+                <div className='flex flex-col lg:flex-row items-center'>
                   <img 
                   className='min-w-6 h-6' 
                   src={activeMenu === 'calculator' ? '/svgs/calculator_active.svg' : '/svgs/calculator.svg'} 
                   alt='Calculator Icon' 
                   />
-                  <span className='ml-3 font-medium'>Kalkulyator</span>
+                  {isMenuOpen && (
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Kalkulyator</span>
+                  )}
                 </div>
               </div>
             </Link>
           </div>
-          <div className='flex flex-col rounded-xl border-solid border-2 justify-center items-center mb-12 '>
-            <svg className='mt-6 mb-4' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M3.41016 22C3.41016 18.13 7.26018 15 12.0002 15" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M22 22L21 21" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <p className='text-center leading-5 max-w-[169px] mb-4 '>Foydalanuvchi statusi hali tasdiqlanmagan</p>
-            <button className='cursor-pointer border-2 mb-9 rounded-full py-3 px-4 '>Tasdiqlash</button>
-          </div>    
+          {isMenuOpen && (
+            <div className='hidden lg:flex flex-col rounded-xl border-solid border-2 justify-center items-center mb-12 '>
+              <svg className='mt-6 mb-4' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3.41016 22C3.41016 18.13 7.26018 15 12.0002 15" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M22 22L21 21" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <p className='text-center leading-5 max-w-[169px] mb-4 '>Foydalanuvchi statusi hali tasdiqlanmagan</p>
+              <button className='cursor-pointer border-2 mb-9 rounded-full py-3 px-4 '>Tasdiqlash</button>
+            </div>
+          )}
         </div>          
       </div>
-      <div className="flex flex-col w-full bg-whiteBackground">
+      <div className="flex flex-col w-full bg-whiteBackground order-1 lg:order-2">
         <div className="flex border-b border-lightGray p-6">
           <div className='relative w-full mr-4'>
             <input 
@@ -105,7 +119,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
             />
             <img src='/svgs/search.svg' alt="Search Icon" className='absolute top-[14.5px] left-4' />
           </div>
-          <LanguageDropdown options={languages} classname="mr-3" />
+          {/* <LanguageDropdown options={languages} classname="mr-3" /> */}
           <Link href='/'>
             <button
               className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3 leading-none'

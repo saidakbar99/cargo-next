@@ -37,12 +37,12 @@ export const Navbar = () => {
           className="fixed inset-0 bg-[rgba(6,6,6,0.8)] backdrop-blur-sm flex flex-col justify-start items-center z-50"
         >
           <button
-            className="absolute top-12 right-40 text-white text-3xl font-medium"
+            className="absolute top-6 right-10 lg:top-12 lg:right-40 text-white text-3xl font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             ✕
           </button>
-          <ul className="mt-40 text-center text-4xl font-semibold text-white">
+          <ul className="mt-20 lg:mt-40 text-center text-4xl font-semibold text-white">
             <li className="mb-7">
               <button onClick={() => handleScroll("aboutUs")}>О нас</button>
             </li>

@@ -133,7 +133,7 @@ const Shipments = () => {
 
   return (
     <CrmLayout activeMenu='shipments'>
-      <div className="p-6 h-full">
+      <div className="p-4 lg:p-6 h-full">
         <h3 className="text-2xl font-bold">Jo’natmalar</h3>
         <div className="flex mt-6">
           {filterButtons.map((filter) => (

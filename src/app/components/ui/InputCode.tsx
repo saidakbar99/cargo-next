@@ -42,7 +42,7 @@ export const InputCode = () => {
           value={value}
           maxLength={1}
           ref={(el) => { inputRefs.current[index] = el; }}
-          className={`w-[68px] h-[68px] text-center text-2xl font-semibold rounded-md border mr-4 outline-none ${
+          className={`w-[55px] h-[55px] lg:w-[68px] lg:h-[68px] text-center text-2xl font-semibold rounded-md border mr-4 outline-none ${
             value ? "border-orange" : "border-grayBorder"
           }`}
           onChange={(e) => handleChange(e.target.value, index)}
