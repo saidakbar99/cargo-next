@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link';
 import { Button } from "./ui/Button"
-import Dropdown from "./ui/Dropdown"
-import { languages, scrollToSection } from '../../lib/utils'
+// import Dropdown from "./ui/Dropdown"
+// import { languages, scrollToSection } from '../../lib/utils'
+import { scrollToSection } from '../../lib/utils'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
