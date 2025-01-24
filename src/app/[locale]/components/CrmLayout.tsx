@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from '../../../i18n/routing'
 // import { languages } from "../../../lib/utils";
 // import LanguageDropdown from "./ui/LanguageDropdown";
 

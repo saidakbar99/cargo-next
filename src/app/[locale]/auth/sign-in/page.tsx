@@ -1,4 +1,5 @@
-import Link from "next/link"
+// import Link from "next/link"
+import { Link } from '../../../../i18n/routing'
 import AuthLayout from "@/components/AuthLayout"
 import { SocialButton } from "@/components/ui/SocialButton"
 

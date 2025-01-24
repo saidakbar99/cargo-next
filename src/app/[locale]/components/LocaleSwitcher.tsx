@@ -1,44 +1,68 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { ChangeEvent, useTransition } from 'react';
-import { Locale, usePathname, useRouter } from '../../../i18n/routing';
+import { useTransition, useState } from 'react';
+import { usePathname, useRouter } from '../../../i18n/routing';
 
 const LocaleSwitcher = () => {
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
-
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value as Locale;
+  const [isPending, startTransition] = useTransition();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string>(
+    params.locale === 'uz' ? 'Uz' : 'Ру' 
+  );
+  
+  const handleSelect = (option: string, label: string) => {
+    setSelectedOption(label);
+    setIsOpen(false);
     startTransition(() => {
       router.replace(
         // @ts-expect-error
         {pathname, params},
-        {locale: nextLocale}
+        {locale: option}
       );
     });
-  }
+  };
 
   return (
-    <label
-      className={`
-        'relative text-gray-400',
-        ${isPending && 'transition-opacity [&:disabled]:opacity-30'}
-      `}
-    >
-      <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
-        defaultValue='ru'
-        disabled={isPending}
-        onChange={onSelectChange}
+    <div className='relative w-full select-none'>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className='font-semibold w-full cursor-pointer flex justify-between items-center
+          bg-white/25 backdrop-blur-[21px] text-white py-2 px-3 lg:py-[14px] lg:px-6 rounded-80 mr-[5px]'
       >
-        <option value='ru'>Ру</option>
-        <option value='uz'>Uz</option>
-      </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
-    </label>
+        <span className="lg:mr-1.5">{selectedOption}</span>
+        <svg
+          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      {isOpen && !isPending && (
+        <ul className='absolute z-10 mt-2 rounded-lg shadow-md max-h-60 overflow-y-auto 
+          marker:bg-white/25 backdrop-blur-[21px] text-gray-700 text-center w-2/3 left-4 font-semibold'>
+            <li
+              onClick={() => handleSelect('ru', 'Ру')}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Ру
+            </li>
+            <li
+              onClick={() => handleSelect('uz', 'Uz')}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              Uz
+            </li>
+        </ul>
+      )}
+    </div>
   );
 }
 

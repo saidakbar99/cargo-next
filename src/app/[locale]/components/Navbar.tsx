@@ -1,13 +1,14 @@
 "use client"
 
 import { useState } from 'react'
-import Link from 'next/link';
+// import Link from 'next/link';
 import { Button } from "./ui/Button"
 // import Dropdown from "./ui/Dropdown"
 import { scrollToSection } from '../../../lib/utils'
 import { useTranslations } from 'next-intl';
 // import LanguageDropdown from './ui/LanguageDropdown';
 import LocaleSwitcher from './LocaleSwitcher';
+import { Link } from '../../../i18n/routing'
 
 export const Navbar = () => {
   const t = useTranslations();
