@@ -41,7 +41,7 @@ const SignUp = () => {
             placeholder="Parol yarating"
           />
         </div>
-        <p className="text-gray-300 text-xs text-left mt-2">Kamida 8 ta symbol ishlatilishi kerak</p>
+        <span className="text-gray-300 text-xs text-left mt-2">Kamida 8 ta symbol ishlatilishi kerak</span>
         <div className="flex flex-col mt-3">
           <label htmlFor="password" className="text-sm mb-1.5 font-semibold">
             Parolni qaytatdan kiriting
@@ -57,12 +57,12 @@ const SignUp = () => {
           Ro’yxatdan o’tish
         </button>
         <SocialButton />
-        <p className="text-center mt-6 text-gray-300">
+        <span className="text-center mt-6 text-gray-300">
           Avval ro’yxatdan o’tganmisiz?
           <Link href='/auth/sign-in'>
             <span className="text-orange font-bold"> Kirish</span>
           </Link>
-        </p>
+        </span>
       </div>
     </AuthLayout>
   )

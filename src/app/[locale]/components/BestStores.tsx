@@ -5,9 +5,7 @@ import { StoreItem, StoreItemProps } from "./StoreItem"
 import { Pagination } from "./ui/Pagination"
 import { useTranslations } from 'next-intl';
 
-
 const categories = [
-  
   {
     name: "Одежда, обувь и аксессуары"
   },
@@ -32,25 +30,25 @@ const stores = [
   {
     id: 1,
     storeName: 'Trendyol',
-    description: '{t("storedescr")}',
+    description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
     icon: '/svgs/store_logo.svg',
   },
   {
     id: 2,
     storeName: 'Trendyol',
-    description: '{t("storedescr2")}',
+    description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
     icon: '/svgs/store_logo.svg',
   },
   {
     id: 3,
     storeName: 'Trendyol',
-    description: '{t("storedescr3")}',
+    description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
     icon: '/svgs/store_logo.svg',
   },
   {
     id: 4,
     storeName: 'Trendyol',
-    description: '{t("storedescr4")}',
+    description: 'Здесь вы найдете широкий выбор витаминов и пищевых добавок, а также товаров для здоровья и ухода.',
     icon: '/svgs/store_logo.svg',
   },
 ]
@@ -63,10 +61,8 @@ export const BestStores = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-  
 
   return (
-    
     <div id='stores' className="mt-[50px] lg:mt-[140px]">
       <h2 className="text-[32px] lg:text-[50px] font-bold text-center font-roadRadio">{t('storetitle')}</h2>
       <div className="mt-9 lg:mt-12 flex">
@@ -74,7 +70,7 @@ export const BestStores = () => {
           <span className="font-medium text-xl">{t('storecategory')}</span>
           <span className="mt-4 font-semibold">{t('storeall')}</span>
           {categories.map((category: {name:string}, index: number) => (
-            <span key={index} className="mt-4 opacity-60 cursor-pointer">{category.name}</span>
+            <span key={index} className="mt-4 opacity-60 cursor-pointer">{t('storetype' + index)}</span>
           ))}
         </div>
         <div>

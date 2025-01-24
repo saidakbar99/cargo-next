@@ -30,24 +30,24 @@ const SignIn = () => {
             placeholder="Parol"
           />
         </div>
-        <p className="text-gray-300 ml-3 mb-6">
+        <span className="text-gray-300 ml-3 mb-6">
           Parolni unutdingizmi?
           <Link href='/auth/recovery'>
             <span className="text-orange font-semibold"> Qayta tiklash</span>
           </Link>
-        </p>
+        </span>
         <Link href='/crm/shipments'>
           <button className="rounded-80 text-center font-semibold items-center w-full px-5 py-3 bg-orange text-white">
             Kirish
           </button>
         </Link>
         <SocialButton />
-        <p className="text-center mt-6 text-gray-300">
+        <span className="text-center mt-6 text-gray-300">
           Avval ro’yxatdan o’tmaganmisiz?
           <Link href='/auth/sign-up'>
             <span className="text-orange font-bold"> Ro’yxatdan o’tish</span>
           </Link>
-        </p>
+        </span>
       </div>
     </AuthLayout>
   )

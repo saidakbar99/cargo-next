@@ -1,4 +1,5 @@
 import { Accordion } from "./ui/Accordion"
+import { useTranslations } from "next-intl";
 
 export interface FaqProps {
   id: number;
@@ -40,12 +41,13 @@ const FAQContent = [
 ]
 
 export const FAQ = () => {
+  const t = useTranslations();
   return (
     <div id="faq" className="mt-[50px] lg:mt-[140px]">
-      <h2 className="font-roadRadio text-[32px] lg:text-[50px] font-bold text-center">Часто задаваемые вопросы</h2>
+      <h2 className="font-roadRadio text-[32px] lg:text-[50px] font-bold text-center">{t('faq')}</h2>
       <div className="lg:w-[768px] mx-auto mt-10 divide-y">
         {FAQContent.map((item: FaqProps) => (
-          <Accordion key={item.id} question={item.question} answer={item.answer} />
+          <Accordion key={item.id} question={item.question} answer={item.answer} id={item.id} />
         ))}
       </div>
     </div>

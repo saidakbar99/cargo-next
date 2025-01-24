@@ -4,8 +4,10 @@ import { useState } from "react"
 import Dropdown from "./ui/Dropdown";
 import { weightOptions } from "../../../lib/utils";
 import { FilterButton } from "./ui/FilterButton";
+import { useTranslations } from "next-intl";
 
 export const Calculator = () => {
+  const t = useTranslations();
   const [slider, setSlider] = useState(600);
   const [amount, setAmount] = useState('12')
   const [activeType, setActiveType] = useState('Express');
@@ -19,7 +21,7 @@ export const Calculator = () => {
 
   return (
     <div id="calculator" className="mt-[50px] lg:mt-[140px]">
-      <h2 className="font-roadRadio text-[32px] font-bold text-center lg:text-[50px]">Стоимость доставки</h2>
+      <h2 className="font-roadRadio text-[32px] font-bold text-center lg:text-[50px]">{t('delivery_cost')}</h2>
       <div className="mt-9 flex justify-center lg:mt-16">
         <div className="bg-[#F3F4F6] p-2 rounded-xl font-medium text-xs lg:text-sm ">
           <button
@@ -28,7 +30,7 @@ export const Calculator = () => {
               activeTab === 'tab1' ? 'bg-white' : 'bg-transparent text-gray-300'
             }`}
           >
-            Из Узбекистана в Турцию.
+            {t('delivery_tab_1')}
           </button>
           <button
             onClick={() => setActiveTab('tab2')}
@@ -36,7 +38,7 @@ export const Calculator = () => {
               activeTab === 'tab2' ? 'bg-white' : 'bg-transparent text-gray-300'
             }`}
           >
-            Из Турции в Узбекистан.
+            {t('delivery_tab_2')}
           </button>
         </div>
       </div>
@@ -44,13 +46,13 @@ export const Calculator = () => {
         <div onClick={() => setActiveType('Express')} className="mr-3">
           <FilterButton 
             variant={activeType === 'Express' ? 'active' : ''}
-            text='Express'
+            text={t('express')}
           />
         </div>
         <div onClick={() => setActiveType('Odatiy')}>
           <FilterButton 
             variant={activeType === 'Odatiy' ? 'active' : ''}
-            text='Odatiy'
+            text={t('regular')}
           />
         </div>
       </div>
@@ -77,7 +79,7 @@ export const Calculator = () => {
           </div>
         </div>
         <div className="p-6 lg:w-[460px] bg-[#F9F9F9] rounded-xl">
-          <span className="font-medium">≈ 5-10 раб. дней</span>
+          <span className="font-medium">{t('delivery_days')}</span>
           <h3 className="text-[32px] lg:text-[40px] font-roadRadio font-bold mt-[14px]">2 000 000 UZS</h3>
         </div>
       </div>

@@ -3,10 +3,18 @@ import {createNavigation} from 'next-intl/navigation';
  
 export const routing = defineRouting({
   locales: ['ru', 'uz'],
-  defaultLocale: 'ru'
+  defaultLocale: 'ru',
+  pathnames: {
+    '/': '/',
+    '/pathnames': {
+      ru: '/pathnames',
+      uz: '/pfadnamen'
+    }
+  }
 });
  
-// Lightweight wrappers around Next.js' navigation APIs
-// that will consider the routing configuration
-export const {Link, redirect, usePathname, useRouter, getPathname} =
+export type Pathnames = keyof typeof routing.pathnames;
+export type Locale = (typeof routing.locales)[number];
+
+export const {Link, getPathname, redirect, usePathname, useRouter} =
   createNavigation(routing);

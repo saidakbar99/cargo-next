@@ -1,6 +1,8 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, ReactNode, useTransition } from "react";
+import { usePathname, useRouter } from '../../../../i18n/routing';
+import { useParams } from 'next/navigation';
 
 interface DropdownProps {
   options: string[];
@@ -11,10 +13,29 @@ const LanguageDropdown: React.FC<DropdownProps> = ({ options, classname }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string>(options[0]);
 
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
+  const params = useParams();
+
   const handleSelect = (option: string) => {
     setSelectedOption(option);
     setIsOpen(false);
   };
+
+  function onSelectChange(event: any) {
+    const nextLocale = event.target.value;
+    console.log('>>>', nextLocale)
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        {pathname, params},
+        {locale: nextLocale}
+      );
+    });
+  }
 
   return (
     <div className={`relative select-none  ${classname}`}>
@@ -39,7 +60,9 @@ const LanguageDropdown: React.FC<DropdownProps> = ({ options, classname }) => {
           {options.map((option, index) => (
             <li
               key={index}
-              onClick={() => handleSelect(option)}
+              // onClick={() => handleSelect(option)}
+              onClick={onSelectChange}
+              
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
             >
               {option}

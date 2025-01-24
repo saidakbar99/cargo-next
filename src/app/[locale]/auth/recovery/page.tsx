@@ -34,7 +34,7 @@ const Recovery = () => {
             Tasdiqlash
           </button>
         </div>
-        <p className='mt-8 text-gray-300 text-center'>Qayta jo’natish 00:20</p>
+        <span className='mt-8 text-gray-300 text-center'>Qayta jo’natish 00:20</span>
       </div>
     </AuthLayout>
   )

@@ -16,15 +16,15 @@ export const AboutUs = () => {
       </div>
       <Image className="my-9 lg:my-[70px]" src={AboutUsImage} alt="About us Image" />
       <div className="lg:flex lg:justify-between">
-        <div className="py-4 px-6 lg:py-6">
+        <div className="flex-1 py-4 px-6 lg:py-6">
           <h3 className="text-4xl lg:text-5xl font-bold font-roadRadio">10,580,996</h3>
           <span className="text-xl font-medium mt-3 lg:mt-[18px]">{t('aboutparcels')}</span>
         </div>
-        <div className="py-4 px-6 mt-6 lg:mt-0 lg:py-6">
+        <div className="flex-1 py-4 px-6 mt-6 lg:mt-0 lg:py-6">
           <h3 className="text-4xl lg:text-5xl font-bold font-roadRadio">1,143,634</h3>
           <span className="text-xl font-medium mt-3 lg:mt-[18px]">{t('aboutclients')}</span>
         </div>
-        <div className="py-4 px-6 mt-6 lg:mt-0 lg:py-6">
+        <div className="flex-1 py-4 px-6 mt-6 lg:mt-0 lg:py-6">
           <h3 className="text-4xl lg:text-5xl font-bold font-roadRadio">300,000+</h3>
           <span className="text-xl font-medium mt-3 lg:mt-[18px]">{t('aboutsocials')}</span>
         </div>

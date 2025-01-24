@@ -103,7 +103,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                 <path d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M22 22L21 21" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <p className='text-center leading-5 max-w-[169px] mb-4 '>Foydalanuvchi statusi hali tasdiqlanmagan</p>
+              <span className='text-center leading-5 max-w-[169px] mb-4 '>Foydalanuvchi statusi hali tasdiqlanmagan</span>
               <button className='cursor-pointer border-2 mb-9 rounded-full py-3 px-4 '>Tasdiqlash</button>
             </div>
           )}
