@@ -3,11 +3,10 @@ import { useTranslations } from "next-intl";
 export interface StoreItemProps {
   id: number;
   storeName: string;
-  description: string;
   icon: string;
 }
 
-export const StoreItem: React.FC<StoreItemProps> = ({storeName, description, icon}) => {
+export const StoreItem: React.FC<StoreItemProps> = ({storeName, icon}) => {
   const t = useTranslations();
   return (
     <div className="border border-grayBorder rounded-xl p-6 mb-4 lg:flex">

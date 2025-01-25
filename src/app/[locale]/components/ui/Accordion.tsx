@@ -4,12 +4,10 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react'
 
 interface AccordionProps {
-  question: string;
-  answer: string;
   id: number
 }
 
-export const Accordion: React.FC<AccordionProps> = ({question, answer, id}) => {
+export const Accordion: React.FC<AccordionProps> = ({id}) => {
   const t = useTranslations();
   const [isOpened, setIsOpened] = useState(false)
 

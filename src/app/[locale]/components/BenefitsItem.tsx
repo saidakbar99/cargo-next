@@ -2,13 +2,11 @@ import { IconWithBackground } from "./ui/IconWithBackground";
 import { useTranslations } from 'next-intl';
 
 export interface BenefitsItemProps {
-  headerText: string;
-  text: string;
   icon: string;
   index: number;
 }
 
-export const BenefitsItem: React.FC<BenefitsItemProps> = ({headerText, text, icon, index}) => {
+export const BenefitsItem: React.FC<BenefitsItemProps> = ({icon, index}) => {
   const t = useTranslations();
   return (
     <div className='flex w-[364px] p-4'>

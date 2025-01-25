@@ -3,8 +3,6 @@ import { useTranslations } from "next-intl";
 
 export interface FaqProps {
   id: number;
-  question: string;
-  answer: string;
 }
 
 const FAQContent = [
@@ -47,7 +45,7 @@ export const FAQ = () => {
       <h2 className="font-roadRadio text-[32px] lg:text-[50px] font-bold text-center">{t('faq')}</h2>
       <div className="lg:w-[768px] mx-auto mt-10 divide-y">
         {FAQContent.map((item: FaqProps) => (
-          <Accordion key={item.id} question={item.question} answer={item.answer} id={item.id} />
+          <Accordion key={item.id} id={item.id} />
         ))}
       </div>
     </div>

@@ -10,13 +10,14 @@ export const metadata: Metadata = {
   description: "cargo",
 };
 
-export default async function RootLayout({
-  children,
-  params: {locale}
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-  params: {locale: string};
-}>) {
+  params: any;
+}
+
+export default async function RootLayout({ children, params }: RootLayoutProps) {
+  const { locale } = params;
+
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }

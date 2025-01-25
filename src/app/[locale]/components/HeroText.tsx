@@ -1,6 +1,9 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+import { scrollToSection } from "../../../lib/utils";
 import { Button } from "./ui/Button"
 import { SocialMedias } from "./ui/SocialMedias"
-import { useTranslations } from 'next-intl';
 
 export const HeroText = () => {
   const t = useTranslations();
@@ -10,7 +13,9 @@ export const HeroText = () => {
       <div className="mt-4 lg:mt-0">
         <h3 className="text-white font-medium lg:text-xl">{t('herotext')}</h3>
         <div className="flex mt-[22px]">
-          <Button variant="orange" className=" mr-8">{t("herobutton")}</Button>
+          <div onClick={() => scrollToSection('stores', 50)}>
+            <Button variant="orange" className=" mr-8">{t("herobutton")}</Button>
+          </div>
           <SocialMedias />
         </div>
       </div>
