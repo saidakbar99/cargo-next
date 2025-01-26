@@ -3,13 +3,18 @@ import { useTranslations } from "next-intl";
 export interface StoreItemProps {
   id: number;
   storeName: string;
+  description: string;
   icon: string;
+  onClick: () => void;
 }
 
-export const StoreItem: React.FC<StoreItemProps> = ({storeName, icon}) => {
+export const StoreItem: React.FC<StoreItemProps> = ({storeName, icon, onClick}) => {
   const t = useTranslations();
   return (
-    <div className="border border-grayBorder rounded-xl p-6 mb-4 lg:flex">
+    <div 
+      onClick={onClick} 
+      className="border border-grayBorder rounded-xl p-6 mb-4 cursor-pointer lg:flex"
+    >
       <div className='bg-storeLogoBg rounded-md flex justify-center items-center w-[60px] h-[60px] lg:mr-6 lg:min-w-[120px] lg:min-h-[120px] '>
         <img className="w-[38px] h-[13px] lg:w-[76px] lg:h-[26px]" src={icon} alt="Store Logo" />
       </div>

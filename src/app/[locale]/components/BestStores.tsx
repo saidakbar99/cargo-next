@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from 'react';
-import { StoreItem, StoreItemProps } from "./StoreItem"
+import { StoreItem } from "./StoreItem"
 import { Pagination } from "./ui/Pagination"
 import { useTranslations } from 'next-intl';
+import { StoreDialog } from './StoreDialog';
 
 const categories = [
   {
@@ -56,6 +57,7 @@ const stores = [
 export const BestStores = () => {
   const t = useTranslations();
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedStore, setSelectedStore] = useState<any>(null);
   const totalPages = 10;
 
   const handlePageChange = (page: number) => {
@@ -74,8 +76,12 @@ export const BestStores = () => {
           ))}
         </div>
         <div>
-          {stores.map((store: StoreItemProps) => (
-            <StoreItem key={store.id} {...store} />
+          {stores.map((store) => (
+            <StoreItem 
+              key={store.id} 
+              onClick={() => setSelectedStore(store)}
+              {...store} 
+            />
           ))}
           <Pagination
             currentPage={currentPage}
@@ -84,6 +90,15 @@ export const BestStores = () => {
           />
         </div>
       </div>
+      <StoreDialog isOpen={selectedStore} onClose={() => setSelectedStore(null)} />
     </div>
   )
 }
+
+{/* <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+  <div className="bg-white rounded-xl p-6 w-1/3">
+    <button onClick={() => setSelectedStore(null)} className="absolute top-4 right-4">Close</button>
+    <h2 className="text-xl font-bold mb-4">{selectedStore.storeName}</h2>
+    <p>{selectedStore.description}</p>
+  </div>
+</div> */}

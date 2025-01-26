@@ -14,8 +14,8 @@ import { Container } from "@/components/ui/Container"
 const HomePage = () => {
   return (
     <div className="hero-background pt-9 h-[812px] lg:h-[900px]">
+      <Navbar />
       <Container>
-        <Navbar />
         <HeroText />
         <AboutUs />
         <Process />
