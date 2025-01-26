@@ -50,6 +50,7 @@ export const InputCode = () => {
           onFocus={() => handleFocus(index)}
         />
       ))}
+      
     </div>
   )
 }

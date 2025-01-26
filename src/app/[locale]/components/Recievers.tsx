@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Dialog } from "./ui/Dialog"
+import { Modal } from "./ui/Modal"
 
 export const Recievers = () => {
   const [showModal, setShowModal] = useState(false)
@@ -43,7 +43,81 @@ export const Recievers = () => {
           </button>
         </div>
       </div>
-      <Dialog isOpen={showModal} onClose={() => setShowModal(false)} />
+      <Modal title="Yangi Qabul Qiluvchi Qo’shish" isOpen={showModal} onClose={() => setShowModal(false)}>
+        <form className="grid grid-cols-2 gap-3 gap-y-6">
+          <div>
+            <label className="block text-sm font-medium mb-1">Ism</label>
+            <input
+              type="text"
+              value='Karim'
+              className="w-full border rounded-lg p-2 text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Familiya</label>
+            <input
+              type="text"
+              value='Salimov'
+              className="w-full border rounded-lg p-2 text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Pasport raqami</label>
+            <input
+              type="text"
+              value='AB 5765731'
+              className="w-full border rounded-lg p-2 text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">PINFL</label>
+            <input
+              type="text"
+              placeholder="PINFL"
+              className="w-full border rounded-lg p-2 text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Telefon raqami</label>
+            <input
+              type="text"
+              value='+998 98 465 44 77'
+              className="w-full border rounded-lg p-2 text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Viloyat</label>
+            <select className="w-full border rounded-lg p-2 text-sm">
+              <option>Viloyatni tanlash</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Shahar</label>
+            <select className="w-full border rounded-lg p-2 text-sm">
+              <option>Shaharni tanlash</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Manzil</label>
+            <input
+              type="text"
+              placeholder="Manzilni kiriting"
+              className="w-full border rounded-lg p-2 text-sm"
+            />
+          </div>
+        </form>
+        <div className="flex justify-between mt-8">
+          <button
+            className="px-5 py-3 border border-lightGray rounded-80 w-full leading-none font-bold mr-6"
+            onClick={() => setShowModal(false)}
+          >
+            Bekor qilish
+          </button>
+          <button className="bg-orange px-5 py-3 rounded-80 text-white leading-none w-full font-bold">
+            Saqlash
+          </button>
+        </div>
+      </Modal>
     </>
   )
 }

@@ -44,11 +44,11 @@ export const Navbar = () => {
         />
         <div className="flex">
           <Link href='/auth/sign-in'>
-            <Button className="mr-[5px] text-sm lg:text-base lg:mr-4">{t('login')}</Button>
+            <Button className="mr-[5px] text-sm lg:text-base lg:mr-4 h-[50px]">{t('login')}</Button>
           </Link>
           <LocaleSwitcher />
           <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <Button className="ml-[5px] w-10 py-2 px-2.5 lg:w-[70px] lg:py-[12px] lg:px-6 lg:ml-4">
+            <Button className="ml-[5px] w-10 py-2 px-2.5 lg:w-[70px] lg:py-[12px] lg:px-6 lg:ml-4 h-[50px]">
               <img src='/svgs/burger.svg' alt="Burger Icon" />
             </Button>
           </div>

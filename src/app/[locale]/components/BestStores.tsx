@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { StoreItem } from "./StoreItem"
 import { Pagination } from "./ui/Pagination"
 import { useTranslations } from 'next-intl';
-import { StoreDialog } from './StoreDialog';
+import { Modal } from './ui/Modal';
+import Image from 'next/image';
+import AboutUsImage from '../../../../public/images/about_us_image.png';
 
 const categories = [
   {
@@ -90,15 +92,21 @@ export const BestStores = () => {
           />
         </div>
       </div>
-      <StoreDialog isOpen={selectedStore} onClose={() => setSelectedStore(null)} />
+      <Modal title="Заголовок" isOpen={selectedStore} onClose={() => setSelectedStore(null)} >
+        <div className="mt-6">
+          <span className="text-gray-300">
+            Мы - команда профессионалов и специалистов, которые работают с любыми типами грузов и организовываем поставки из любой точки мира под различными таможенными
+          </span>
+          <Image className="my-6" width={800} height={400} src={AboutUsImage} alt="dialog image" />
+          <span className="text-gray-300">
+            Наша компания всегда старается гарантировать сроки доставки грузов. Налаженная работа позволяет нам сокращать время ожидания совместной дозагрузки, что соответственно влияет на скорость доставки грузов.
+          </span>
+          <button className="flex items-center bg-orange px-8 py-5 rounded-80 text-white leading-none font-semibold mt-9">
+            Веб-сайт
+            <img className="ml-[14px]" src="/svgs/link_icon.svg" alt="link icon" />
+          </button>
+        </div>
+      </Modal>
     </div>
   )
 }
-
-{/* <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-  <div className="bg-white rounded-xl p-6 w-1/3">
-    <button onClick={() => setSelectedStore(null)} className="absolute top-4 right-4">Close</button>
-    <h2 className="text-xl font-bold mb-4">{selectedStore.storeName}</h2>
-    <p>{selectedStore.description}</p>
-  </div>
-</div> */}

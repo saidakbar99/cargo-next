@@ -18,7 +18,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, backgroundImage }) =>
           </Link>
           {/* <LanguageDropdown options={languages} /> */}
         </nav>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center w-full">
           {children}
         </div>
         <footer className="hidden lg:flex justify-between py-5 px-6">
