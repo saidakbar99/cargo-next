@@ -120,6 +120,9 @@
 
   "404title": "В настоящее время ничего",
   "404text": " не найдено",
+  "404NotFoundTitle": "Страница не найдена",
+  "404NotFoundText": "К сожалению, запрашиваемая вами страница не найдена",
+  "404NotFoundButton": "Вернуться на главную",
 
   "personalSettingsName": "Имя",
   "personalSettingsSurname": "Фамилия",
@@ -141,12 +144,37 @@
   "signInPageRegister": "Вы еще не были зарегистрированы ?",
   "signInPageRegisterButton": "Регистрация",
 
+  "signUpPageEnter": "Регистрация",
+  "signUpPageTitle": "Введите свои личные данные",
+  "signUpPageEmail": "Электронная почта",
+  "signUpPageEmailPlace": "Введите свою почту",
+  "signUpPagePhone": "Введите свой номер телефона",
+  "signUpPagePhonePlace": "Ваш номер телефона",
+  "signUpPagePassword": "Пароль",
+  "signUpPagePasswordPlace": "Создайте пароль",
+  "signUpPagePasswordPlace2": "Должно быть не менее 8 символов",
+  "signUpPagePasswordRe": "Повторите пароль",
+  "signUpPagePasswordRePlace": "Пароль",
+  "signUpPageButton": "Регистрация",
+  "signUpPageReg": "Вы еще не были зарегистрированы ?",
+  "signUpPageRegButton": "Войти",
+
   "recoveryPageTitle": "Восстановление пароля",
   "recoveryPageText": "Введите необходимую информацию",
   "recoveryPageEmail": "Электронная почта",
   "recoveryPageEmailPlace": "Ваша почта",
   "recoveryPageButton": "Восстановить",
-  "recoveryPageAlert": "Отправить повторно через 00:20"
+  "recoveryPageAlert": "Отправить повторно через 00:20",
+
+  "crmLayoutpost": "Посылки",
+  "crmLayoutlands": "Адреса",
+  "crmLayoutsettings": "Настройки",
+  "crmLayoutcalc": "Калькулятор",
+  "crmLayoutunconfirmed": "Пользовательский статус еще не подтвержден",
+  "crmLayoutconfirm": "Подтвердить",
+  "crmLayoutexit": "Выход"
+
+
 
 
 

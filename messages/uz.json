@@ -120,6 +120,9 @@
 
   "404title": " Hozirchalik hech qanday",
   "404text": " mavjud emas",
+  "404NotFoundTitle": "Sahifa topilmadi",
+  "404NotFoundText": "Afsuski, siz qidirayotgan sahifa topilmadi",
+  "404NotFoundButton": "Bosh sahifaga qaytish",
 
   "personalSettingsName": "Ism",
   "personalSettingsSurname": "Familiya",
@@ -141,11 +144,37 @@
   "signInPageRegister": "Avval ro‘yxatdan o‘tmaganmisiz ?",
   "signInPageRegisterButton": "Ro‘yxatdan o‘tish",
 
+  "signUpPageEnter": "Ro‘yxatdan o‘tish",
+  "signUpPageTitle": "Shaxsiy ma’lumotlaringizni kiriting",
+  "signUpPageEmail": "Email",
+  "signUpPageEmailPlace": "Pochtangizni kiriting",
+  "signUpPagePhone": " Telefon raqamingizni kiriting",
+  "signUpPagePhonePlace": "Telefon raqamingiz",
+  "signUpPagePassword": "Parol",
+  "signUpPagePasswordPlace": "Parol yarating",
+  "signUpPagePasswordPlace2": "Kamida 8 ta symbol ishlatilishi kerak",
+  "signUpPagePasswordRe": "Parolni qaytatdan kiriting",
+  "signUpPagePasswordRePlace": "Parol",
+  "signUpPageButton": "Ro‘yxatdan o‘tish",
+  "signUpPageReg": "Avval ro‘yxatdan o‘tmaganmisiz ?",
+  "signUpPageRegButton": "Kirish",
+
+
+
   "recoveryPageTitle": "Parolni qayta tiklash",
   "recoveryPageText": "Kerakli ma’lumotni kiriting",
   "recoveryPageEmail": "Email",
   "recoveryPageEmailPlace": "Pochtangizni kiriting",
   "recoveryPageButton": "Tasdiqlash",
-  "recoveryPageAlert": "Qayta jo’natish 00:20"
+  "recoveryPageAlert": "Qayta jo’natish 00:20",
+ 
+  "crmLayoutpost": "Jo’natmalar",
+  "crmLayoutlands": "Manzillar",
+  "crmLayoutsettings": "Sozlamalar",
+  "crmLayoutcalc": "Kalkulyator",
+  "crmLayoutunconfirmed": "Foydalanuvchi statusi hali tasdiqlanmagan",
+  "crmLayoutconfirm": "Tasdiqlash",
+  "crmLayoutexit": "Chiqish"
+
 
 }

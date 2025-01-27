@@ -3,19 +3,26 @@
 import { useState } from 'react';
 // import Link from "next/link";
 import { Link } from '../../../i18n/routing'
+import { useTranslations } from 'next-intl';
 // import { languages } from "../../../lib/utils";
 // import LanguageDropdown from "./ui/LanguageDropdown";
+
+const t = useTranslations()
 
 interface CrmLayoutProps {
   children: React.ReactNode;
   activeMenu: string;
 }
 
+
+
 const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(true)
 
   const isActive = (currentPath:string, targetPath:string) => 
     currentPath === `${targetPath}` ? 'bg-orange-05 text-orange' : '';
+
+  
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -48,7 +55,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                     alt='Truck Icon' 
                   />
                   {isMenuOpen && (
-                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Jo’natmalar</span>
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>{t('crmLayoutpost')}</span>
                   )}
                 </div>
               </div>
@@ -62,7 +69,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                   alt='Map Icon' 
                   />
                   {isMenuOpen && (
-                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Manzillar</span>
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>{t('crmLayoutlands')}</span>
                   )}
                 </div>
               </div>
@@ -76,7 +83,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                   alt='Settings Icon' 
                   />
                   {isMenuOpen && (
-                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Sozlamalar</span>
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>{t('crmLayoutsettings')}</span>
                   )}
                 </div>
               </div>
@@ -90,7 +97,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                   alt='Calculator Icon' 
                   />
                   {isMenuOpen && (
-                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>Kalkulyator</span>
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>{t('crmLayoutcalc')}</span>
                   )}
                 </div>
               </div>
@@ -104,8 +111,8 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                 <path d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M22 22L21 21" stroke="#FB7C0E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className='text-center leading-5 max-w-[169px] mb-4 '>Foydalanuvchi statusi hali tasdiqlanmagan</span>
-              <button className='cursor-pointer border-2 mb-9 rounded-full py-3 px-4 '>Tasdiqlash</button>
+              <span className='text-center leading-5 max-w-[169px] mb-4 '>{t('crmLayoutunconfirmed')}</span>
+              <button className='cursor-pointer border-2 mb-9 rounded-full py-3 px-4 '>{t('crmLayoutconfirm')}</button>
             </div>
           )}
         </div>          
@@ -126,7 +133,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
               className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3 leading-none'
             >
               <img src='/svgs/logout.svg' alt='Logout Icon' />
-              <span className='ml-2.5 font-semibold text-sm'>Chiqish</span>
+              <span className='ml-2.5 font-semibold text-sm'>{t("crmLayoutexit")}</span>
             </button>
           </Link>
         </div>
