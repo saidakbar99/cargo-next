@@ -1,8 +1,11 @@
 import CrmLayout from "@/components/CrmLayout";
 import NoData from "@/components/NoData";
+import { useTranslations } from "next-intl";
 
 const Addresses = () => {
+  const t = useTranslations();
   const isEmpty = false
+  
 
   if (isEmpty) {
     return <NoData pageName="manzillar" />
@@ -11,17 +14,17 @@ const Addresses = () => {
     <CrmLayout activeMenu='addresses'>
       <div className="pt-6 h-screen">
         <div className="p-10 bg-white w-[744px] mx-auto rounded-xl">
-          <h3 className="text-2xl font-bold mb-6">Sizning Turkiyadagi manzilingiz</h3>
-          <span className=" ">Bu manzilni Turkiya magazinlaridan onlayn xarid qilish jarayonida kiriting</span>
+          <h3 className="text-2xl font-bold mb-6">{t('crmAddressTitle')}</h3>
+          <span className=" ">{t('crmAddressText')}</span>
           <div className="flex justify-between my-10">
             <div className="flex flex-col text-gray-300 whitespace-nowrap">
-              <span className="mt-4 flex-1">Qabul qiluvchi</span>
-              <span className="mt-4 flex-1">Manzil</span>
-              <span className="mt-4 flex-1">Viloyat</span>
-              <span className="mt-4 flex-1">Shahar</span>
-              <span className="mt-4 flex-1">Zip code</span>
-              <span className="mt-4 flex-1">Davlat</span>
-              <span className="mt-4 flex-1">Mobil raqam</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan')}</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan2')}</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan3')}</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan4')}</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan5')}</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan6')}</span>
+              <span className="mt-4 flex-1">{t('crmAddressSpan7')}</span>
             </div>
             <div className="flex">
               <div className="flex flex-col ml-6 font-medium">
@@ -44,14 +47,14 @@ const Addresses = () => {
               </div>
             </div>
           </div>
-          <span className="font-bold">Yetkazib berish vaqti - 9:00 - 18:00 Dush. - Jum.</span>
+          <span className="font-bold">{t('crmAddressDeliveryTime')}</span>
         </div>
         <div className="w-[744px] mx-auto mt-6 flex">
           <div className="rounded-xl bg-white px-[55px] h-24 flex items-center">
-            <button className="text-orange font-bold text-center w-[250px]">Bu manzildan qanday foydalanish kerak?</button>
+            <button className="text-orange font-bold text-center w-[250px]">{t('crmAddressInfo')}</button>
           </div>
           <div className="rounded-xl bg-white ml-6 px-[55px] h-24 flex items-center">
-            <button className="text-orange font-bold text-center w-[250px]">Taqiqlangan tovarlar ro’yxati</button>
+            <button className="text-orange font-bold text-center w-[250px]">{t('crmAddressForbidden')}</button>
           </div>
         </div>
       </div>
