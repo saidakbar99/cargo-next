@@ -1,28 +1,21 @@
 "use client"
 
 import { useState } from 'react';
-// import Link from "next/link";
 import { Link } from '../../../i18n/routing'
 import { useTranslations } from 'next-intl';
-// import { languages } from "../../../lib/utils";
-// import LanguageDropdown from "./ui/LanguageDropdown";
-
-const t = useTranslations()
+import LocaleSwitcher from './LocaleSwitcher';
 
 interface CrmLayoutProps {
   children: React.ReactNode;
   activeMenu: string;
 }
 
-
-
 const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
+  const t = useTranslations()
   const [isMenuOpen, setIsMenuOpen] = useState(true)
 
   const isActive = (currentPath:string, targetPath:string) => 
     currentPath === `${targetPath}` ? 'bg-orange-05 text-orange' : '';
-
-  
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -127,10 +120,10 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
             />
             <img src='/svgs/search.svg' alt="Search Icon" className='absolute top-[14.5px] left-4' />
           </div>
-          {/* <LanguageDropdown options={languages} classname="mr-3" /> */}
+          <LocaleSwitcher variant='white' />
           <Link href='/'>
             <button
-              className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3 leading-none'
+              className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3 leading-none ml-3'
             >
               <img src='/svgs/logout.svg' alt='Logout Icon' />
               <span className='ml-2.5 font-semibold text-sm'>{t("crmLayoutexit")}</span>

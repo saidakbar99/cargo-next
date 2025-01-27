@@ -4,7 +4,11 @@ import { useParams } from 'next/navigation';
 import { useTransition, useState } from 'react';
 import { usePathname, useRouter } from '../../../i18n/routing';
 
-const LocaleSwitcher = () => {
+interface LocaleSwitcherProps {
+  variant: 'blurred' | 'white'
+}
+
+const LocaleSwitcher: React.FC<LocaleSwitcherProps> = ({variant}) => {
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
@@ -28,12 +32,16 @@ const LocaleSwitcher = () => {
     });
   };
 
+  const blurred = 'bg-white/25 backdrop-blur-[21px] text-white py-2 px-3 lg:py-[14px] lg:px-6'
+  const white = 'border w-fit py-3 px-4'
+
   return (
-    <div className='relative w-full select-none'>
+    <div className='relative select-none'>
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className='font-semibold w-full cursor-pointer flex justify-between items-center
-          bg-white/25 backdrop-blur-[21px] text-white py-2 px-3 lg:py-[14px] lg:px-6 rounded-80 mr-[5px]'
+        className={`font-semibold cursor-pointer w-full flex justify-between items-center rounded-80 
+          ${variant === 'blurred' ? blurred : white}
+        `}
       >
         <span className="lg:mr-1.5">{selectedOption}</span>
         <svg

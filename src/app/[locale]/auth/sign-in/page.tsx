@@ -36,7 +36,7 @@ const SignIn = () => {
         <span className="text-gray-300">
           {t('signInPageForgotPassword')}
           <Link href='/auth/recovery'>
-            <span className="text-orange font-semibold">{t('signInPageRestart')}</span>
+            <span className="text-orange font-semibold"> {t('signInPageRestart')}</span>
           </Link>
         </span>
         <Link href='/crm/shipments'>

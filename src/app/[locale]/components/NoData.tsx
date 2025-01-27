@@ -3,9 +3,10 @@ import { useTranslations } from "next-intl";
 interface NoDataProps {
   pageName: string;
 } 
-const t = useTranslations()
 
 const NoData: React.FC<NoDataProps> = ({ pageName }) => {
+  const t = useTranslations()
+
   return (
     <div className="flex flex-col justify-center items-center h-full">
       <div className="w-20 h-20 bg-white rounded-2xl flex justify-center items-center">

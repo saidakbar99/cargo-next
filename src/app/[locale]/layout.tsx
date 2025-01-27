@@ -16,7 +16,7 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children, params }: RootLayoutProps) {
-  const { locale = 'ru' } = params;
+  const { locale = 'ru' } = await params;
 
   if (!routing.locales.includes(locale as any)) {
     notFound();

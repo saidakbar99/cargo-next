@@ -1,8 +1,6 @@
 import React from 'react';
-// import Link from 'next/link';
 import { Link } from '../../../i18n/routing'
-// import { languages } from '../../../lib/utils';
-// import LanguageDropdown from './ui/LanguageDropdown';
+import LocaleSwitcher from './LocaleSwitcher';
 interface AuthLayoutProps {
   children: React.ReactNode;
   backgroundImage: string;
@@ -16,7 +14,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, backgroundImage }) =>
           <Link href='/'>
             <img className='w-12 h-6 lg:w-[85px] lg:h-[42px]' src='/svgs/cargo_black.svg' alt="Logo" />
           </Link>
-          {/* <LanguageDropdown options={languages} /> */}
+          <LocaleSwitcher variant={'white'} />
         </nav>
         <div className="flex items-center justify-center w-full">
           {children}
@@ -27,7 +25,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, backgroundImage }) =>
         </footer>
       </div>
       <div
-        className="hidden lg:block lg:w-1/2 bg-cover bg-center m-5 rounded-lg"
+        className="hidden lg:block lg:w-1/2 bg-cover bg-center m-5 rounded-lg min-h-full"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
     </div>
