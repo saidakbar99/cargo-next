@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import AuthLayout from "@/components/AuthLayout"
-// import { Button } from "@/components/ui/Button"
 import { InputCode } from '@/components/ui/InputCode'
 import { useTranslations } from 'next-intl'
 

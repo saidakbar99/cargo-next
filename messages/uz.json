@@ -141,7 +141,7 @@
   "signInPageForgotPassword": "Parolni unutdingizmi?",
   "signInPageRestart": "Qayta tiklash",
   "signInPageButton": "Kirish",
-  "signInPageRegister": "Avval ro‘yxatdan o‘tmaganmisiz ?",
+  "signInPageRegister": "Avval ro‘yxatdan o‘tmaganmisiz?",
   "signInPageRegisterButton": "Ro‘yxatdan o‘tish",
 
   "signUpPageEnter": "Ro‘yxatdan o‘tish",
@@ -156,10 +156,8 @@
   "signUpPagePasswordRe": "Parolni qaytatdan kiriting",
   "signUpPagePasswordRePlace": "Parol",
   "signUpPageButton": "Ro‘yxatdan o‘tish",
-  "signUpPageReg": "Avval ro‘yxatdan o‘tmaganmisiz ?",
+  "signUpPageReg": "Avval ro‘yxatdan o‘tganmisiz?",
   "signUpPageRegButton": "Kirish",
-
-
 
   "recoveryPageTitle": "Parolni qayta tiklash",
   "recoveryPageText": "Kerakli ma’lumotni kiriting",
@@ -174,7 +172,11 @@
   "crmLayoutcalc": "Kalkulyator",
   "crmLayoutunconfirmed": "Foydalanuvchi statusi hali tasdiqlanmagan",
   "crmLayoutconfirm": "Tasdiqlash",
-  "crmLayoutexit": "Chiqish"
+  "crmLayoutexit": "Chiqish",
 
-
+  "loginError": "Kirish ma’lumotlari xato!",
+  "registrError": "Что-то пошло не так при регистрации!",
+  "registrAllFieldsError": "Все поля должны быть заполнены!",
+  "registrPasswordError": "Пароль должен содержать не менее 8 символов!",
+  "registrPasswordConfirmError": "Пароль должен совпадать!"
 }

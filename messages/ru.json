@@ -141,7 +141,7 @@
   "signInPageForgotPassword": "Забыли пароль?",
   "signInPageRestart": "Восстановить",
   "signInPageButton": "Войти",
-  "signInPageRegister": "Вы еще не были зарегистрированы ?",
+  "signInPageRegister": "Вы еще не были зарегистрированы?",
   "signInPageRegisterButton": "Регистрация",
 
   "signUpPageEnter": "Регистрация",
@@ -156,7 +156,7 @@
   "signUpPagePasswordRe": "Повторите пароль",
   "signUpPagePasswordRePlace": "Пароль",
   "signUpPageButton": "Регистрация",
-  "signUpPageReg": "Вы еще не были зарегистрированы ?",
+  "signUpPageReg": "Вы уже зарегистрированы?",
   "signUpPageRegButton": "Войти",
 
   "recoveryPageTitle": "Восстановление пароля",
@@ -172,14 +172,11 @@
   "crmLayoutcalc": "Калькулятор",
   "crmLayoutunconfirmed": "Пользовательский статус еще не подтвержден",
   "crmLayoutconfirm": "Подтвердить",
-  "crmLayoutexit": "Выход"
+  "crmLayoutexit": "Выход",
 
-
-
-
-
-
-
-
-
+  "loginError": "Неправильные данные входа!",
+  "registrError": "Что-то пошло не так при регистрации!",
+  "registrAllFieldsError": "Все поля должны быть заполнены!",
+  "registrPasswordError": "Пароль должен содержать не менее 8 символов!",
+  "registrPasswordConfirmError": "Пароль должен совпадать!"
 }

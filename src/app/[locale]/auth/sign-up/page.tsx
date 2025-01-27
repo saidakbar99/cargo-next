@@ -1,11 +1,51 @@
-// import Link from "next/link"
-import { Link } from '../../../../i18n/routing'
+'use client'
+
+import { useState } from 'react'
+import axios from 'axios'
+import { toast } from 'react-toastify'
+import { Link, useRouter } from '../../../../i18n/routing'
 import AuthLayout from "@/components/AuthLayout"
 import { SocialButton } from "@/components/ui/SocialButton"
 import { useTranslations } from 'next-intl'
 
 const SignUp = () => {
   const t = useTranslations()
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const handleRegister = async () => {
+    if (!email || !phone || !password || !confirmPassword) {
+      toast.error(t('registrAllFieldsError'));
+      return;
+    }
+
+    if (password.length < 8) {
+      toast.error(t('registrPasswordError'));
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      toast.error(t('registrPasswordConfirmError'));
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}customer/auth/register`,
+        { email, password, phone }
+      );
+
+      localStorage.setItem('access_token', response.data.data.access_token);
+      router.push('/crm/shipments');
+    } catch (err) {
+      console.log(err)
+      toast.error(t('registrError'))
+    }
+  };
+
   return (
     <AuthLayout backgroundImage="/images/sign_up.png">
       <div className="px-8 lg:px-0 max-w-[400px] w-full">
@@ -18,6 +58,8 @@ const SignUp = () => {
           <input
             id="email"
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="border border-lightGray py-3 px-[14px] rounded-lg max-w-[400px] text-sm"
             placeholder={t('signUpPageEmailPlace')}
           />
@@ -29,6 +71,8 @@ const SignUp = () => {
           <input
             id="telephone"
             type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             className="border border-lightGray py-3 px-[14px] rounded-lg max-w-[400px] text-sm"
             placeholder={t('signUpPagePhonePlace')}
           />
@@ -40,6 +84,8 @@ const SignUp = () => {
           <input
             id="password"
             type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="border border-lightGray py-3 px-[14px] rounded-lg max-w-[400px] text-sm"
             placeholder={t('signUpPagePasswordPlace')}
           />
@@ -52,11 +98,16 @@ const SignUp = () => {
           <input
             id="password"
             type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             className="border border-lightGray py-3 px-[14px] rounded-lg max-w-[400px] text-sm"
             placeholder={t('signUpPagePasswordRePlace')}
           />
         </div>
-        <button className="rounded-80 text-center font-semibold items-center w-full px-5 py-3 mt-6 bg-orange text-white">
+        <button 
+          className="rounded-80 text-center font-semibold items-center w-full px-5 py-3 mt-6 bg-orange text-white"
+          onClick={handleRegister}
+        >
           {t('signUpPageButton')}
         </button>
         <SocialButton classname='mb-6' />
