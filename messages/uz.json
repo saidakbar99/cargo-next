@@ -52,6 +52,11 @@
   "storetype5": "Sport",
   "storedescr": "Bu erda siz vitaminlar va ovqat qo'shimchalari, shuningdek, sog'lik va go'zallik mahsulotlarini topasiz.",
 
+  "bestStoreModalTitle": "Sarlavha",
+  "bestStoreModalText": "Biz har qanday turdagi yuklar bilan ishlaydigan va dunyoning istalgan nuqtasidan turli xil bojxona to‘lovlari ostida yetkazib berishni tashkil etadigan professionallar va mutaxassislar jamoamiz",
+  "bestStoreModalText2": "Kompaniyamiz doimo yuklarni yetkazib berish muddatlarini kafolatlashga harakat qiladi. Sozlangan ish birgalikda qo‘shimcha yuklanishni kutish vaqtini qisqartirishga imkon beradi, bu mos ravishda yuklarni yetkazib berish tezligiga ta’sir qiladi.",
+  "bestStoreModalButton": "Veb-sayt",
+
   "delivery_cost": "Yetkazib berish narxi",
   "delivery_tab_1": "O‘zbekistondan Turkiyaga.",
   "delivery_tab_2": "Turkiyadan O‘zbekistonga.",
@@ -173,6 +178,26 @@
   "crmLayoutunconfirmed": "Foydalanuvchi statusi hali tasdiqlanmagan",
   "crmLayoutconfirm": "Tasdiqlash",
   "crmLayoutexit": "Chiqish",
+
+  "crmAddressTitle": "Sizning Turkiyadagi manzilingiz",
+  "crmAddressText": "Bu manzilni Turkiya magazinlaridan onlayn xarid qilish jarayonida kiriting",
+  "crmAddressSpan": "Qabul qiluvchi",
+  "crmAddressSpan2": "Manzil",
+  "crmAddressSpan3": "Viloyat",
+  "crmAddressSpan4": "Shahar",
+  "crmAddressSpan5": "Zip code",
+  "crmAddressSpan6": "Davlat",
+  "crmAddressSpan7": "Mobil raqam",
+  "crmAddressDeliveryTime": "Yetkazib berish vaqti - 9:00 - 18:00 Dush. - Jum.",
+  "crmAddressInfo": "Bu manzildan qanday foydalanish kerak?",
+  "crmAddressForbidden": "Taqiqlangan tovarlar ro’yxati",
+
+  "crmCalcTitle": "Kalkulyator",
+  "crmCalcFromUzb": "O‘zbekistondan Turkiyaga.",
+  "crmCalcFromTurkey": "Turkiyadan O‘zbekistonga.",
+  "crmCalcDelivery": "≈ 5-10 ish kuni",
+
+
 
   "loginError": "Kirish ma’lumotlari xato!",
   "registrError": "Что-то пошло не так при регистрации!",

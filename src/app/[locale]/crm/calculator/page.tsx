@@ -4,6 +4,7 @@ import { useState } from "react";
 import CrmLayout from "@/components/CrmLayout";
 import Dropdown from "@/components/ui/Dropdown";
 import { weightOptions } from "../../../../lib/utils";
+import { useTranslations } from "next-intl";
 
 const Calculator = () => {
   const [slider, setSlider] = useState(600);
@@ -15,12 +16,12 @@ const Calculator = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSlider(Number(event.target.value));
   };
-
+  const t = useTranslations();
   return (
     <CrmLayout activeMenu="calculator">
       <div className="pt-6 h-screen">
         <div className="p-10 bg-white w-[744px] mx-auto rounded-xl">
-          <h3 className="text-2xl font-bold mb-9">Kalkulyator</h3>
+          <h3 className="text-2xl font-bold mb-9">{t('crmCalcTitle')}</h3>
           <div className="mb-9 flex justify-center">
             <div className="bg-[#F3F4F6] p-2 rounded-xl text-sm font-semibold">
               <button
@@ -29,7 +30,7 @@ const Calculator = () => {
                   activeTab === 'tab1' ? 'bg-white' : 'bg-transparent text-gray-300'
                 }`}
               >
-                Из Узбекистана в Турцию.
+               {t('crmCalcFromUzb')}
               </button>
               <button
                 onClick={() => setActiveTab('tab2')}
@@ -37,7 +38,7 @@ const Calculator = () => {
                   activeTab === 'tab2' ? 'bg-white' : 'bg-transparent text-gray-300'
                 }`}
               >
-                Из Турции в Узбекистан.
+                {t('crmCalcFromTurkey')}
               </button>
             </div>
           </div>
@@ -63,7 +64,7 @@ const Calculator = () => {
             </div>
           </div>
           <div className="p-6 w-[460px] rounded-xl">
-            <span className="font-medium">≈ 5-10 раб. дней</span>
+            <span className="font-medium">{t('crmCalcDelivery')}</span>
             <h3 className="text-4xl font-roadRadio font-bold mt-[14px]">2 000 000 UZS</h3>
           </div>
         </div>

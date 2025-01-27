@@ -92,17 +92,17 @@ export const BestStores = () => {
           />
         </div>
       </div>
-      <Modal title="Заголовок" isOpen={selectedStore} onClose={() => setSelectedStore(null)} >
+      <Modal title={t("bestStoreModalTitle")} isOpen={selectedStore} onClose={() => setSelectedStore(null)} >
         <div className="mt-6">
           <span className="text-gray-300">
-            Мы - команда профессионалов и специалистов, которые работают с любыми типами грузов и организовываем поставки из любой точки мира под различными таможенными
+          {t('bestStoreModalText')}
           </span>
           <Image className="my-6" width={800} height={400} src={AboutUsImage} alt="dialog image" />
           <span className="text-gray-300">
-            Наша компания всегда старается гарантировать сроки доставки грузов. Налаженная работа позволяет нам сокращать время ожидания совместной дозагрузки, что соответственно влияет на скорость доставки грузов.
+           {t('bestStoreModalText2')}
           </span>
           <button className="flex items-center bg-orange px-8 py-5 rounded-80 text-white leading-none font-semibold mt-9">
-            Веб-сайт
+           {t('bestStoreModalButton')}
             <img className="ml-[14px]" src="/svgs/link_icon.svg" alt="link icon" />
           </button>
         </div>
