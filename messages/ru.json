@@ -129,7 +129,7 @@
   "404NotFoundText": "К сожалению, запрашиваемая вами страница не найдена",
   "404NotFoundButton": "Вернуться на главную",
 
-  "personalSettingsName": "Имя",
+  "personalSettingsName": "ФИО",
   "personalSettingsSurname": "Фамилия",
   "personalSettingsAge": "Дата рождения",
   "personalSettingsGender": "Пол",
@@ -202,9 +202,12 @@
   "registrError": "Что-то пошло не так при регистрации!",
   "registrAllFieldsError": "Все поля должны быть заполнены!",
   "registrPasswordError": "Пароль должен содержать не менее 8 символов!",
-  "registrPasswordConfirmError": "Пароль должен совпадать!"
+  "registrPasswordConfirmError": "Пароль должен совпадать!",
 
-
+  "gender": {
+    "male": "Мужчина",
+    "female": "Женщина"
+  }
 
 
 }

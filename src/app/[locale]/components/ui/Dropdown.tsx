@@ -4,19 +4,14 @@ import React, { useState } from "react";
 
 interface DropdownProps {
   options: string[];
-  placeholder?: string;
+  selectedValue: string;
   variant?: 'white' | 'blurred';
   classname?: string;
+  onSelect: (selected: string) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'white', classname }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, selectedValue, variant = 'white', classname, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<string>(options[0]);
-
-  const handleSelect = (option: string) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
 
   const getDropdownStyles = (variant: string) => {
     switch (variant) {
@@ -48,7 +43,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
         onClick={() => setIsOpen(!isOpen)}
         className={`${baseDropdownStyles} ${variantDropdownStyles}`}
       >
-        <span className="lg:mr-1.5">{selectedOption || placeholder}</span>
+        <span className="lg:mr-1.5">{selectedValue}</span>
         <svg
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +60,10 @@ const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, variant = 'wh
           {options.map((option, index) => (
             <li
               key={index}
-              onClick={() => handleSelect(option)}
+              onClick={() => {
+                onSelect(option);
+                setIsOpen(false);
+              }}
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
             >
               {option}

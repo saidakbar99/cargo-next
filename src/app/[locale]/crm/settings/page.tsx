@@ -7,7 +7,7 @@ import { PersonalSettings } from '@/components/PersonalSettings';
 import { Recievers } from '@/components/Recievers';
 
 const Settings = () => {
-  const [activeFilter, setActiveFilter] = useState<string>('Qabul qiluvchilar');
+  const [activeFilter, setActiveFilter] = useState<string>('Identifikatsiya');
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
@@ -21,26 +21,26 @@ const Settings = () => {
           <h3 className="text-2xl font-bold mb-6">Sozlamalar</h3>
           <div className="flex justify-between">
             <div className="flex">
-              <div onClick={() => handleFilterClick("Shaxsiy ma’lumotlar")}>
+              <div onClick={() => handleFilterClick("Identifikatsiya")}>
                 <FilterButton 
-                  variant={activeFilter === 'Shaxsiy ma’lumotlar' ? 'active' : ''}
-                  text='Shaxsiy ma’lumotlar'
+                  variant={activeFilter === 'Identifikatsiya' ? 'active' : ''}
+                  text='Identifikatsiya'
                   className='mr-3'
                 />
               </div>
-              <div onClick={() => handleFilterClick("Qabul qiluvchilar")}>
+              {/* <div onClick={() => handleFilterClick("Qabul qiluvchilar")}>
                 <FilterButton 
                   variant={activeFilter === 'Qabul qiluvchilar' ? 'active' : ''}
                   text='Qabul qiluvchilar'
                 />
-              </div>
+              </div> */}
             </div>
             <button className='flex items-center rounded-80 bg-whiteBackground px-4 text-sm font-semibold'>
               <img className='mr-2.5' src="/svgs/lock_black.svg" alt="Lock Icon" />
               Parolni o’zgartirish
             </button>
           </div>
-          {activeFilter === 'Shaxsiy ma’lumotlar' ? (
+          {activeFilter === 'Identifikatsiya' ? (
             <PersonalSettings />
           ) : (
             <Recievers />

@@ -129,10 +129,10 @@
   "404NotFoundText": "Afsuski, siz qidirayotgan sahifa topilmadi",
   "404NotFoundButton": "Bosh sahifaga qaytish",
 
-  "personalSettingsName": "Ism",
+  "personalSettingsName": "FIO",
   "personalSettingsSurname": "Familiya",
   "personalSettingsAge": "Tug’ilgan sa’na",
-  "personalSettingsGender": "Jins",
+  "personalSettingsGender": "Jinsingiz",
   "personalSettingsPhone": "Telefon raqami",
   "personalSettingsEmail": "Elektron pochta",
   "personalSettingsSave": "Saqlash",
@@ -197,11 +197,14 @@
   "crmCalcFromTurkey": "Turkiyadan O‘zbekistonga.",
   "crmCalcDelivery": "≈ 5-10 ish kuni",
 
-
-
   "loginError": "Kirish ma’lumotlari xato!",
   "registrError": "Что-то пошло не так при регистрации!",
   "registrAllFieldsError": "Все поля должны быть заполнены!",
   "registrPasswordError": "Пароль должен содержать не менее 8 символов!",
-  "registrPasswordConfirmError": "Пароль должен совпадать!"
+  "registrPasswordConfirmError": "Пароль должен совпадать!",
+
+  "gender": {
+    "male": "Erkak",
+    "female": "Ayol"
+  }
 }

@@ -50,7 +50,7 @@ const Calculator = () => {
                 className="border border-lightGray font-semibold rounded-lg w-full py-3 px-4 mr-6 focus:outline-none" 
                 onChange={(e) => setAmount(e.target.value)}  
               />
-              <Dropdown options={weightOptions} />
+              <Dropdown options={weightOptions} onSelect={() =>console.log('')} selectedValue=""  />
             </div>
             <div className="flex items-center justify-between mt-6 py-5">
               <input
