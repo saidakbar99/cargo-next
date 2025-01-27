@@ -114,8 +114,38 @@
   "footerlink20": "Maxfiylik siyosati",
   "footerlink21": "Cookies",
   "footerlink22": "Litsenziyalar",
-  "footerlink23": "Sozlamalar"
+  "footerlink23": "Sozlamalar",
 
+  "socialButton": "Google orqali kirish",
 
+  "404title": " Hozirchalik hech qanday",
+  "404text": " mavjud emas",
+
+  "personalSettingsName": "Ism",
+  "personalSettingsSurname": "Familiya",
+  "personalSettingsAge": "Tug’ilgan sa’na",
+  "personalSettingsGender": "Jins",
+  "personalSettingsPhone": "Telefon raqami",
+  "personalSettingsEmail": "Elektron pochta",
+  "personalSettingsSave": "Saqlash",
+
+  "signInPageEnter": "Kirish",
+  "signInPageTitle": "Shaxsiy ma’lumotlaringizni kiriting",
+  "signInPageEmail": "Email",
+  "signInPageEmailPlace": "Pochtangiz",
+  "signInPagePassword": "Parol",
+  "signInPagePasswordPlace": "Parolingiz",
+  "signInPageForgotPassword": "Parolni unutdingizmi?",
+  "signInPageRestart": "Qayta tiklash",
+  "signInPageButton": "Kirish",
+  "signInPageRegister": "Avval ro‘yxatdan o‘tmaganmisiz ?",
+  "signInPageRegisterButton": "Ro‘yxatdan o‘tish",
+
+  "recoveryPageTitle": "Parolni qayta tiklash",
+  "recoveryPageText": "Kerakli ma’lumotni kiriting",
+  "recoveryPageEmail": "Email",
+  "recoveryPageEmailPlace": "Pochtangizni kiriting",
+  "recoveryPageButton": "Tasdiqlash",
+  "recoveryPageAlert": "Qayta jo’natish 00:20"
 
 }

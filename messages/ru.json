@@ -114,7 +114,44 @@
   "footerlink20": "Конфиденциальность",
   "footerlink21": "Cookies",
   "footerlink22": "Лицензии",
-  "footerlink23": "Настройки"
+  "footerlink23": "Настройки",
+
+  "socialButton": "Войти через Google",
+
+  "404title": "В настоящее время ничего",
+  "404text": " не найдено",
+
+  "personalSettingsName": "Имя",
+  "personalSettingsSurname": "Фамилия",
+  "personalSettingsAge": "Дата рождения",
+  "personalSettingsGender": "Пол",
+  "personalSettingsPhone": "Телефон",
+  "personalSettingsEmail": "Электронная почта",
+  "personalSettingsSave": "Сохранить",
+
+  "signInPageEnter": "Войти",
+  "signInPageTitle": "Введите свои личные данные",
+  "signInPageEmail": "Электронная почта",
+  "signInPageEmailPlace": "Ваша почта",
+  "signInPagePassword": "Пароль",
+  "signInPagePasswordPlace": "Ваш пароль",
+  "signInPageForgotPassword": "Забыли пароль?",
+  "signInPageRestart": "Восстановить",
+  "signInPageButton": "Войти",
+  "signInPageRegister": "Вы еще не были зарегистрированы ?",
+  "signInPageRegisterButton": "Регистрация",
+
+  "recoveryPageTitle": "Восстановление пароля",
+  "recoveryPageText": "Введите необходимую информацию",
+  "recoveryPageEmail": "Электронная почта",
+  "recoveryPageEmailPlace": "Ваша почта",
+  "recoveryPageButton": "Восстановить",
+  "recoveryPageAlert": "Отправить повторно через 00:20"
+
+
+
+
+
 
 
 }

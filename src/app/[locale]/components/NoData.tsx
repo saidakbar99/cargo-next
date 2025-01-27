@@ -1,6 +1,9 @@
+import { useTranslations } from "next-intl";
+
 interface NoDataProps {
   pageName: string;
 } 
+const t = useTranslations()
 
 const NoData: React.FC<NoDataProps> = ({ pageName }) => {
   return (
@@ -9,7 +12,7 @@ const NoData: React.FC<NoDataProps> = ({ pageName }) => {
         <img src="/svgs/empty_archive.svg" alt="Empty Icon" />
       </div>
       <span className="mt-8 text-lg font-semibold text-center max-w-[287px]">
-        Hozirchalik hech qanday {pageName} mavjud emas
+        {t('404title')} {pageName} {t('404text')}
       </span>
     </div>
   )

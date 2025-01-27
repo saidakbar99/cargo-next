@@ -1,9 +1,12 @@
+import { useTranslations } from "next-intl"
+
 export const PersonalSettings = () => {
+  const t = useTranslations()
   return (
     <form className="grid grid-cols-2 gap-x-3 gap-y-6 mt-9">
       <div className="col-span-1">
         <label htmlFor="name" className="block text-sm font-medium">
-          Ism
+         {t('personalSettingsName')}
         </label>
         <input
           id="name"
@@ -14,7 +17,7 @@ export const PersonalSettings = () => {
       </div>
       <div className="col-span-1">
         <label htmlFor="surname" className="block text-sm font-medium">
-          Familiya
+          {t('personalSettingsSurname')}
         </label>
         <input
           id="surname"
@@ -25,7 +28,7 @@ export const PersonalSettings = () => {
       </div>
       <div className="col-span-1">
         <label htmlFor="date" className="block text-sm font-medium">
-          Tug’ilgan sa’na
+         {t('personalSettingsAge')}
         </label>
         <input
           id="date"
@@ -36,7 +39,7 @@ export const PersonalSettings = () => {
       </div>
       <div className="col-span-1">
         <label htmlFor="sex" className="block text-sm font-medium">
-          Jinsi
+         {t('personalSettingsGender')}
         </label>
         <input
           id="sex"
@@ -47,7 +50,7 @@ export const PersonalSettings = () => {
       </div>
       <div className="col-span-1">
         <label htmlFor="telephone" className="block text-sm font-medium">
-          Telefon raqami
+          {t('personalSettingsPhone')}
         </label>
         <input
           id="telephone"
@@ -58,7 +61,7 @@ export const PersonalSettings = () => {
       </div>
       <div className="col-span-1">
         <label htmlFor="email" className="block text-sm font-medium">
-          Email
+         {t('personalSettingsEmail')}
         </label>
         <input
           id="email"
@@ -70,7 +73,7 @@ export const PersonalSettings = () => {
       <button 
         className='px-5 py-2 bg-orange rounded-80 text-white font-bold mt-3'
       >
-        Saqlash
+     {t('personalSettingsSave')}
       </button>
     </form>
   )
