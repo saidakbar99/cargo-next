@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Head from 'next/head';
+import React from "react";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -28,11 +30,16 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
 
   return (
     <html lang={locale}>
+      <Head>
+        <link rel="icon" type="image/svg+xml" href="/svgs/cargo_black.svg" />
+      </Head>
       <body className="antialiased font-gilroy text-black">
+      <React.StrictMode>
         <NextIntlClientProvider messages={messages}>
           {children}
           <ToastContainer position="bottom-right" />
         </NextIntlClientProvider>
+      </React.StrictMode>
       </body>
     </html>
   );
