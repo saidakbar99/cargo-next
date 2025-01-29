@@ -14,8 +14,6 @@ export const scrollToSection = (id: string, offset: number = 0) => {
   }
 };
 
-export const weightOptions = ['KG', 'Lb', 'grams']
-
 export const calculateTotalAmount = (items: { name: string; item_amount: number; quantity: number }[]) => {
   return items.reduce((total, item) => total + item.item_amount * item.quantity, 0);
 };
@@ -30,3 +28,11 @@ export const formatCurrency = (amount: number, currency: string = "UZS"): string
     .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     .concat(` ${currency}`);
 };
+
+export const trimTrailingZeros = (value: string) => {
+  if (value.includes('.')) {
+    return value.replace(/(\.\d*?[1-9])0+$/g, '$1').replace(/\.0+$/, '');
+  }
+  
+  return value;
+}

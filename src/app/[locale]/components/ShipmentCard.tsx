@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { ShipmentStatuses } from "./ShipmentStatuses"
-import { formatDate } from '../../../lib/utils'
+import { formatDate, trimTrailingZeros } from '../../../lib/utils'
 import { IShipment } from '../crm/shipments/page'
 import Table from './ui/Table'
 
@@ -24,13 +24,13 @@ export const ShipmentCard: React.FC<IShipment> = ({
   const fields = [
     { label: "Qabul qilingan sa’na", value: formatDate(date_prepared) },
     { label: "Karobka soni", value: boxes_quantity },
-    { label: "Vazni", value: `${weight} kg` },
+    { label: "Vazni", value: `${trimTrailingZeros(weight)} kg` },
     { label: "Turkiya manzil", value: sender_address },
     { label: "O’zbekiston manzil", value: receiver_address },
     { label: "Qabul qiluvchi", value: receiver_name },
     // { label: "Summa", value: formatCurrency(calculateTotalAmount(items)) },
-    { label: "Turkiyada to'lov", value: payment_tr ? payment_tr + '$' : '' },
-    { label: "O'zbeksitonda to'lov", value: payment_uz  ? payment_uz + '$' : '' },
+    { label: "Turkiyada to'lov", value: payment_tr ? trimTrailingZeros(payment_tr) + ' $' : '' },
+    { label: "O'zbeksitonda to'lov", value: payment_uz  ? trimTrailingZeros(payment_uz) + ' $' : '' },
   ];
 
   return (

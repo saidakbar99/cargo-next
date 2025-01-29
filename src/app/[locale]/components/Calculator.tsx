@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Dropdown from "./ui/Dropdown";
-import { weightOptions } from "../../../lib/utils";
 import { FilterButton } from "./ui/FilterButton";
 import { useTranslations } from "next-intl";
 
@@ -10,6 +9,7 @@ export const Calculator = () => {
   const t = useTranslations();
   const [slider, setSlider] = useState(600);
   const [weight, setWeight] = useState(12);
+  const [weightType, setWeightType] = useState('KG');
   const [amount, setAmount] = useState(96);
   const [activeDeliveryType, setActiveDeliveryType] = useState('Express');
   const [activeTab, setActiveTab] = useState('tab1');
@@ -21,20 +21,27 @@ export const Calculator = () => {
   };
 
   const handleWeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setWeight(Number(event.target.value));
-    calculateDeliveryAmount(activeDeliveryType, Number(event.target.value));
+    const value = event.target.value
+    setWeight(Number(value || 1));
+    calculateDeliveryAmount(activeDeliveryType, Number(value || 1), weightType);
   }
 
   const handleDeliveryTypeChange = (deliveryType: string) => {
     setActiveDeliveryType(deliveryType)
-    calculateDeliveryAmount(deliveryType, weight);
+    calculateDeliveryAmount(deliveryType, weight, weightType);
   }
 
-  const calculateDeliveryAmount = (deliveryType: string, weight: number) => {
+  const handleWeightTypeChange = (e: string) => {
+    setWeightType(e)
+    calculateDeliveryAmount(activeDeliveryType, weight, e);
+  }
+
+  const calculateDeliveryAmount = (deliveryType: string, weight: number, weightType: string) => {
+    const weightInKg = weightType === 'KG' ? weight : weight * 1000;
     if (deliveryType === 'Express') {
-      setAmount(weight * 8);
+      setAmount(weightInKg * 8);
     } else {
-      setAmount(weight * 4.5);
+      setAmount(weightInKg * 4.5);
     }
   }
 
@@ -84,7 +91,11 @@ export const Calculator = () => {
               className="border border-lightGray font-semibold rounded-lg w-full py-3 px-4 mr-6 focus:outline-none" 
               onChange={handleWeightChange}  
             />
-            <Dropdown options={weightOptions} onSelect={() =>console.log('')} selectedValue="KG" />
+            <Dropdown 
+              options={["KG", "Tonna"]} 
+              onSelect={(e) => handleWeightTypeChange(e)} 
+              selectedValue={weightType} 
+            />
           </div>
           <div className="flex items-center justify-between mt-6 py-5">
             <input
