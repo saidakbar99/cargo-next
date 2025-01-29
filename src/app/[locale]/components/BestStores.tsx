@@ -92,7 +92,7 @@ export const BestStores = () => {
           />
         </div>
       </div>
-      <Modal title={t("bestStoreModalTitle")} isOpen={selectedStore} onClose={() => setSelectedStore(null)} >
+      <Modal title={t("bestStoreModalTitle")} isOpen={selectedStore} onClose={() => setSelectedStore(null)}>
         <div className="mt-6">
           <span className="text-gray-300">
           {t('bestStoreModalText')}
