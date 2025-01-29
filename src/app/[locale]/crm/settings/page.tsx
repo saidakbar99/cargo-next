@@ -19,6 +19,11 @@ const Settings = () => {
     setActiveFilter(filter);
   };
 
+  const cleanInputs = () => {
+    setCurrentPassword('');
+    setNewPassword('');
+  }
+
   const changePassword = async () => {
     const token = localStorage.getItem("access_token");
     try {
@@ -36,6 +41,7 @@ const Settings = () => {
       );
       
       setIsOpen(false);
+      cleanInputs();
       toast.success('Parol o’zgartirildi');
     } catch (error) {
       console.log(error);
@@ -84,7 +90,7 @@ const Settings = () => {
       <Modal 
         title="Parolni o'zgartirish" 
         isOpen={isOpen} 
-        onClose={() => setIsOpen(false)}
+        onClose={() => {setIsOpen(false); cleanInputs()}}
       >
         <form className="mt-4">
           <div className='mb-3'>
@@ -109,7 +115,7 @@ const Settings = () => {
         <div className="flex justify-between mt-8">
           <button
             className="px-5 py-3 border border-lightGray rounded-80 w-full leading-none font-bold mr-6"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {setIsOpen(false); cleanInputs()}}
           >
             Bekor qilish
           </button>
