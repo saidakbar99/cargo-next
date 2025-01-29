@@ -1,5 +1,6 @@
 {  
   "login": "Login",
+  "cabinet": "Kabinet",
 
   "about": "Biz haqimizda",
   "proccess": "Ish jarayoni",
@@ -58,11 +59,12 @@
   "bestStoreModalButton": "Veb-sayt",
 
   "delivery_cost": "Yetkazib berish narxi",
-  "delivery_tab_1": "O‘zbekistondan Turkiyaga.",
-  "delivery_tab_2": "Turkiyadan O‘zbekistonga.",
+  "delivery_tab_2": "O‘zbekistondan Turkiyaga.",
+  "delivery_tab_1": "Turkiyadan O‘zbekistonga.",
   "express": "Express",
-  "regular": "Odatiy",
-  "delivery_days": "≈ 5-10 ish kuni",
+  "regular": "Standart",
+  "express_delivery_days": "≈ 1-3 ish kuni",
+  "standart_delivery_days": "≈ 7 ish kuni",
 
   "faq_question_1": "Bepul sinov versiyasi bormi?",
   "faq_question_2": "Rejamni keyinroq o‘zgartira olamanmi?",
@@ -193,9 +195,6 @@
   "crmAddressForbidden": "Taqiqlangan tovarlar ro’yxati",
 
   "crmCalcTitle": "Kalkulyator",
-  "crmCalcFromUzb": "O‘zbekistondan Turkiyaga.",
-  "crmCalcFromTurkey": "Turkiyadan O‘zbekistonga.",
-  "crmCalcDelivery": "≈ 5-10 ish kuni",
 
   "loginError": "Kirish ma’lumotlari xato!",
   "registrError": "Что-то пошло не так при регистрации!",
@@ -206,5 +205,8 @@
   "gender": {
     "male": "Erkak",
     "female": "Ayol"
-  }
+  },
+
+  "goodsColumn1": "Tovar nomi",
+  "goodsColumn2": "Soni"
 }

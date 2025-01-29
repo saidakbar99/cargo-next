@@ -11,6 +11,7 @@ export const Navbar = () => {
   const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
+  const isSignedIn = localStorage.getItem('access_token') ? true : false;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,13 +39,14 @@ export const Navbar = () => {
     >
       <div className="flex justify-between h-[50px] items-center px-4 md:p-0 mx-auto w-full xl:w-[1140px]">
         <img
-          className='w-[75px] lg:w-[85px]'
+          className='w-[75px] lg:w-[85px] cursor-pointer'
           src='/svgs/cargo_white.svg'
           alt="Logo"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         />
         <div className="flex">
-          <Link href='/auth/sign-in'>
-            <Button className="mr-[5px] text-sm lg:text-base lg:mr-4 h-[50px]">{t('login')}</Button>
+          <Link href={isSignedIn ? '/crm/shipments' : '/auth/sign-in'}>
+            <Button className="mr-[5px] text-sm lg:text-base lg:mr-4 h-[50px]">{isSignedIn ? t('cabinet') :t('login')}</Button>
           </Link>
           <LocaleSwitcher variant='blurred' />
           <div onClick={() => setIsMenuOpen(!isMenuOpen)}>

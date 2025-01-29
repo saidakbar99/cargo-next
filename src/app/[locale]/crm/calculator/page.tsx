@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 const Calculator = () => {
   const [slider, setSlider] = useState(600);
   const [amount, setAmount] = useState('12')
-  const [activeTab, setActiveTab] = useState('tab2');
+  const [activeTab, setActiveTab] = useState('tab1');
   const min = 0;
   const max = 1000;
 
@@ -30,7 +30,7 @@ const Calculator = () => {
                   activeTab === 'tab1' ? 'bg-white' : 'bg-transparent text-gray-300'
                 }`}
               >
-               {t('crmCalcFromUzb')}
+               {t('delivery_tab_1')}
               </button>
               <button
                 onClick={() => setActiveTab('tab2')}
@@ -38,7 +38,7 @@ const Calculator = () => {
                   activeTab === 'tab2' ? 'bg-white' : 'bg-transparent text-gray-300'
                 }`}
               >
-                {t('crmCalcFromTurkey')}
+                {t('delivery_tab_2')}
               </button>
             </div>
           </div>
@@ -64,7 +64,7 @@ const Calculator = () => {
             </div>
           </div>
           <div className="p-6 w-[460px] rounded-xl">
-            <span className="font-medium">{t('crmCalcDelivery')}</span>
+            <span className="font-medium">{t('delivery_days')}</span>
             <h3 className="text-4xl font-roadRadio font-bold mt-[14px]">2 000 000 UZS</h3>
           </div>
         </div>

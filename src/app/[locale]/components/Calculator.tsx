@@ -9,15 +9,34 @@ import { useTranslations } from "next-intl";
 export const Calculator = () => {
   const t = useTranslations();
   const [slider, setSlider] = useState(600);
-  const [amount, setAmount] = useState('12')
-  const [activeType, setActiveType] = useState('Express');
-  const [activeTab, setActiveTab] = useState('tab2');
+  const [weight, setWeight] = useState(12);
+  const [amount, setAmount] = useState(96);
+  const [activeDeliveryType, setActiveDeliveryType] = useState('Express');
+  const [activeTab, setActiveTab] = useState('tab1');
   const min = 0;
   const max = 1000;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSlider(Number(event.target.value));
   };
+
+  const handleWeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setWeight(Number(event.target.value));
+    calculateDeliveryAmount(activeDeliveryType, Number(event.target.value));
+  }
+
+  const handleDeliveryTypeChange = (deliveryType: string) => {
+    setActiveDeliveryType(deliveryType)
+    calculateDeliveryAmount(deliveryType, weight);
+  }
+
+  const calculateDeliveryAmount = (deliveryType: string, weight: number) => {
+    if (deliveryType === 'Express') {
+      setAmount(weight * 8);
+    } else {
+      setAmount(weight * 4.5);
+    }
+  }
 
   return (
     <div id="calculator" className="mt-[50px] lg:mt-[140px]">
@@ -43,15 +62,15 @@ export const Calculator = () => {
         </div>
       </div>
       <div className="hidden lg:flex justify-center mt-8">
-        <div onClick={() => setActiveType('Express')} className="mr-3">
+        <div onClick={() => handleDeliveryTypeChange('Express')} className="mr-3">
           <FilterButton 
-            variant={activeType === 'Express' ? 'active' : ''}
+            variant={activeDeliveryType === 'Express' ? 'active' : ''}
             text={t('express')}
           />
         </div>
-        <div onClick={() => setActiveType('Odatiy')}>
+        <div onClick={() => handleDeliveryTypeChange('Standart')}>
           <FilterButton 
-            variant={activeType === 'Odatiy' ? 'active' : ''}
+            variant={activeDeliveryType === 'Standart' ? 'active' : ''}
             text={t('regular')}
           />
         </div>
@@ -61,11 +80,11 @@ export const Calculator = () => {
           <div className="flex">
             <input 
               type="number"
-              value={amount} 
+              value={weight} 
               className="border border-lightGray font-semibold rounded-lg w-full py-3 px-4 mr-6 focus:outline-none" 
-              onChange={(e) => setAmount(e.target.value)}  
+              onChange={handleWeightChange}  
             />
-            <Dropdown options={weightOptions} onSelect={() =>console.log('')} selectedValue="" />
+            <Dropdown options={weightOptions} onSelect={() =>console.log('')} selectedValue="KG" />
           </div>
           <div className="flex items-center justify-between mt-6 py-5">
             <input
@@ -79,8 +98,10 @@ export const Calculator = () => {
           </div>
         </div>
         <div className="p-6 lg:w-[460px] bg-[#F9F9F9] rounded-xl">
-          <span className="font-medium">{t('delivery_days')}</span>
-          <h3 className="text-[32px] lg:text-[40px] font-roadRadio font-bold mt-[14px]">2 000 000 UZS</h3>
+          <span className="font-medium">
+            {t(activeDeliveryType === 'Express' ? 'express_delivery_days' : 'standart_delivery_days')}
+          </span>
+          <h3 className="text-[32px] lg:text-[40px] font-roadRadio font-bold mt-[14px]">{amount} $</h3>
         </div>
       </div>
     </div>

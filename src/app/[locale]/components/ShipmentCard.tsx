@@ -2,27 +2,42 @@
 
 import { useState } from 'react'
 import { ShipmentStatuses } from "./ShipmentStatuses"
-import { calculateTotalAmount, formatCurrency, formatDate } from '../../../lib/utils'
+import { formatDate } from '../../../lib/utils'
+import { IShipment } from '../crm/shipments/page'
+import Table from './ui/Table'
 
-// TODO: add interface
-export const ShipmentCard: React.FC<any> = ({shipment}) => {
+export const ShipmentCard: React.FC<IShipment> = ({
+  boxes_quantity,
+  date_prepared,
+  goods,
+  id,
+  payment_tr,
+  payment_uz,
+  receiver_address,
+  receiver_name,
+  sender_address,
+  status,
+  weight
+}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const fields = [
-    { label: "Qabul qilingan sa’na", value: formatDate(shipment.date) },
-    { label: "Karobka soni", value: shipment.package_count },
-    { label: "Vazni", value: `${shipment.weight} grams` },
-    { label: "Turkiya manzil", value: shipment.turkeyAddress },
-    { label: "O’zbekiston manzil", value: shipment.uzbekistanAddress },
-    { label: "Qabul qiluvchi", value: shipment.clientName },
-    { label: "Summa", value: formatCurrency(calculateTotalAmount(shipment.items)) },
+    { label: "Qabul qilingan sa’na", value: formatDate(date_prepared) },
+    { label: "Karobka soni", value: boxes_quantity },
+    { label: "Vazni", value: `${weight} kg` },
+    { label: "Turkiya manzil", value: sender_address },
+    { label: "O’zbekiston manzil", value: receiver_address },
+    { label: "Qabul qiluvchi", value: receiver_name },
+    // { label: "Summa", value: formatCurrency(calculateTotalAmount(items)) },
+    { label: "Turkiyada to'lov", value: payment_tr ? payment_tr + '$' : '' },
+    { label: "O'zbeksitonda to'lov", value: payment_uz  ? payment_uz + '$' : '' },
   ];
 
   return (
     <div className="bg-white rounded-xl mt-6 p-4 lg:p-6">
       <div className="flex justify-between items-center flex-wrap">
-        <h3 className="text-black text-xl font-bold">ID raqami {shipment?.id}</h3>
-        <ShipmentStatuses activeStatus={shipment.status} />
+        <h3 className="text-black text-xl font-bold">ID raqami {id}</h3>
+        <ShipmentStatuses activeStatus={status} />
       </div>
       {isOpen && (
         <>
@@ -55,17 +70,17 @@ export const ShipmentCard: React.FC<any> = ({shipment}) => {
           <div className='hidden lg:block mt-6'>
             <span className='font-bold'>Tovarlar</span>
             <div className='mt-4 grid grid-cols-3 gap-6'>
-              {shipment.items.map((item:any) => (
-                <div className='flex' key={item.id}>
+              <Table data={goods} />
+              {/* {goods.map((good: IShipmentGood) => (
+                <div className='flex' key={good.goods_name + good.quantity}>
                   <div className='w-full'>
-                    <span className='text-gray-300 text-sm'>{item.name}</span>
+                    <span className='text-gray-300 text-sm'>{good.goods_name}</span>
                     <div className='flex items-center'>
-                      <span className='mt-2.5 text-xl font-bold'>{formatCurrency(item.item_amount)}</span>
-                      <span className='mt-2.5 ml-8 text-sm font-medium'>{item.quantity} dona</span>
+                      <span className='mt-2.5 ml-8 text-sm font-medium'>{good.quantity} dona</span>
                     </div>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </>

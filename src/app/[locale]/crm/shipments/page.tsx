@@ -1,135 +1,80 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import CrmLayout from "@/components/CrmLayout"
 import NoData from "@/components/NoData";
 import { FilterButton } from "@/components/ui/FilterButton";
 import { ShipmentCard } from "@/components/ShipmentCard";
 
-const mockData = [
+export interface IShipment {
+  boxes_quantity: number;
+  date_prepared: string;
+  goods: IShipmentGood[];
+  id: number;
+  payment_tr: string | null;
+  payment_uz: string | null;
+  receiver_address: string;
+  receiver_name: string;
+  sender_address: string;
+  status: number;
+  weight: string;
+}
+
+export interface IShipmentGood {
+  goods_name: string;
+  quantity: number;
+}
+
+const filterButtons = [
   {
-    id: 40189496,
-    status: 4,
-    weight: 2000,
-    package_count: 2,
-    turkeyAddress: 'UNALAN MAH. LIBADIYE CAD. NO:80 G BLOK, USKUDAR',
-    uzbekistanAddress: 'Toshkent shahar, Yunusobod tumani, Ahmad Donish 44A',
-    clientName: 'Karim Salimov',
-    date: "2024-12-20T00:00:00.000Z",
-    items: [
-      {
-        id: 1231231256731,
-        name: 'Apple Headphone',
-        item_amount: 4500000,
-        quantity: 1
-      },
-      {
-        id: 123125677651231,
-        name: 'Samsung S21',
-        item_amount: 8000000,
-        quantity: 1
-      },
-      {
-        id: 123125766556731,
-        name: 'Logitech G403',
-        item_amount: 1000000,
-        quantity: 2
-      },
-    ],
+    name_en: 'all',
+    name: 'Barcha jo’natmalar',
+    id: 1,
   },
   {
-    id: 77561783,
-    status: 2,
-    weight: 500,
-    package_count: 1,
-    turkeyAddress: 'Istanbul. LIBSSADSADIYE CADSAD. NO:81111 A BLOK, TASCSKUDAR',
-    uzbekistanAddress: 'Andijon shahar, Yunusobod tumani, Ahmad Donish 44A',
-    clientName: 'Karim Salimov',
-    date: "2025-06-12T00:00:00.000Z",
-    items: [
-      {
-        id: 123125766545671,
-        name: 'Apple Headphone',
-        item_amount: 4500000,
-        quantity: 1
-      },
-      {
-        id: 123115236643342731,
-        name: 'Apple Headphone',
-        item_amount: 4500000,
-        quantity: 1
-      },
-      {
-        id: 1231257624363462346,
-        name: 'Samsung S21',
-        item_amount: 8000000,
-        quantity: 1
-      },
-      {
-        id: 12317089779878,
-        name: 'Logitech G403',
-        item_amount: 1000000,
-        quantity: 2
-      },
-    ],
+    name_en: 'active',
+    name: 'Faol',
+    id: 2,
   },
   {
-    id: 97123383,
-    status: 1,
-    weight: 7000,
-    package_count: 3,
-    turkeyAddress: 'Berek. LIBSSADSADIYE CADSAD. NO:81111 A BLOK, TASCSKUDAR',
-    uzbekistanAddress: 'Buxoro shahar, Yunusobod tumani, Ahmad Donish 44A',
-    clientName: 'Karim Salimov',
-    date: "2022-01-01T00:00:00.000Z",
-    items: [
-      {
-        id: 123198689676,
-        name: 'Apple Headphone',
-        item_amount: 4500000,
-        quantity: 1
-      },
-      {
-        id: 6387935847269,
-        name: 'Apple Headphone',
-        item_amount: 4500000,
-        quantity: 1
-      },
-      {
-        id: 1231278888888234,
-        name: 'Samsung S21',
-        item_amount: 8000000,
-        quantity: 1
-      },
-      {
-        id: 123112312322256731,
-        name: 'Logitech G403',
-        item_amount: 1000000,
-        quantity: 2
-      },
-      {
-        id: 123195674362112312,
-        name: 'Apple Macbook',
-        item_amount: 15000000,
-        quantity: 1
-      },
-    ],
-  },
+    name_en: 'delivered',
+    name: 'Yetkazib berilganlar',
+    id: 3,
+  }
 ]
 
-const filterButtons = ['Barcha jo’natmalar', 'Faol', 'Yetkazib berilganlar']
-
 const Shipments = () => {
-  const [activeFilter, setActiveFilter] = useState<string>('Barcha jo’natmalar');
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [shipments, setShipments] = useState<IShipment[]>([]);
 
-  if (!mockData.length) {
-    return <NoData pageName="jo'natmalar" />
+  const fetchData = async (filter: string) => {
+    const token = localStorage.getItem("access_token");
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}customer/sendings/${filter}`,
+        {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        }
+      );
+
+      setShipments(response.data.data)
+
+    } catch (error) {
+      console.log(error)
+    }
   }
 
-  const handleFilterClick = (filter: string) => {
-    setActiveFilter(filter);
-    // fetchData(filter);
+  const handleFilterClick = (active_filter: string) => {
+    setActiveFilter(active_filter);
+    fetchData(active_filter);
   };
+
+  useEffect(() => {
+    fetchData('all');
+  }, [])
 
   return (
     <CrmLayout activeMenu='shipments'>
@@ -137,18 +82,22 @@ const Shipments = () => {
         <h3 className="text-2xl font-bold">Jo’natmalar</h3>
         <div className="flex mt-6">
           {filterButtons.map((filter) => (
-            <div key={filter} onClick={() => handleFilterClick(filter)}>
+            <div key={filter.id} onClick={() => handleFilterClick(filter.name_en)}>
               <FilterButton
                 className="mr-3"
-                variant={activeFilter === filter ? 'active' : ''}
-                text={filter}
+                variant={activeFilter === filter.name_en ? 'active' : ''}
+                text={filter.name}
               />
             </div>
           ))}
         </div>
-        {mockData.map((item:any) => (
-          <ShipmentCard key={item.id} shipment={item} />
-        ))}
+        {shipments.length ? (
+          shipments.map((shipment:IShipment) => (
+            <ShipmentCard key={shipment.id} {...shipment} />
+          ))
+        ) : (
+          <NoData pageName="jo'natmalar" />
+        )}
       </div>
     </CrmLayout>
   )

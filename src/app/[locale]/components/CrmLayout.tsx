@@ -24,7 +24,9 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
       >
         <div className='hidden lg:flex justify-between items-center pl-4'>
           {isMenuOpen && (
-            <img className='w-[52px] h-[26px]' src='/svgs/cargo_black.svg' alt="Logo Icon" />
+            <Link href='/crm/shipments'>
+              <img className='w-[52px] h-[26px]' src='/svgs/cargo_black.svg' alt="Logo Icon" />
+            </Link>
           )}
           <svg
             className={`w-4 h-4 mb-1 transition-transform cursor-pointer ${isMenuOpen ? "rotate-180" : ""}`}
@@ -124,6 +126,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
           <Link href='/'>
             <button
               className='rounded-80 w-full border border-lightGray flex justify-center px-4 py-3 leading-none ml-3'
+              onClick={() => localStorage.removeItem('access_token')}
             >
               <img src='/svgs/logout.svg' alt='Logout Icon' />
               <span className='ml-2.5 font-semibold text-sm'>{t("crmLayoutexit")}</span>
