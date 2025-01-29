@@ -5,7 +5,11 @@ import Dropdown from "./ui/Dropdown";
 import { FilterButton } from "./ui/FilterButton";
 import { useTranslations } from "next-intl";
 
-export const Calculator = () => {
+interface ICalculatorProps {
+  placement: 'crm' | 'homepage';
+}
+
+export const Calculator: React.FC<ICalculatorProps> = ({placement}) => {
   const t = useTranslations();
   const [slider, setSlider] = useState(600);
   const [weight, setWeight] = useState(12);
@@ -22,8 +26,8 @@ export const Calculator = () => {
 
   const handleWeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
-    setWeight(Number(value || 1));
-    calculateDeliveryAmount(activeDeliveryType, Number(value || 1), weightType);
+    setWeight(Number(value));
+    calculateDeliveryAmount(activeDeliveryType, Number(value), weightType);
   }
 
   const handleDeliveryTypeChange = (deliveryType: string) => {
@@ -46,10 +50,9 @@ export const Calculator = () => {
   }
 
   return (
-    <div id="calculator" className="mt-[50px] lg:mt-[140px]">
-      <h2 className="font-roadRadio text-[32px] font-bold text-center lg:text-[50px]">{t('delivery_cost')}</h2>
-      <div className="mt-9 flex justify-center lg:mt-16">
-        <div className="bg-[#F3F4F6] p-2 rounded-xl font-medium text-xs lg:text-sm ">
+    <>
+      <div className="mt-9 flex justify-center">
+        <div className={`bg-[#F3F4F6] p-2 rounded-xl font-medium text-xs lg:text-sm ${placement === 'crm' ? 'w-full' : ''}`}>
           <button
             onClick={() => setActiveTab('tab1')}
             className={`px-2 lg:px-5 py-2 rounded-lg w-[166px] lg:w-[308px] mr-1 lg:mr-2 ${
@@ -68,7 +71,7 @@ export const Calculator = () => {
           </button>
         </div>
       </div>
-      <div className="hidden lg:flex justify-center mt-8">
+      <div className={`hidden mt-8 lg:flex ${placement === 'homepage' ? 'justify-center' : ''}`}>
         <div onClick={() => handleDeliveryTypeChange('Express')} className="mr-3">
           <FilterButton 
             variant={activeDeliveryType === 'Express' ? 'active' : ''}
@@ -82,11 +85,12 @@ export const Calculator = () => {
           />
         </div>
       </div>
-      <div className="mt-8 lg:flex justify-between">
+      <div className={`mt-8 ${placement === 'homepage' ? 'lg:flex justify-between' : ''}`}>
         <div className="flex flex-col lg:w-[620px]">
           <div className="flex">
             <input 
-              type="number"
+              type="text"
+              inputMode="numeric"
               value={weight} 
               className="border border-lightGray font-semibold rounded-lg w-full py-3 px-4 mr-6 focus:outline-none" 
               onChange={handleWeightChange}  
@@ -108,13 +112,13 @@ export const Calculator = () => {
             />
           </div>
         </div>
-        <div className="p-6 lg:w-[460px] bg-[#F9F9F9] rounded-xl">
+        <div className={`p-6 lg:w-[460px] rounded-xl ${placement === 'homepage' ? 'bg-[#F9F9F9]' : ''}`}>
           <span className="font-medium">
             {t(activeDeliveryType === 'Express' ? 'express_delivery_days' : 'standart_delivery_days')}
           </span>
-          <h3 className="text-[32px] lg:text-[40px] font-roadRadio font-bold mt-[14px]">{amount} $</h3>
+          <h3 className="text-[32px] leading-none lg:text-[40px] font-roadRadio font-bold mt-[14px]">{amount} $</h3>
         </div>
       </div>
-    </div>
+    </>
   )
 }

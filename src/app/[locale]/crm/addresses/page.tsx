@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 const Addresses = () => {
   const t = useTranslations();
   const isEmpty = false
-  
 
   if (isEmpty) {
     return <NoData pageName="manzillar" />

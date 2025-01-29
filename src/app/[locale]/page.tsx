@@ -2,7 +2,7 @@ import { AboutUs } from "@/components/AboutUs"
 import { Banner } from "@/components/Banner"
 import { Benefits } from "@/components/Benefits"
 import { BestStores } from "@/components/BestStores"
-import { Calculator } from "@/components/Calculator"
+import { HomePageCalculator } from "@/components/HomePageCalculator"
 import { ContactUs } from "@/components/ContactUs"
 import { FAQ } from "@/components/FAQ"
 import { Footer } from "@/components/Footer"
@@ -26,7 +26,7 @@ const HomePage = () => {
       <Container>
         <Benefits />
         <BestStores />
-        <Calculator />
+        <HomePageCalculator />
         <FAQ />
         <ContactUs />
       </Container>
