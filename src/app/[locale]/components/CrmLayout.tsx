@@ -113,15 +113,15 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
         </div>          
       </div>
       <div className="flex flex-col w-full bg-whiteBackground order-1 lg:order-2">
-        <div className="flex border-b border-lightGray p-6">
-          <div className='relative w-full mr-4'>
+        <div className="flex border-b border-lightGray p-6 justify-end">
+          {/* <div className='relative w-full mr-4'>
             <input 
               type="text" 
               className="border w-full border-lightGray rounded-80 py-3 pr-4 pl-12 focus:outline-none"
               placeholder='Qidirish'
             />
             <img src='/svgs/search.svg' alt="Search Icon" className='absolute top-[14.5px] left-4' />
-          </div>
+          </div> */}
           <LocaleSwitcher variant='white' />
           <Link href='/'>
             <button
