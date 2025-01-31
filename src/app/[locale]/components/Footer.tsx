@@ -53,7 +53,7 @@ export const Footer = () => {
                     <li className="mb-4">{t('footerlink20')}</li>
                     <li className="mb-4">{t('footerlink21')}</li>
                     <li className="mb-4">{t('footerlink22')}</li>
-                    <li className="mb-4">{t('footerlink23')}</li>
+                    <li className="mb-4">{t('settings')}</li>
                   </ul>
               </div>
             </div>

@@ -152,7 +152,7 @@ export const PersonalSettings = () => {
       </div>
       <div className="col-span-6">
         <label htmlFor="email" className="block text-sm font-medium">
-         {t('personalSettingsEmail')}
+          {t('personalSettingsEmail')}
         </label>
         <input
           id="email"
@@ -167,7 +167,7 @@ export const PersonalSettings = () => {
         onClick={updateProfile} 
         className='col-span-6 px-5 py-2 bg-orange rounded-80 text-white font-bold mt-3'
       >
-     {t('personalSettingsSave')}
+        {t('personalSettingsSave')}
       </button>
     </div>
   )

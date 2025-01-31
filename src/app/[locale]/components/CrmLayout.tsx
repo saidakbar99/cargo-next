@@ -78,7 +78,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
                   alt='Settings Icon' 
                   />
                   {isMenuOpen && (
-                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>{t('crmLayoutsettings')}</span>
+                    <span className='mt-2 lg:mt-0 lg:ml-3 font-medium text-xs lg:text-base'>{t('settings')}</span>
                   )}
                 </div>
               </div>

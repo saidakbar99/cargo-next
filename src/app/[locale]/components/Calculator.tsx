@@ -9,81 +9,75 @@ interface ICalculatorProps {
   placement: 'crm' | 'homepage';
 }
 
+const DELIVERY_RATES = {
+  express: 8,
+  standard: 4.5,
+};
+
+const WEIGHT_UNITS = {
+  KG: 1,
+  Tonna: 1000,
+};
+
 export const Calculator: React.FC<ICalculatorProps> = ({placement}) => {
   const t = useTranslations();
   const [slider, setSlider] = useState(600);
   const [weight, setWeight] = useState(12);
-  const [weightType, setWeightType] = useState('KG');
+  const [weightType, setWeightType] = useState<"KG" | "Tonna">('KG');
   const [amount, setAmount] = useState(96);
-  const [activeDeliveryType, setActiveDeliveryType] = useState('Express');
-  const [activeTab, setActiveTab] = useState('tab1');
-  const min = 0;
-  const max = 1000;
+  const [activeDeliveryType, setActiveDeliveryType] = useState<"express" | "standard">('express');
+  const [activeTab, setActiveTab] = useState('tab_1');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSlider(Number(event.target.value));
+  const calculateDeliveryAmount = (
+    deliveryType: keyof typeof DELIVERY_RATES,
+    weight: number,
+    weightType: keyof typeof WEIGHT_UNITS
+  ) => {
+    const weightInKg = weight * WEIGHT_UNITS[weightType];
+    setAmount(weightInKg * DELIVERY_RATES[deliveryType]);
   };
 
   const handleWeightChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
-    setWeight(Number(value));
-    calculateDeliveryAmount(activeDeliveryType, Number(value), weightType);
-  }
+    const value = Number(event.target.value);
+    setWeight(value);
+    calculateDeliveryAmount(activeDeliveryType, value, weightType);
+  };
 
-  const handleDeliveryTypeChange = (deliveryType: string) => {
-    setActiveDeliveryType(deliveryType)
+  const handleDeliveryTypeChange = (deliveryType: keyof typeof DELIVERY_RATES) => {
+    setActiveDeliveryType(deliveryType);
     calculateDeliveryAmount(deliveryType, weight, weightType);
-  }
+  };
 
-  const handleWeightTypeChange = (e: string) => {
-    setWeightType(e)
-    calculateDeliveryAmount(activeDeliveryType, weight, e);
-  }
-
-  const calculateDeliveryAmount = (deliveryType: string, weight: number, weightType: string) => {
-    const weightInKg = weightType === 'KG' ? weight : weight * 1000;
-    if (deliveryType === 'Express') {
-      setAmount(weightInKg * 8);
-    } else {
-      setAmount(weightInKg * 4.5);
-    }
-  }
+  const handleWeightTypeChange = (unit: keyof typeof WEIGHT_UNITS) => {
+    setWeightType(unit);
+    calculateDeliveryAmount(activeDeliveryType, weight, unit);
+  };
 
   return (
     <>
       <div className="mt-9 flex justify-center">
         <div className={`bg-[#F3F4F6] p-2 rounded-xl font-medium text-xs lg:text-sm ${placement === 'crm' ? 'w-full' : ''}`}>
-          <button
-            onClick={() => setActiveTab('tab1')}
-            className={`px-2 lg:px-5 py-2 rounded-lg w-[166px] lg:w-[308px] mr-1 lg:mr-2 ${
-              activeTab === 'tab1' ? 'bg-white' : 'bg-transparent text-gray-300'
-            }`}
-          >
-            {t('delivery_tab_1')}
-          </button>
-          <button
-            onClick={() => setActiveTab('tab2')}
-            className={`px-2 lg:px-5 py-2 rounded-lg w-[166px] lg:w-[308px] ${
-              activeTab === 'tab2' ? 'bg-white' : 'bg-transparent text-gray-300'
-            }`}
-          >
-            {t('delivery_tab_2')}
-          </button>
+          {["tab_1", "tab_2"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-2 lg:px-5 py-2 rounded-lg w-[166px] lg:w-[308px] mr-1 lg:mr-2 ${activeTab === tab ? "bg-white" : "bg-transparent text-gray-300"}`}
+            >
+              {t(`delivery_${tab}`)}
+            </button>
+          ))}
         </div>
       </div>
       <div className={`hidden mt-8 lg:flex ${placement === 'homepage' ? 'justify-center' : ''}`}>
-        <div onClick={() => handleDeliveryTypeChange('Express')} className="mr-3">
-          <FilterButton 
-            variant={activeDeliveryType === 'Express' ? 'active' : ''}
-            text={t('express')}
-          />
-        </div>
-        <div onClick={() => handleDeliveryTypeChange('Standart')}>
-          <FilterButton 
-            variant={activeDeliveryType === 'Standart' ? 'active' : ''}
-            text={t('regular')}
-          />
-        </div>
+        {["express", "standard"].map((type) => (
+          <div 
+            key={type} 
+            onClick={() => handleDeliveryTypeChange(type as keyof typeof DELIVERY_RATES)}
+            className="mr-3"
+          >
+            <FilterButton variant={activeDeliveryType === type ? "active" : ""} text={t(type)} />
+          </div>
+        ))}
       </div>
       <div className={`mt-8 ${placement === 'homepage' ? 'lg:flex justify-between' : ''}`}>
         <div className="flex flex-col lg:w-[620px]">
@@ -97,25 +91,23 @@ export const Calculator: React.FC<ICalculatorProps> = ({placement}) => {
             />
             <Dropdown 
               options={["KG", "Tonna"]} 
-              onSelect={(e) => handleWeightTypeChange(e)} 
+              onSelect={(e) => handleWeightTypeChange(e as "KG" | "Tonna")}  
               selectedValue={weightType} 
             />
           </div>
           <div className="flex items-center justify-between mt-6 py-5">
             <input
               type="range"
-              min={min}
-              max={max}
+              min={0}
+              max={1000}
               value={slider}
-              onChange={handleChange}
+              onChange={(e) => setSlider(Number(e.target.value))}
               className="w-full h-1 rounded-lg accent-orange cursor-pointer custom-slider"
             />
           </div>
         </div>
         <div className={`p-6 lg:w-[460px] rounded-xl ${placement === 'homepage' ? 'bg-[#F9F9F9]' : ''}`}>
-          <span className="font-medium">
-            {t(activeDeliveryType === 'Express' ? 'express_delivery_days' : 'standart_delivery_days')}
-          </span>
+        <span className="font-medium">{t(`${activeDeliveryType.toLowerCase()}_delivery_days`)}</span>
           <h3 className="text-[32px] leading-none lg:text-[40px] font-roadRadio font-bold mt-[14px]">{amount} $</h3>
         </div>
       </div>

@@ -8,16 +8,14 @@ import { Recievers } from '@/components/Recievers';
 import { Modal } from '@/components/ui/Modal';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useTranslations } from 'next-intl';
 
 const Settings = () => {
+  const t = useTranslations();
   const [activeFilter, setActiveFilter] = useState<string>('Identifikatsiya');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [currentPassword, setCurrentPassword] = useState<string>('');
   const [newPassword, setNewPassword] = useState<string>('');
-
-  const handleFilterClick = (filter: string) => {
-    setActiveFilter(filter);
-  };
 
   const cleanInputs = () => {
     setCurrentPassword('');
@@ -54,17 +52,17 @@ const Settings = () => {
       <CrmLayout activeMenu="settings">
         <div className="pt-6 h-screen">
           <div className="p-10 bg-white w-[744px] mx-auto rounded-xl">
-            <h3 className="text-2xl font-bold mb-6">Sozlamalar</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('settings')}</h3>
             <div className="flex justify-between">
               <div className="flex">
-                <div onClick={() => handleFilterClick("Identifikatsiya")}>
+                <div onClick={() => setActiveFilter("Identifikatsiya")}>
                   <FilterButton 
                     variant={activeFilter === 'Identifikatsiya' ? 'active' : ''}
-                    text='Identifikatsiya'
+                    text={t('identification')}
                     className='mr-3'
                   />
                 </div>
-                {/* <div onClick={() => handleFilterClick("Qabul qiluvchilar")}>
+                {/* <div onClick={() => setActiveFilter("Qabul qiluvchilar")}>
                   <FilterButton 
                     variant={activeFilter === 'Qabul qiluvchilar' ? 'active' : ''}
                     text='Qabul qiluvchilar'
@@ -76,7 +74,7 @@ const Settings = () => {
                 onClick={() => setIsOpen(true)}
               >
                 <img className='mr-2.5' src="/svgs/lock_black.svg" alt="Lock Icon" />
-                Parolni o’zgartirish
+                {t('changePassword')}
               </button>
             </div>
             {activeFilter === 'Identifikatsiya' ? (

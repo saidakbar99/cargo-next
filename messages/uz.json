@@ -62,22 +62,22 @@
   "delivery_tab_2": "O‘zbekistondan Turkiyaga.",
   "delivery_tab_1": "Turkiyadan O‘zbekistonga.",
   "express": "Express",
-  "regular": "Standart",
+  "standard": "Standart",
   "express_delivery_days": "≈ 1-3 ish kuni",
-  "standart_delivery_days": "≈ 7 ish kuni",
+  "standard_delivery_days": "≈ 7 ish kuni",
 
-  "faq_question_1": "Bepul sinov versiyasi bormi?",
-  "faq_question_2": "Rejamni keyinroq o‘zgartira olamanmi?",
-  "faq_question_3": "Bekor qilish qoidalari qanday?",
-  "faq_question_4": "Hisobvaraq-fakturaga boshqa ma’lumotlarni qo‘shish mumkinmi?",
-  "faq_question_5": "Billing qanday ishlaydi?",
-  "faq_question_6": "Hisobimning elektron pochta manzilini qanday o‘zgartirish mumkin?",
+  "faq_question_0": "Bepul sinov versiyasi bormi?",
+  "faq_question_1": "Rejamni keyinroq o‘zgartira olamanmi?",
+  "faq_question_2": "Bekor qilish qoidalari qanday?",
+  "faq_question_3": "Hisobvaraq-fakturaga boshqa ma’lumotlarni qo‘shish mumkinmi?",
+  "faq_question_4": "Billing qanday ishlaydi?",
+  "faq_question_5": "Hisobimning elektron pochta manzilini qanday o‘zgartirish mumkin?",
+  "faq_answer_0": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
   "faq_answer_1": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
   "faq_answer_2": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
   "faq_answer_3": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
   "faq_answer_4": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
   "faq_answer_5": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
-  "faq_answer_6": "Ha, siz bizni 30 kun bepul sinab ko‘rishingiz mumkin. Agar xohlasangiz, ishni iloji boricha tezroq boshlashingizga yordam berish uchun sizga bepul moslashtirilgan 30 daqiqalik kirish qo‘ng‘irog‘ini taqdim etamiz.",
 
   "contactUs": "Biz bilan bog'lanish",
   "contactUstitle": "Bizga xabar yozing",
@@ -121,7 +121,7 @@
   "footerlink20": "Maxfiylik siyosati",
   "footerlink21": "Cookies",
   "footerlink22": "Litsenziyalar",
-  "footerlink23": "Sozlamalar",
+  "settings": "Sozlamalar",
 
   "socialButton": "Google orqali kirish",
 
@@ -175,7 +175,6 @@
  
   "crmLayoutpost": "Jo’natmalar",
   "crmLayoutlands": "Manzillar",
-  "crmLayoutsettings": "Sozlamalar",
   "crmLayoutcalc": "Kalkulyator",
   "crmLayoutunconfirmed": "Foydalanuvchi statusi hali tasdiqlanmagan",
   "crmLayoutconfirm": "Tasdiqlash",
@@ -208,5 +207,7 @@
   },
 
   "goodsColumn1": "Tovar nomi",
-  "goodsColumn2": "Soni"
+  "goodsColumn2": "Soni",
+  "identification": "Identifikatsiya",
+  "changePassword": "Parolni o’zgartirish"
 }

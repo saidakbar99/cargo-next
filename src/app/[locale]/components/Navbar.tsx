@@ -11,9 +11,11 @@ export const Navbar = () => {
   const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
-  const isSignedIn = localStorage.getItem('access_token') ? true : false;
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   useEffect(() => {
+    setIsSignedIn(!!localStorage?.getItem("access_token"));
+
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);
