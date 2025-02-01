@@ -209,5 +209,6 @@
   "goodsColumn1": "Tovar nomi",
   "goodsColumn2": "Soni",
   "identification": "Identifikatsiya",
-  "changePassword": "Parolni o’zgartirish"
+  "changePassword": "Parolni o’zgartirish",
+  "fillProfile": "Sizning profil ma’lumotlaringiz to’ldirilmagan. Iltimos, to’ldiring"
 }

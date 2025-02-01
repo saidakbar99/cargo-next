@@ -209,5 +209,6 @@
   "goodsColumn1": "Название товара",
   "goodsColumn2": "Количество",
   "identification": "Идентификация",
-  "changePassword": "Изменить пароль"
+  "changePassword": "Изменить пароль",
+  "fillProfile": "Ваши профильные данные не заполнены. Пожалуйста, заполните"
 }

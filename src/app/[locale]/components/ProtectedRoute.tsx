@@ -7,7 +7,7 @@ interface ProtectedRouteProps {
 }
 
 export default function ProtectedRoute({ children }: ProtectedRouteProps) {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, isProfileFilled } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -15,6 +15,11 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     if (!isLoading && !isAuthenticated) {
       const locale = pathname.split('/')[0];
       router.replace(`/${locale}/auth/sign-in`);
+    }
+
+    if (!isLoading && isAuthenticated && !isProfileFilled) {
+      const locale = pathname.split('/')[0];
+      router.replace(`/${locale}/crm/settings`);
     }
   }, [isAuthenticated, isLoading, router, pathname]);
 

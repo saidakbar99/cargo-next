@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CrmLayout from "@/components/CrmLayout";
 import { FilterButton } from '@/components/ui/FilterButton';
 import { PersonalSettings } from '@/components/PersonalSettings';
@@ -9,9 +9,11 @@ import { Modal } from '@/components/ui/Modal';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useTranslations } from 'next-intl';
+import { useAuth } from '../../../../lib/useAuth';
 
 const Settings = () => {
   const t = useTranslations();
+  const { isProfileFilled } = useAuth();
   const [activeFilter, setActiveFilter] = useState<string>('Identifikatsiya');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [currentPassword, setCurrentPassword] = useState<string>('');
@@ -46,6 +48,12 @@ const Settings = () => {
       toast.error('Eski parol noto’g’ri');
     }
   }
+
+  useEffect(() => {
+    if (!isProfileFilled) {
+      toast.error(t('fillProfile'));
+    }
+  }, [isProfileFilled]);
 
   return (
     <>

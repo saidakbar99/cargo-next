@@ -92,7 +92,7 @@ export const PersonalSettings = () => {
         <input
           id="full_name"
           name="full_name"
-          value={profileData.full_name}
+          value={profileData.full_name || ''}
           onChange={handleChange}
           type="text"
           className="mt-1 block w-full border rounded-md p-2"
@@ -118,7 +118,7 @@ export const PersonalSettings = () => {
         <input
           type="text"
           name="passport"
-          value={profileData.passport}
+          value={profileData.passport || ''}
           onChange={handleChange}
           className="mt-1 block w-full border rounded-md p-2"
         />
@@ -130,7 +130,7 @@ export const PersonalSettings = () => {
         <input
           id="birth_date"
           name="birth_date"
-          value={profileData.birth_date}
+          value={profileData.birth_date || ''}
           onChange={handleChange}
           type="text"
           className="mt-1 block w-full border rounded-md p-2"
@@ -144,7 +144,7 @@ export const PersonalSettings = () => {
         <input
           id="phone"
           name="phone"
-          value={profileData.phone}
+          value={profileData.phone || ''}
           onChange={handleChange}
           type="text"
           className="mt-1 block w-full border rounded-md p-2"
@@ -157,7 +157,7 @@ export const PersonalSettings = () => {
         <input
           id="email"
           name="email"
-          value={profileData.email}
+          value={profileData.email || ''}
           onChange={handleChange}
           type="text"
           className="mt-1 block w-full border rounded-md p-2"
