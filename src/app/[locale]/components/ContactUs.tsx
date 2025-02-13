@@ -69,7 +69,7 @@ export const ContactUs = () => {
                 </tr>
                 <tr>
                   <td>Ofis:</td>
-                  <td>+999899 044 4422</td>
+                  <td>+999899 044 4244</td>
                 </tr>
                 <tr>
                   <td>Ofis:</td>
