@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 interface ButtonProps {
   handleClick?: () => void;
   classname?: string;
@@ -7,6 +9,7 @@ export const SocialButton: React.FC<ButtonProps> = ({
   handleClick,
   classname = '',
 }) => {
+   const t = useTranslations();
   return (
     <button
       onClick={handleClick}
@@ -14,7 +17,7 @@ export const SocialButton: React.FC<ButtonProps> = ({
         flex justify-center px-5 py-2.5 mt-2 ${classname}`}
     >
       <img src='/svgs/google_icon.svg' width={20} height={20} alt='Google Icon' />
-      <span className='ml-2'>Google orqali kirish</span>
+      <span className='ml-2'>{t("socialButton")}</span>
     </button>
   )
 }
