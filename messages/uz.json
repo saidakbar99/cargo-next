@@ -1,4 +1,4 @@
-{  
+{
   "login": "Login",
   "cabinet": "Kabinet",
 
@@ -10,7 +10,7 @@
   "faq": "Ko'p so'raladigan savollar",
   "contacts": "Biz bilan bog'lanish",
 
-  "herotitle":"Turkiyadan uyingizga - oson va tez!",
+  "herotitle": "Turkiyadan uyingizga - oson va tez!",
   "herotext": "Biz omborlarni xarid qilish bo‘yicha bitimni ko‘rib chiqishdan boshlab kalitlar va to‘liq hujjatlar paketini olishgacha kuzatib borishga yordam beramiz",
   "herobutton": "Xaridni boshlash",
 
@@ -172,7 +172,7 @@
   "recoveryPageEmailPlace": "Pochtangizni kiriting",
   "recoveryPageButton": "Tasdiqlash",
   "recoveryPageAlert": "Qayta jo’natish 00:20",
- 
+
   "crmLayoutpost": "Jo’natmalar",
   "crmLayoutlands": "Manzillar",
   "crmLayoutcalc": "Kalkulyator",
