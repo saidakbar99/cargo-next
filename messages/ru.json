@@ -59,8 +59,8 @@
   "bestStoreModalButton": "Веб-сайт",
 
   "delivery_cost": "Стоимость доставки",
-  "delivery_tab_2": "Из Узбекистана в Турцию.",
-  "delivery_tab_1": "Из Турции в Узбекистан.",
+  "delivery_uzb_tr": "Из Узбекистана в Турцию.",
+  "delivery_tr_uzb": "Из Турции в Узбекистан.",
   "express": "Экспресс",
   "standard": "Стандартная",
   "express_delivery_days": "≈ 1-3 раб. дней",

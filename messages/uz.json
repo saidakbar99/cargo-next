@@ -59,8 +59,8 @@
   "bestStoreModalButton": "Veb-sayt",
 
   "delivery_cost": "Yetkazib berish narxi",
-  "delivery_tab_2": "O‘zbekistondan Turkiyaga.",
-  "delivery_tab_1": "Turkiyadan O‘zbekistonga.",
+  "delivery_uzb_tr": "O‘zbekistondan Turkiyaga.",
+  "delivery_tr_uzb": "Turkiyadan O‘zbekistonga.",
   "express": "Express",
   "standard": "Standart",
   "express_delivery_days": "≈ 1-3 ish kuni",
