@@ -97,12 +97,12 @@ export const Calculator: React.FC<ICalculatorProps> = ({placement}) => {
     <>
       <div className="mt-9 flex justify-center">
         <div
-          className={`bg-[#F3F4F6] p-2 rounded-xl font-medium text-xs lg:text-sm ${placement === 'crm' ? 'w-full' : ''}`}>
+          className={`bg-[#F3F4F6] p-2 rounded-xl font-medium text-xs lg:text-sm max-[460px]:flex max-[460px]:flex-col max-[460px]:gap-2 ${placement === 'crm' ? 'w-full' : ''}`}>
           {Object.keys(DIRECTIONS).map((direction) => (
             <button
               key={direction}
               onClick={() => handleDirectionChange(direction as keyof typeof DIRECTIONS)}
-              className={`px-2 lg:px-5 py-2 rounded-lg w-[166px] lg:w-[308px] mr-1 lg:mr-2 ${activeDirection === direction ? "bg-white" : "bg-transparent text-gray-300"}`}
+              className={`px-2 lg:px-5 py-2 rounded-lg w-[166px] lg:w-[308px] mr-1 lg:mr-2 max-[460px]:w-full max-[460px]:py-3 ${activeDirection === direction ? "bg-white" : "bg-transparent text-gray-300"}`}
             >
               {t(`delivery_${direction}`)}
             </button>
@@ -124,8 +124,9 @@ export const Calculator: React.FC<ICalculatorProps> = ({placement}) => {
       </div>
       <div className={`mt-8 ${placement === 'homepage' ? 'lg:flex justify-between' : ''}`}>
         <div className="flex flex-col lg:w-[620px]">
-          <div className="flex">
+          <div className="flex max-[500px]:flex-col max-[500px]:gap-4">
             <input
+              placeholder="write weight"
               type="text"
               inputMode="numeric"
               value={weight}
@@ -140,6 +141,7 @@ export const Calculator: React.FC<ICalculatorProps> = ({placement}) => {
           </div>
           <div className="flex items-center justify-between mt-6 py-5">
             <input
+              placeholder="choose"
               type="range"
               min={0}
               max={1000}

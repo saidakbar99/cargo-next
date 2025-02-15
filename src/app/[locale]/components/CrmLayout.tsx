@@ -20,8 +20,8 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
 
   return (
     <ProtectedRoute>
-      <div className="flex flex-col lg:flex-row">
-        <div className={`border-r border-lightGray p-3 lg:min-h-screen order-2 lg:order-1 
+      <div className="flex flex-col lg:flex-row h-screen justify-between">
+        <div className={`border-r border-lightGray p-2 lg:min-h-screen order-2 lg:order-1
           ${isMenuOpen ? 'min-w-[264px]' : ''}`}
         >
           <div className='hidden lg:flex justify-between items-center pl-4'>
@@ -41,7 +41,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </div>
-          <div className='flex flex-col justify-between lg:h-[90vh]'>
+          <div className='flex flex-col justify-between lg:h-[90vh] max-lg:justify-end'>
             <div className='flex justify-around lg:flex-col'>
               <Link href='/crm/shipments'>
                 <div className={`mt-1 lg:mt-5 p-3 cursor-pointer rounded-xl ${isActive(activeMenu, 'shipments')}`}>
@@ -114,16 +114,16 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
             )}
           </div>          
         </div>
-        <div className="flex flex-col w-full bg-whiteBackground order-1 lg:order-2">
+        <div className="flex flex-col w-full bg-whiteBackground order-1 lg:order-2 h-full">
           <div className="flex border-b border-lightGray p-6 justify-end">
-            {/* <div className='relative w-full mr-4'>
+            <div className='relative w-full mr-4'>
               <input 
                 type="text" 
                 className="border w-full border-lightGray rounded-80 py-3 pr-4 pl-12 focus:outline-none"
                 placeholder='Qidirish'
               />
               <img src='/svgs/search.svg' alt="Search Icon" className='absolute top-[14.5px] left-4' />
-            </div> */}
+            </div>
             <LocaleSwitcher variant='white' />
             <Link href='/'>
               <button
@@ -143,3 +143,4 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
 }
 
 export default CrmLayout;
+//  max-lg:h-[calc(100vh-420px)]

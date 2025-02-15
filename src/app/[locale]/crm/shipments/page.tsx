@@ -78,13 +78,13 @@ const Shipments = () => {
 
   return (
     <CrmLayout activeMenu='shipments'>
-      <div className="p-4 lg:p-6 h-full">
+      <div className="p-4 lg:p-6 max-[450px]:text-[0.8em] h-[calc(100vh-200px)] flec flex-col">
         <h3 className="text-2xl font-bold">Jo’natmalar</h3>
-        <div className="flex mt-6">
+        <div className="flex mt-6 max-[500px]:justify-between max-[500px]:gap-2">
           {filterButtons.map((filter) => (
             <div key={filter.id} onClick={() => handleFilterClick(filter.name_en)}>
               <FilterButton
-                className="mr-3"
+                className="mr-3 max-[500px]:w-full"
                 variant={activeFilter === filter.name_en ? 'active' : ''}
                 text={filter.name}
               />

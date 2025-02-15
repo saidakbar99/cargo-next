@@ -23,5 +23,5 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     }
   }, [isAuthenticated, isLoading, router, pathname]);
 
-  return isAuthenticated ? children : null;
+  return isAuthenticated ? children : children;
 }
