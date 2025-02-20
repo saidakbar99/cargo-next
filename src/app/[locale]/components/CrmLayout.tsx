@@ -20,7 +20,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
 
   return (
     <ProtectedRoute>
-      <div className="flex flex-col lg:flex-row h-screen justify-between">
+      <div className="flex flex-col lg:flex-row min-h-screen justify-between">
         <div className={`border-r border-lightGray p-2 lg:min-h-screen order-2 lg:order-1
           ${isMenuOpen ? 'min-w-[264px]' : ''}`}
         >

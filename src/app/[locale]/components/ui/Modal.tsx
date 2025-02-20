@@ -20,7 +20,9 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }
             <img src="/svgs/cross.svg" alt="X" />
           </button>
         </div>
-        {children}
+        <div className="mt-4 max-h-[70vh] overflow-y-auto">
+          {children}
+        </div>
       </div>
     </div>
   );
