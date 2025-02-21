@@ -21,7 +21,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
   return (
     <ProtectedRoute>
       <div className="flex flex-col lg:flex-row min-h-screen justify-between">
-        <div className={`border-r border-lightGray p-2 lg:min-h-screen order-2 lg:order-1
+        <div className={`border-r border-lightGray p-2 lg:min-h-screen order-2 lg:order-1 z-100 bg-white sticky bottom-0
           ${isMenuOpen ? 'min-w-[264px]' : ''}`}
         >
           <div className='hidden lg:flex justify-between items-center pl-4'>
@@ -114,7 +114,7 @@ const CrmLayout: React.FC<CrmLayoutProps> = ({ children, activeMenu }) => {
             )}
           </div>          
         </div>
-        <div className="flex flex-col w-full bg-whiteBackground order-1 lg:order-2 h-full">
+        <div className="flex flex-col w-full bg-whiteBackground order-1 lg:order-2 min-h-full">
           <div className="flex border-b border-lightGray p-6 justify-end">
             <div className='relative w-full mr-4'>
               <input 

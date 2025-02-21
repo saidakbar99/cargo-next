@@ -78,9 +78,9 @@ const Shipments = () => {
 
   return (
     <CrmLayout activeMenu='shipments'>
-      <div className="p-4 lg:p-6 max-[450px]:text-[0.8em] h-[calc(100vh-200px)] flec flex-col">
+      <div className="p-4 lg:p-6">
         <h3 className="text-2xl font-bold">Jo’natmalar</h3>
-        <div className="flex mt-6 max-[500px]:justify-between max-[500px]:gap-2">
+        <div className="flex mt-6">
           {filterButtons.map((filter) => (
             <div key={filter.id} onClick={() => handleFilterClick(filter.name_en)}>
               <FilterButton
